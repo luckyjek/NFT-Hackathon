@@ -1,0 +1,74 @@
+.createNftImg {
+  position: relative;
+}
+
+.createNftText {
+  display: flex;
+  position: absolute;
+  top:150px;
+  left:550px;
+}
+
+.donateTitle {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+
+.donateDescription {
+  
+  font-weight: bold;
+  font-size:15px;
+
+}
+
+
+.donateBtn {
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+  height: 250px;
+  width: 1000px;
+  border-radius: 5px;
+
+}
+
+.nftList {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  margin: 35px;
+  width: 240px;
+  background-color:whitesmoke;
+  
+}
+
+/* card 마우스 올릴 때 효과 */
+.nftList:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nftList__details {
+  padding: 2px 8px;
+  margin: 15px;
+  margin-top: 3px;
+  
+}
+
+.nftList__worksImg {
+    width: 240px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+/* .nftList__worksImg {
+  border-radius: 5px 5px 0 0;
+  width: 15px;
+  height: 30px;
+} */
+
+.nftList__artistsImg {
+  width:30%;
+  height: 30%
+  border-radius: 15px;
+}
