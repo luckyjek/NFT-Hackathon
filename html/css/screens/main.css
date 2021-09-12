@@ -1,5 +1,10 @@
 /* 메인 페이지 CSS */
 
+.main__column:first-child {
+  font-size: 100px;
+}
+
+/* donate 버튼 */
 .main__donateBtn {
   position: absolute;
   bottom: 180px;
@@ -21,6 +26,7 @@
   /* font-family: "Baloo Paaji 2", cursive; */
 }
 
+/* donate 버튼 입체 */
 .main__donateBtn:active {
   transform: translateY(2px);
   transition: transform 0.25s cubic-bezier(0.3, 0.8, 0.4, 1.5);
