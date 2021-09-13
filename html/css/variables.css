@@ -1,5 +1,8 @@
-:root{
-  --navy:#120078;
-  --pink:#fd3a69;
-  --yellow:#fecd1a;
+:root {
+    --navy: #120078;
+    --pink: #fd3a69;
+    --yellow: #fecd1a;
+}
+body {
+    font-family: "Permanent Marker", cursive;
 }
