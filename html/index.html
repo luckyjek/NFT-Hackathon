@@ -5,6 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+            rel="stylesheet"
+        />
+
         <title>Document</title>
     </head>
     <body>
@@ -21,59 +28,123 @@
                 <div class="house">
                     <!--왼쪽벽-->
                     <section class="wall wall-left">
-                        <div class="wall-grid-items" onclick="viewF()">
-                            <div class="grid-item">1</div>
-                            <div class="grid-item">2</div>
-                            <div class="grid-item">3</div>
-                            <div class="grid-item">4</div>
-                            <div class="grid-item">5</div>
-                            <div class="grid-item">6</div>
-                            <div class="grid-item">7</div>
-                            <div class="grid-item">8</div>
+                        <div class="wall-grid-items">
+                            <!-- <div class="wall-grid-items" onclick="viewF()"> -->
+                            <!--아래 다 감싸줘야 될 class이다.-->
+
+                            <div class="grid-item-con">
+                                <div class="grid-item">1</div>
+                                <button class="item-button-left"></button>
+                            </div>
+                            <div class="grid-item-con">
+                                <div class="grid-item">2</div>
+                                <button class="item-button-left"></button>
+                            </div>
+                            <div class="grid-item-con">
+                                <div class="grid-item">3</div>
+                                <button class="item-button-left"></button>
+                            </div>
+                            <div class="grid-item-con">
+                                <div class="grid-item">4</div>
+                                <button class="item-button-left"></button>
+                            </div>
+                            <div class="grid-item-con">
+                                <div class="grid-item">5</div>
+                                <button class="item-button-left"></button>
+                            </div>
+                            <div class="grid-item-con">
+                                <div class="grid-item">6</div>
+                                <button class="item-button-left"></button>
+                            </div>
+                            <div class="grid-item-con">
+                                <div class="grid-item">7</div>
+                                <button class="item-button-left"></button>
+                            </div>
+                            <div class="grid-item-con">
+                                <div class="grid-item">8</div>
+                                <button class="item-button-left"></button>
+                            </div>
                         </div>
-                        <a href="https://www.google.com/" target="_blank"
-                            ><div class="test test2"></div
-                        ></a>
                     </section>
                     <!--왼쪽벽 끝-->
                     <!--오른쪽 벽 -->
                     <section class="wall wall-right">
                         <div class="wall-grid-items" onclick="viewF()">
-                            <div class="grid-item">1</div>
-                            <div class="grid-item">2</div>
-                            <div class="grid-item">3</div>
-                            <div class="grid-item">4</div>
-                            <div class="grid-item">5</div>
-                            <div class="grid-item">6</div>
-                            <div class="grid-item">7</div>
-                            <div class="grid-item">8</div>
+                            <!--아래 다 감싸줘야 될 class이다.-->
+                            <div class="grid-item-con">
+                                <button class="item-button-right"></button>
+                                <div class="grid-item">1</div>
+                            </div>
+                            <div class="grid-item-con">
+                                <button class="item-button-right"></button>
+                                <div class="grid-item">2</div>
+                            </div>
+                            <div class="grid-item-con">
+                                <button class="item-button-right"></button>
+                                <div class="grid-item">3</div>
+                            </div>
+                            <div class="grid-item-con">
+                                <button class="item-button-right"></button>
+                                <div class="grid-item">4</div>
+                            </div>
+                            <div class="grid-item-con">
+                                <button class="item-button-right"></button>
+                                <div class="grid-item">5</div>
+                            </div>
+                            <div class="grid-item-con">
+                                <button class="item-button-right"></button>
+                                <div class="grid-item">6</div>
+                            </div>
+                            <div class="grid-item-con">
+                                <button class="item-button-right"></button>
+                                <div class="grid-item">7</div>
+                            </div>
+                            <div class="grid-item-con">
+                                <button class="item-button-right"></button>
+                                <div class="grid-item">8</div>
+                            </div>
                         </div>
+                        <a href="https://www.google.com/" target="_blank"
+                            ><div class="test test2"></div
+                        ></a>
                     </section>
-
                     <!--오른쪽 벽  끝-->
 
                     <!--4개 콘텐트중 1번째-->
                     <section class="wall wall-front wall-front-a">
+                        <!-- 인물 -->
                         <div class="wall-content">
-                            <h2 class="wall-title">풍경</h2>
+                            <h2 class="wall-title">
+                                <video
+                                    class="video"
+                                    src="./video/video.mp4"
+                                    autoplay
+                                    muted
+                                    loop
+                                ></video>
+                                <canvas class="canvas" width="1200" height="900"
+                                    >이 브라우/저는 캔버스를 지원하지
+                                    않습니다.</canvas
+                                >
+                            </h2>
                         </div>
                     </section>
                     <!--4개 콘텐트중 2번째-->
                     <section class="wall wall-front wall-front-b">
                         <div class="wall-content">
-                            <h2 class="wall-title">클래식</h2>
+                            <h2 class="wall-title">캐릭터 Cha</h2>
                         </div>
                     </section>
                     <!--4개 콘텐트중 3번째-->
-                    <section class="wall wall-front wall-front-c">
+                    <!-- <section class="wall wall-front wall-front-c">
                         <div class="wall-content">
                             <h2 class="wall-title">캐릭터</h2>
                         </div>
-                    </section>
+                    </section> -->
                     <!--4개 콘텐트중 4번째-->
                     <section class="wall wall-front wall-front-d">
                         <div class="wall-content">
-                            <h2 class="wall-title">인물</h2>
+                            <h2 class="wall-title">풍경</h2>
                         </div>
                     </section>
                 </div>
@@ -81,5 +152,6 @@
         </div>
 
         <script src="js/wall3d.js"></script>
+        <script src="js/video.js"></script>
     </body>
 </html>

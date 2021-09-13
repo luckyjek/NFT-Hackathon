@@ -50,9 +50,9 @@
         //위의 계산한 값으로 활용하자.
         stageElem.style.transform =
             "rotateX(" +
-            mousePos.y * 50 +
+            mousePos.y * 8 +
             "deg) rotateY(" +
-            mousePos.x * 50 +
+            mousePos.x * 8 +
             "deg)";
     });
 
