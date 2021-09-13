@@ -9,7 +9,8 @@
 
 /* screens */
 @import "screens/main.css";
-@import "screens/createNFT.css";
+@import "screens/donateNFT.css";
+@import "screens/createGrid.css";
 
 body {
   box-sizing: border-box;
