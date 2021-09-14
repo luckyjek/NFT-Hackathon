@@ -50,9 +50,9 @@
         //위의 계산한 값으로 활용하자.
         stageElem.style.transform =
             "rotateX(" +
-            mousePos.y * 8 +
+            mousePos.y * 50 +
             "deg) rotateY(" +
-            mousePos.x * 8 +
+            mousePos.x * 50 +
             "deg)";
     });
 
@@ -62,3 +62,16 @@
     window.addEventListener("resize", resizeHandler);
     resizeHandler();
 })();
+
+// modal test _ show
+function viewF() {
+    let openLink = document.querySelector(".open-link");
+    console.log(openLink);
+    openLink.style.display = "inline-block";
+}
+
+//test_remove
+function removeF() {
+    let openLink = document.querySelector(".open-link");
+    openLink.style.display = "none";
+}

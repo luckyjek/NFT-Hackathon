@@ -4,7 +4,7 @@
     position: absolute;
     justify-items: center;
     grid-template-columns: repeat(8, 4fr);
-    
+
     grid-auto-rows: minmax(100px, auto);
     gap: 1rem;
 } */
@@ -28,9 +28,21 @@
 .grid-item {
     width: 500px;
     height: 300px;
-    border: 3px solid rgb(50, 50, 40);
+    border: 8px solid rgb(18, 0, 120);
     background: palegreen;
 }
+
+/*각 아이템마다 정의된부부분 시작*/
+.item1 {
+    background-image: url("/client/img/sky_test.jpg");
+    background-size: cover;
+}
+
+.button1 {
+    /* background-image: url("../../image/squer.jpg"); */
+}
+
+/*각 아이템마다 정의된부부분 끝*/
 
 .item-button-left {
     width: 50px;

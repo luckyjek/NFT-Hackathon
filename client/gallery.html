@@ -33,8 +33,25 @@
                             <!--아래 다 감싸줘야 될 class이다.-->
 
                             <div class="grid-item-con">
-                                <div class="grid-item">1</div>
-                                <button class="item-button-left"></button>
+                                <div class="grid-item item1">
+                                    1
+                                    <!--wall3.js로 이동-->
+                                    <div
+                                        class="test test1"
+                                        onclick="viewF()"
+                                    ></div>
+                                </div>
+
+                                <button
+                                    class="item-button-left button1"
+                                    onclick="viewF()"
+                                ></button>
+                                <!-- <div class="text">
+                                    "하늘을 날자"
+                                    <br /><br />
+                                    이것은 000작가의 작품입니다. 밤하늘
+                                    비행기안에서 찍었던 작품.
+                                </div> -->
                             </div>
                             <div class="grid-item-con">
                                 <div class="grid-item">2</div>
@@ -114,6 +131,24 @@
                     <section class="wall wall-front wall-front-a">
                         <!-- 인물 -->
                         <div class="wall-content">
+                            <h2 class="wall-title"></h2>
+                        </div>
+                    </section>
+                    <!--4개 콘텐트중 2번째-->
+                    <section class="wall wall-front wall-front-b">
+                        <div class="wall-content">
+                            <h2 class="wall-title"></h2>
+                        </div>
+                    </section>
+                    <!--4개 콘텐트중 3번째-->
+                    <!-- <section class="wall wall-front wall-front-c">
+                        <div class="wall-content">
+                            <h2 class="wall-title">캐릭터</h2>
+                        </div>
+                    </section> -->
+                    <!--4개 콘텐트중 4번째-->
+                    <section class="wall wall-front wall-front-d">
+                        <div class="wall-content">
                             <h2 class="wall-title">
                                 <video
                                     class="video"
@@ -129,28 +164,32 @@
                             </h2>
                         </div>
                     </section>
-                    <!--4개 콘텐트중 2번째-->
-                    <section class="wall wall-front wall-front-b">
-                        <div class="wall-content">
-                            <h2 class="wall-title">캐릭터 Cha</h2>
-                        </div>
-                    </section>
-                    <!--4개 콘텐트중 3번째-->
-                    <!-- <section class="wall wall-front wall-front-c">
-                        <div class="wall-content">
-                            <h2 class="wall-title">캐릭터</h2>
-                        </div>
-                    </section> -->
-                    <!--4개 콘텐트중 4번째-->
-                    <section class="wall wall-front wall-front-d">
-                        <div class="wall-content">
-                            <h2 class="wall-title">풍경</h2>
-                        </div>
-                    </section>
                 </div>
             </div>
         </div>
-
+        <!--modal start-->
+        <div class="open-link pointer-lock-close overlay">
+            <div id="foo">
+                <button class="close" onclick="removeF()">×</button>
+                <h3>Open External Link</h3>
+                <p>
+                    »&nbsp;<span
+                        class="url"
+                        title="https://opensea.io/assets/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/146000007"
+                        >https://opensea.io/assets/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/146000007</span
+                    >
+                </p>
+                <p>
+                    <a
+                        class="button"
+                        target="_blank"
+                        href="https://opensea.io/assets/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/146000007"
+                        >Open</a
+                    >
+                </p>
+            </div>
+        </div>
+        <!--modal end-->
         <script src="js/wall3d.js"></script>
         <script src="js/video.js"></script>
     </body>
