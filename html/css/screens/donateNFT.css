@@ -58,7 +58,7 @@ img {
 }
 
 .nftList {
-  border: 1px solid var(--yellow);
+  /* border: 1px solid var(--yellow); */
   box-shadow: 0 4px 8px 0 #d2a501;
   transition: 0.3s;
   border-radius: 5px;
@@ -69,16 +69,16 @@ img {
 
 .nftList:hover,
 .container:hover {
-  box-shadow: 0 8px 16px 0 #fd6588;
+  box-shadow: 0 8px 16px 0 #fe97af;
 }
 
 .nft__title {
   font-weight: 100px;
 }
 
-.container {
+.nftcard__text {
   padding: 2px 16px;
-  margin: 30px;
+
   margin-top: 3px;
   width: 250px;
   height: 300px;
