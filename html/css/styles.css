@@ -10,11 +10,11 @@
 /* screens */
 @import "screens/main.css";
 @import "screens/donateNFT.css";
-@import "screens/createGrid.css";
 
 body {
   box-sizing: border-box;
   /* background-color: var(--yellow); */
   /* nav bar 상단 고정으로 인해 main contentx가 가려짐을 방지 */
   margin-top: 50px;
+  height: 1000vh;
 }
