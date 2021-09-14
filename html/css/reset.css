@@ -7,6 +7,50 @@
 
 html,
 body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+code,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+div,
+span,
+article,
+section,
+header,
+footer,
+p,
+ul,
+li,
+fieldset,
+legend,
+label,
+nav {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+
+html,
+body,
 div,
 span,
 applet,
@@ -107,20 +151,17 @@ nav,
 section {
   display: block;
 }
-body {
-  line-height: 1;
-}
+
 ol,
 ul {
   list-style: none;
 }
-blockquote,
 q {
   quotes: none;
 }
+q:before,
 blockquote:before,
 blockquote:after,
-q:before,
 q:after {
   content: "";
   content: none;
@@ -128,4 +169,14 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+/* 모든 a 태그 default (블루색상) 없애기 */
+a {
+  text-decoration: none;
+  color: black;
+}
+body {
+  /*최소한 부모의 height만큼 차게! 설정해주었다. */
+  min-height: 100%;
+  line-height: 1;
 }
