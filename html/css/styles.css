@@ -1,0 +1,20 @@
+/* 폰트 스타일 (구글 폰트) */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap");
+
+@import "reset.css";
+@import "variables.css";
+/* components */
+@import "components/nav.css";
+@import "components/footer.css";
+
+/* screens */
+@import "screens/main.css";
+@import "screens/donateNFT.css";
+
+body {
+  box-sizing: border-box;
+  /* background-color: var(--yellow); */
+  /* nav bar 상단 고정으로 인해 main contentx가 가려짐을 방지 */
+  margin-top: 50px;
+  height: 1000vh;
+}
