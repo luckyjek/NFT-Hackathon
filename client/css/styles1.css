@@ -13,11 +13,13 @@
 @import "screens/main.css";
 @import "screens/donateNFT.css";
 
+/* screens - 은경*/
+@import "screens/createNft.css";
+
 body {
     box-sizing: border-box;
     /* background-color: var(--yellow); */
     /* nav bar 상단 고정으로 인해 main contentx가 가려짐을 방지 */
     margin-top: 50px;
-    height: 1000vh;
     font-family: "Baloo Paaji 2", "Gugi", cursive;
 }
