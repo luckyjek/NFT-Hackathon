@@ -1,15 +1,9 @@
 /* 폰트 스타일 (구글 폰트) */
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&family=Song+Myung&display=swap");
 
 @import "reset.css";
 @import "variables.css";
-
-/* components - 은경 */
-@import "components/modal.css";
-@import "components/perspective.css";
-@import "components/progress-bar.css";
-@import "components/wall-grid-container.css";
-@import "components/wall.css";
 
 /* components - 희경 */
 @import "components/nav.css";
@@ -25,8 +19,5 @@ body {
     /* nav bar 상단 고정으로 인해 main contentx가 가려짐을 방지 */
     margin-top: 50px;
     height: 1000vh;
-}
-
-body {
-    font-family: "Permanent Marker", cursive;
+    font-family: "Baloo Paaji 2", "Gugi", cursive;
 }

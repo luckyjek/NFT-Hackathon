@@ -1,0 +1,9 @@
+@import "reset.css";
+@import "variables.css";
+
+/* components - 은경 */
+@import "components/modal.css";
+@import "components/perspective.css";
+@import "components/progress-bar.css";
+@import "components/wall-grid-container.css";
+@import "components/wall.css";
