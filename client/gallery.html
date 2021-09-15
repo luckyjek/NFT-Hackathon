@@ -11,7 +11,8 @@
             href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
             rel="stylesheet"
         />
-
+        <!--axios script-->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <title>Document</title>
     </head>
     <body>
@@ -131,19 +132,19 @@
                     <section class="wall wall-front wall-front-a">
                         <!-- 인물 -->
                         <div class="wall-content">
-                            <h2 class="wall-title"></h2>
+                            <h2 class="wall-title">Art,<br />Portrait</h2>
                         </div>
                     </section>
                     <!--4개 콘텐트중 2번째-->
                     <section class="wall wall-front wall-front-b">
                         <div class="wall-content">
-                            <h2 class="wall-title"></h2>
+                            <h2 class="wall-title">Art,<br />Character</h2>
                         </div>
                     </section>
                     <!--4개 콘텐트중 3번째-->
                     <!-- <section class="wall wall-front wall-front-c">
                         <div class="wall-content">
-                            <h2 class="wall-title">캐릭터</h2>
+                            <h2 class="wall-title"></h2>
                         </div>
                     </section> -->
                     <!--4개 콘텐트중 4번째-->
@@ -192,5 +193,19 @@
         <!--modal end-->
         <script src="js/wall3d.js"></script>
         <script src="js/video.js"></script>
+
+        <script>
+            axios({
+  method: 'get',
+  url: 'https://ca6ec645-a4d6-4572-82a1-6768e39df010.mock.pstmn.io/getproducList',
+  responseType: 'json'
+})
+  .then(function (response) {
+    console.log(response.data);
+  });
+
+  </script>
+
+        </script>
     </body>
 </html>

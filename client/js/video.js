@@ -20,7 +20,7 @@
     ];
 
     function render() {
-        console.log(videoElem.currentTime);
+        // console.log(videoElem.currentTime);
         ctx.drawImage(videoElem, 0, 0, 1200, 900);
 
         for (let i = 0; i < messages.length; i++) {
