@@ -22,13 +22,22 @@
     padding: 20px;
 }
 .text {
-    margin-top: 20px;
+    /* margin: 20px; */
+    margin-bottom: 20px;
 }
-.file-upload {
+
+.colorBtn {
+    background-color: var(--pink);
+    border: 1;
+    border-radius: 20px;
+    transition: transform 300ms ease;
+}
+.colorBtn:hover {
+    transform: scale(1.1);
 }
 
 /*show image-box*/
-.main-content {
+.view-content {
     /* position: absolute; */
     border: 4px solid blue;
     width: 300px;
