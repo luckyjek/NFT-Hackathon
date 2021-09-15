@@ -16,6 +16,16 @@
         <title>Document</title>
     </head>
     <body>
+        <!-- Go to Home 버튼 -->
+        <div>
+            <a href="index.html"
+                ><div class="backButton">
+                    <i class="fas fa-paint-brush fa-lg"
+                        ><span>Go to Home</span></i
+                    >
+                </div></a
+            >
+        </div>
         <!--회색 막대기-->
         <div class="progress-bar-con">
             <!--하늘색 막대기-->
@@ -193,19 +203,5 @@
         <!--modal end-->
         <script src="js/wall3d.js"></script>
         <script src="js/video.js"></script>
-
-        <script>
-            axios({
-  method: 'get',
-  url: 'https://ca6ec645-a4d6-4572-82a1-6768e39df010.mock.pstmn.io/getproducList',
-  responseType: 'json'
-})
-  .then(function (response) {
-    console.log(response.data);
-  });
-
-  </script>
-
-        </script>
     </body>
 </html>

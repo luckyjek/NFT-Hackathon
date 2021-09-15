@@ -75,3 +75,12 @@ function removeF() {
     let openLink = document.querySelector(".open-link");
     openLink.style.display = "none";
 }
+
+// getGalleryData
+axios({
+    method: "get",
+    url: "https://ca6ec645-a4d6-4572-82a1-6768e39df010.mock.pstmn.io/getproducList",
+    responseType: "json",
+}).then(function (response) {
+    console.log(response.data);
+});
