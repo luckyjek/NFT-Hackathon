@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+
+    <body>
+        <button>AXIOS</button>
+        <script>
+
+            axios({
+                method: "get",
+                url: "https://ca6ec645-a4d6-4572-82a1-6768e39df010.mock.pstmn.io/getproducList",
+                responseType: "json",
+            }).then(function (response) {
+                console.log(response.data);
+            });
+
+            const testAuthentication = () => {
+                const url = `https://api.pinata.cloud/data/testAuthentication`;
+                return axios
+                    .get(url, {
+                        headers: {
+                            pinata_api_key: "your pinata api key",
+                            pinata_secret_api_key: "your pinata secret api key",
+                        },
+                    })
+                    .then(function (response) {
+                        //handle your response here
+                    })
+                    .catch(function (error) {
+                        //handle error here
+                    });
+            };
+        </script>
+    </body>
+</html>

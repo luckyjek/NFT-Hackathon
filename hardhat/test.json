@@ -1,0 +1,15 @@
+{
+    "attributes": [
+        {
+            "trait_type": "Dragon Kind",
+            "value": "Night Fury"
+        },
+        {
+            "trait_type": "Skin Color",
+            "value": "Black"
+        }
+    ],
+    "description": "My favorite dragon",
+    "image": "https://gateway.pinata.cloud/ipfs/QmXxHLZwsSMydqqHnvEA6L36wBSYzNmShrov81gATVZFZc",
+    "name": "Toothless"
+}
