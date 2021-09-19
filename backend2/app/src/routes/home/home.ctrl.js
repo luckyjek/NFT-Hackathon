@@ -1,6 +1,7 @@
 // this's following ECMAScrit role
 "use strict";
 
+const UserStorage = require("../../models/UserStorage");
 const output = {
     home: (req, res) => {
         res.render("home/index.ejs");
@@ -10,29 +11,31 @@ const output = {
     },
 };
 
-const users = {
-    id: ["abc1", "abc2", "abc3"],
-    pw: ["123", "123", "123"],
-};
+// const users = {
+//     id: ["abc1", "abc2", "abc3"],
+//     pw: ["123", "123", "123"],
+// };
 
 const process = {
     login: (req, res) => {
-        const id = req.body.id;
-        const pw = req.body.pw;
+        const id = req.body.id,
+            pw = req.body.pw;
 
+        const users = UserStorage.getUsers("id", "pw");
+        console.log(users);
+
+        const response = {};
         if (users.id.includes(id)) {
             const idx = users.id.indexOf(id);
             if (users.pw[idx] === pw) {
-                return res.json({
-                    success: true,
-                });
+                response.success = true;
+                return res.json(response);
             }
         }
 
-        return res.json({
-            success: false,
-            msg: "login failure",
-        });
+        response.success = false;
+        response.msg = "login failure";
+        return res.json(response);
     },
 };
 
