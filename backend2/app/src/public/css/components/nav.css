@@ -1,0 +1,39 @@
+/* 상단 nav bar css */
+/* 모든 페이지 적용 */
+
+/* 상단 nav bar */
+.nav {
+    /* 상단에 항상 고정 */
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    /* 텍스트 가로 정렬 */
+    display: flex;
+    /* 각각의 텍스트들 한줄로 나란히 정렬 */
+    justify-content: center;
+    align-items: center;
+    /* nav bar 높이 */
+    height: 50px;
+    /* nar bar 텍스트간 padding */
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: var(--navy);
+    font-family: "Baloo Paaji 2", cursive;
+}
+
+/* 상단 nav bar 메뉴들 */
+.nav__menu {
+    display: flex;
+    margin-left: auto;
+}
+
+/* 상단 nave bar 각각 메뉴들 */
+.nav__item {
+    padding: 20px;
+}
+
+/* 상단 nav bar 텍스트 */
+.nav__link {
+    color: white;
+    font-size: 20px;
+}

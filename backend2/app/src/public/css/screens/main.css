@@ -1,0 +1,33 @@
+/* 메인 페이지 CSS */
+
+.main__column:first-child {
+  font-size: 100px;
+}
+
+/* donate 버튼 */
+.main__donateBtn {
+  position: absolute;
+  bottom: 180px;
+  right: 85px;
+  margin: 20px;
+  padding: 10px 13px;
+  text-decoration: none;
+  font-size: 28px;
+  color: white;
+  display: inline-block;
+  border-radius: 5px;
+  /* border-style: none; */
+  border-color: wheat;
+  transition: all 1.5s;
+  text-shadow: 0px -2px rgba(0, 0, 0, 0.44);
+  /* font-family: "Lobster", cursive; */
+  background-color: var(--pink);
+  border-bottom: 7px solid #ff709c;
+  /* font-family: "Baloo Paaji 2", cursive; */
+}
+
+/* donate 버튼 입체 */
+.main__donateBtn:active {
+  transform: translateY(2px);
+  transition: transform 0.25s cubic-bezier(0.3, 0.8, 0.4, 1.5);
+}

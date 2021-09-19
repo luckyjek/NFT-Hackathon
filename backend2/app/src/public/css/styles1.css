@@ -1,0 +1,30 @@
+/* 폰트 스타일 (구글 폰트) */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&family=Song+Myung&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+/*마지막*/
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+@import "reset.css";
+@import "variables.css";
+
+/* components - 희경 */
+@import "components/nav.css";
+@import "components/footer.css";
+
+/* screens */
+@import "screens/main.css";
+@import "screens/donateNFT.css";
+
+/* screens - 은경*/
+@import "screens/createNft.css";
+
+body {
+    box-sizing: border-box;
+    /* background-color: var(--yellow); */
+    /* nav bar 상단 고정으로 인해 main contentx가 가려짐을 방지 */
+    margin-top: 50px;
+    /* font-family: "Baloo Paaji 2", "Gugi", cursive; */
+    font-family: "Noto Sans KR", sans-serif;
+    /* font-family: "Nanum Gothic", sans-serif; */
+}

@@ -9,6 +9,12 @@ const output = {
     login: (req, res) => {
         res.render("home/login.ejs");
     },
+    test: (req, res) => {
+        res.render("home/test.ejs");
+    },
+    gallery: (req, res) => {
+        res.render("home/gallery.ejs");
+    },
 };
 
 // const users = {
