@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+  <title>Java Script</title>
+    <!-- other html -->
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+    <!-- Add plugin styles -->
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+</head>
+
+<body>
+  <body>
+    <input type="file">
+  </body>
+
+
+  <!--Add plugin scripts-->
+  <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-image-transform/dist/filepond-plugin-image-transform.js"></script>
+  <!-- other html -->
+  <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+  <script>
+
+    //initialize the plugins
+    
+    FilePond.registerPlugin(
+
+      FilePondPluginImagePreview,
+      FilePondPluginImageResize,
+      FilePondPluginImageTransform
+    );
+
+
+
+
+    // Get a reference to the file input element
+    const inputElement = document.querySelector('input[type="file"]');
+
+    // Create a FilePond instance
+    const pond = FilePond.create(inputElement,{
+      imageResizeTargetWidth:256,
+      imageResizeMode:'contain',
+
+      //callback when the image is added
+      onaddfile:(err, fileItem) =>{
+        console.log(err,fileItem.getMetadata('resize'));
+      },
+
+      //callback for displaying the image on the screen
+      
+      // onaddfile: (err, fileItem) => {
+      //   console.log(err, fileItem.getMetadata('resize'));
+      // },
+      // onpreparefile: (fileItem, outputFiles) => {
+      //   outputFiles.forEach(output => {
+      //     const img = new Image();
+      //     img.src = URL.createObjectURL(output.file);
+      //     document.body.appendChild(img);
+    
+      // });
+      // },
+
+
+
+      imageTransformVariants: {
+          thumb_medium_: transforms => {
+          transforms.resize.size.width = 512;
+          return transforms;
+          },
+          thumb_small_: transforms => {
+          transforms.resize.size.width = 64;
+          return transforms;
+        }
+      }
+
+
+    });
+  </script>
+</body>
+
+</html>
