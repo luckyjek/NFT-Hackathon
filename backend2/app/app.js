@@ -11,5 +11,6 @@ app.set("view engine", "ejs");
 // router connect
 // use : 미들웨어를 등록해주는 method
 app.use("/", home);
+app.use(express.static(`${__dirname}/src/public/`));
 
 module.exports = app;
