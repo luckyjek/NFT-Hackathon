@@ -8,7 +8,31 @@ const id = document.querySelector("#id"),
 loginBtn.addEventListener("click", login);
 
 function login() {
-    console.log("login!");
-    console.log(id.value);
-    console.log(pw.value);
+    const req = {
+        id: id.value,
+        pw: pw.value,
+    };
+    // console.log(req);
+    // console.log(JSON.stringify(req));
+
+    fetch("/login", {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json",
+        },
+        body: JSON.stringify(req),
+    })
+        .then((res) => res.json())
+        // .then(console.log(res));
+        .then((res) => {
+            if (res.success) {
+                location.href = "/";
+            } else {
+                alert(res.msg);
+            }
+        })
+        .catch((err) => {
+            // console.error("로그인 중 에러 발생");
+            console.error(new Error("로그인 중 에러 발생"));
+        });
 }
