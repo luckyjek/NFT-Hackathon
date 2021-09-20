@@ -4,16 +4,19 @@
 const User = require("../../models/User");
 const output = {
     home: (req, res) => {
-        res.render("home/index.ejs");
+        res.render("home/index");
     },
     login: (req, res) => {
-        res.render("home/login.ejs");
+        res.render("home/login");
     },
     test: (req, res) => {
-        res.render("home/test.ejs");
+        res.render("home/test");
     },
     gallery: (req, res) => {
-        res.render("home/gallery.ejs");
+        res.render("home/gallery");
+    },
+    register: (req, res) => {
+        res.render("home/register");
     },
 };
 
@@ -43,6 +46,12 @@ const process = {
         // response.success = false;
         // response.msg = "login failure";
         // return res.json(response);
+    },
+    register: (req, res) => {
+        const user = new User(req.body);
+        const response = user.register();
+        // 클라이언트로 응답
+        return res.json(response);
     },
 };
 

@@ -21,6 +21,12 @@ class User {
         }
         return { success: false, msg: "존재하지 않는 아이디" };
     }
+
+    register() {
+        const body = this.body;
+        const response = UserStorage.save(body);
+        return response;
+    }
 }
 // const user = new User("abc");
 // console.log(user);s
