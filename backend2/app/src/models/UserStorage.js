@@ -17,6 +17,19 @@ class UserStorage {
         // 마지막  {} 에 넣어준다.
         return newUsers;
     }
+
+    static getUserInfo(id) {
+        const users = this.#users;
+        const idx = users.id.indexOf(id);
+        const usersKeys = Object.keys(users);
+
+        const usreInfo = usersKeys.reduce((newUser, info) => {
+            // idx에 맞는 User.id, User.pw .. 를 newUser에 넣음
+            newUser[info] = users[info][idx];
+            return newUser;
+        }, {});
+        return usreInfo;
+    }
 }
 
 module.exports = UserStorage;
