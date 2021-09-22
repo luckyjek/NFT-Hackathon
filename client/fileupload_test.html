@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+  <title>Java Script</title>
+
+</head>
+
+<style>
+img{
+  width:150px;
+  height: 150px;
+  border-radius: 50%;
+  
+}
+
+</style>
+
+<body>
+
+  <h1>Save images to Local Storage</h1>
+  <input type="file" id="myFileInput">
+  <img id="imgPreview" src="" alt="Preview">
+  
+  <script>
+    document.querySelector('#myFileInput').addEventListener('change',function(){
+      // console.log(this.files);
+      const reader = new FileReader();
+      reader.addEventListener("load",()=>{
+        // console.log(reader.result);
+        localStorage.setItem("recent-image", reader.result);
+      });
+      reader.readAsDataURL(this.files[0]);
+    });
+    document.addEventListener("DOMContentLoaded",()=>{
+      const recentImageDataUrl = localStorage.getItem("recent-image");
+
+      if(recentImageDataUrl){
+        document.querySelector('#imgPreview').setAttribute("src",recentImageDataUrl);
+      }
+    })
+  </script>
+</body>
+
+</html>
