@@ -55,3 +55,14 @@ class-house에 3d벽들이 배치가 되고, 캐릭터가 집 앞이나 집 옆�
     transform: translateZ(-490vw);
     transform-style: preserve-3d;
 }
+
+.goHomeBtn {
+    font-size: 40px;
+    color: white;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    margin: auto;
+    border-radius: 50%;
+    background-color: var(--pink);
+}

@@ -84,3 +84,78 @@ axios({
 }).then(function (response) {
     console.log(response.data);
 });
+
+//testData
+var data = [
+    {
+        artist_id: "0",
+        artist_name: "eunkyung",
+        art_num: "10",
+        art_image: "./uploads/images/10",
+        art_info: "first eunkyung art",
+        art_update: "2021-09-14",
+        art_price: "10eth",
+    },
+    {
+        artist_id: "1",
+        artist_name: "heekyung",
+        art_num: "11",
+        art_image: "./uploads/images/11",
+        art_info: "first heekyung art",
+        art_update: "2021-09-15",
+        art_price: "10eth",
+    },
+    {
+        artist_id: "2",
+        artist_name: "jangyeon",
+        art_num: "12",
+        art_image: "./uploads/images/12",
+        art_info: "first jangyeon art",
+        art_update: "2021-09-16",
+        art_price: "10eth",
+    },
+    {
+        artist_id: "3",
+        artist_name: "jeongseup",
+        art_num: "13",
+        art_image: "./uploads/images/13",
+        art_info: "first jeongseup art",
+        art_update: "2021-09-17",
+        art_price: "10eth",
+    },
+];
+
+function showItem() {
+    for (let i = 0; i < data.length; i++) {
+        console.log(data[i]);
+
+        //먼저 저 하나의큰 템플릿?을 하나 만들어 준뒤
+        const item_left = document.querySelector(".grid-item-con");
+        //for문을 돌린다.
+        //그때 이미 만들어진 데이터와함께 만들어준다.
+
+        // for (let j = 8; item_left < j; item_left++) {
+        // console.log("item_left1", hi);
+        item_left.innerHTML = `
+            <div class="grid-item">
+            arrtist_id : ${data[0].artist_id}<br/>
+            artist_name : ${data[0].artist_name}<br/>
+            art_num : ${data[0].art_num}<br/>
+            art_image : ${data[0].art_image}<br/>
+            art_info : ${data[0].art_info}<br/>
+            </div>
+            <button
+            class="item-button-left button1"
+            onclick="viewF()"
+            ></button>
+            `;
+        // }
+    }
+
+    // item_left.innerHTML = `
+    // <div class="grid-item">arrtist_id : ${data[0].artist_id}</div>
+    // <button class="item-button-left"></button>
+    // `;
+}
+
+showItem();
