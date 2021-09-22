@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+  <head>
+    <!--edit_profile의 주요 기능으로 이미지업로드가있다.-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles_profile.css">
+    
+    <!--axios script-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+      <!-- 메인페이지 상단 nav bar-->
+      <header class="nav">
+        <!-- 서비스명 및 로고  -->
+        <!-- 서비스명과 로고 클릭 시 메인 페이지로 이동 -->
+        <a class="nav__link" href="index.html"><h1>Service Name</h1></a>
+        <!-- nav bar 메뉴들 -->
+        <ul class="nav__menu">
+            <!-- nav bar "HOME" 메뉴 버튼 -->
+            <!-- "Home" 클릭 시 메인 페이지로 이동 -->
+            <li class="nav__item">
+                <a class="nav__link" href="index.html">Home</a>
+            </li>
+            <!-- nav bar "Gallery" 메뉴 버튼 -->
+            <li class="nav__item">
+                <a class="nav__link" href="gallery.html">Gallery</a>
+            </li>
+            <!-- nav bar "Create NFT" 메뉴 버튼 -->
+            <li class="nav__item">
+                <a class="nav__link" href="createNFT.html">Create NFT</a>
+            </li>
+            <!-- nav bar "Log in" 메뉴 버튼 -->
+            <!-- Log in 클릭 시  메타마스크 연결-->
+            <li class="nav__item">
+                <a class="nav__link" href="logIn.html">Log in</a>
+            </li>
+        </ul>
+      </header>
+
+      <div class="myProfile" >
+        나의 프로필 편집
+      </div>
+
+      <!--main container-->
+      <div class="container">
+        <!--profile 사진부분 -->
+        <div>
+          <div class="text view-content">
+            <!-- main-content -->
+            <img id="imgPreview" src="" alt="Preview">
+          </div>
+          <input type="file" id="myFileInput" onclick="profile()">
+        </div>
+
+        <!--profile input부분 -->
+
+        <div class="con main2 main-container">
+        <!--nickName-->
+          <div style="margin-bottom: 10px;" >닉네임</div>
+          <div class="input-group mb-3" >
+            <input type="text" class="form-control" id="nickName" placeholder="luckyjek">
+          </div>
+          <!--email_addr-->
+          <div style="margin-bottom: 10px;">이메일주소</div>  
+          <div class="input-group">
+            <input type="text" class="form-control" id="emailAddr"placeholder="luckyjek@gmail.com" >
+          </div>
+        </div>
+      </div>
+
+      <!--main button-->
+      <div style="text-align: center; ">
+        <a href="profile.html">
+          <input type="reset" class="colorBtn" value="취소" >
+        </a>
+        <input type="button" class="colorBtn" value="변경사항저장" onclick="submit()">
+      </div>
+
+      <script src="js/edit_profile.js"></script>
+
+  </body>
+</html>
