@@ -1,0 +1,85 @@
+.container {
+    margin: auto;
+    margin-top: 60px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 1000px;
+    height: 1100px;
+}
+
+.second-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.third-container {
+    padding: 20px;
+}
+
+/*make new nft*/
+.main-container {
+    /* position: absolute; */
+    /* border: 3px solid red; */
+    width: 600px;
+    height: 500px;
+    padding: 20px;
+}
+.text {
+    /* margin: 20px; */
+    margin-bottom: 20px;
+}
+
+.colorBtn {
+    background-color: var(--pink);
+    border: 1;
+    border-radius: 20px;
+    transition: transform 300ms ease;
+}
+.colorBtn:hover {
+    transform: scale(1.1);
+}
+
+/*show image-box*/
+.view-content {
+    /* position: absolute; */
+    border: 4px solid blue;
+    width: 300px;
+    height: 300px;
+}
+
+.main-info {
+    padding: 40px;
+    /* border: 1px solid darkgreen; */
+}
+
+.test-text {
+    resize: none;
+    position: absolute;
+    width: 500px;
+    height: 100px;
+}
+
+.test-text-2 {
+    width: 800px;
+    height: 120px;
+    background-color: rgb(230, 248, 255);
+}
+
+.box-color-1 {
+    color: gray;
+    padding: 30px;
+    text-align: left;
+    /* text-align: center; */
+    width: 800px;
+    height: 100px;
+}
+.box-color-2 {
+    color: gray;
+    padding: 10px;
+    text-align: left;
+    /* text-align: center; */
+    width: 800px;
+    height: 100px;
+}

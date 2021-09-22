@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+  <!--profile의 주요 기능으로 이미지업로드 및 회원 탈퇴가있다.-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles_profile.css">
+
+   <!--axios script-->
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <!-- 메인페이지 상단 nav bar-->
+    <header class="nav">
+      <!-- 서비스명 및 로고  -->
+      <!-- 서비스명과 로고 클릭 시 메인 페이지로 이동 -->
+      <a class="nav__link" href="index.html"><h1>Service Name</h1></a>
+      <!-- nav bar 메뉴들 -->
+      <ul class="nav__menu">
+          <!-- nav bar "HOME" 메뉴 버튼 -->
+          <!-- "Home" 클릭 시 메인 페이지로 이동 -->
+          <li class="nav__item">
+              <a class="nav__link" href="index.html">Home</a>
+          </li>
+          <!-- nav bar "Gallery" 메뉴 버튼 -->
+          <li class="nav__item">
+              <a class="nav__link" href="gallery.html">Gallery</a>
+          </li>
+          <!-- nav bar "Create NFT" 메뉴 버튼 -->
+          <li class="nav__item">
+              <a class="nav__link" href="createNFT.html">Create NFT</a>
+          </li>
+          <!-- nav bar "Log in" 메뉴 버튼 -->
+          <!-- Log in 클릭 시  메타마스크 연결-->
+          <li class="nav__item">
+              <a class="nav__link" href="logIn.html">Log in</a>
+          </li>
+      </ul>
+    </header>
+
+  <div class="myProfile">
+    나의 프로필
+  </div>
+  
+  <!--main container-->
+    <div class="container">
+      <!--profile 사진부분 -->
+      <div>
+      <div class="text view-content">
+        <!-- main-content -->
+        <img id="imgPreview" src=""alt="Preview">
+      </div>
+    </div>
+      <!--profile input부분 -->
+
+        <div class="con main-container">
+          <!-- nickName -->
+            <div style="margin-bottom: 10px;" >닉네임</div>
+            <div class="input-group mb-3" >
+              <br/>
+              <input type="text" class="form-control" id="inputGroup" placeholder="luckyjek" readonly>
+            </div>
+            <!--Pub_Key_addr-->
+            <div style="margin-bottom: 10px;">지갑주소</div>  
+            <div class="input-group mb-3">
+              <input type="text" class="form-control"  id="eth-v" placeholder="0x20e2017939398293e29274s" readonly>
+            </div>
+            <!--email_addr-->
+            <div style="margin-bottom: 10px;">이메일주소</div>  
+            <div class="input-group">
+              <input type="text" class="form-control" id="email-e" placeholder="luckyjek@gmail.com" readonly>
+            </div>
+        </div>
+    </div>
+      
+          <!--main button-->
+      <div style="text-align: center; ">
+        <a href="edit_profile.html">
+          <input type="reset" class="colorBtn" value="프로필편집">
+        </a>
+        <input type="button" class="colorBtn" value="회원탈퇴" onclick="viewF();">
+      </div>
+
+      
+  <!--modal start-->
+  <div class="open-link pointer-lock-close overlay">
+    <div id="foo">
+        <button class="close" onclick="removeF()">×</button>
+        <h3>탈퇴 유의사항</h3><br/>
+        <p>
+            »&nbsp;<span class="url"> 1. 보유중인  NFT는 탈퇴 후에도 사라지지 않습니다. <br/><br/></span>
+            »&nbsp;<span class="url"> 1. 탈퇴 후 30일 동안 재가입이 불가능합니다.<br/><br/></span>
+            »&nbsp;<span class="url"> 1. 같은 지갑 주소로 재가입을 할 경우, 일부 이전 정보들이 노출됩니다.<br/><br/></span>
+        </p>
+        <p>
+            <a
+                class="button"
+                href="index.html"
+                >탈퇴 유의사항을 모두 확인하였습니다</a
+            >
+        </p>
+    </div>
+  </div>
+  <!--modal end-->
+
+    <script src="js/profile.js"></script>
+</body>
+
+</html>

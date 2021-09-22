@@ -1,0 +1,36 @@
+/* 폰트 스타일 (구글 폰트) */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
+
+@import "reset.css";
+@import "variables.css";
+
+/* components - 희경 */
+@import "components/nav.css";
+@import "components/footer.css";
+@import "components/backButton.css";
+@import "components/myAccountNav.css";
+@import "components/payment.css";
+
+/* screens */
+@import "screens/main.css";
+@import "screens/donateNFT.css";
+@import "screens/artInfo.css";
+@import "screens/myAccountGiver.css";
+@import "screens/myAccountArtist.css";
+@import "screens/owndedNFT.css";
+@import "screens/signUp.css";
+
+html {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  /* nav bar 상단 고정으로 인해 main contents가 가려짐을 방지 */
+  margin-top: 50px;
+  min-height: 100%;
+  font-family: "Baloo Paaji 2", "Noto Sans KR", sans-serif;
+}
