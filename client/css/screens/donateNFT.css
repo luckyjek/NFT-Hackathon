@@ -1,14 +1,15 @@
-/* NFT list screen */
+/* NFT list page css */
 
 /* donatePlatform */
 .donatePlatform {
-  border: 1px solid #ffe170;
-  background-color: #ffe170;
+  border: 1px solid var(--yellow);
+  background-color: var(--yellow);
   border-radius: 10px;
   width: 950px;
-  height: 270px;
+  height: 250px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 5px 5px 5px 5px #d2a501;
 }
 
 /* donatePlatform box 안에 들은 Donate 텍스트 */
@@ -16,17 +17,15 @@
   font-size: 65px;
   font-weight: 1000;
   text-align: center;
-  margin-bottom: 88px;
+  margin-bottom: 25px;
 }
 
 /* donatePlatform box 안에 들은 "누구나 쉽고~" 텍스트 */
 .donatePlatform__body span {
   display: flex;
-  font-weight: 400;
   font-size: 18px;
   flex-direction: column;
   text-align: center;
-  margin-top: 0px;
 }
 
 /* donatePlatform box 안에 들은 파레트 아이콘 */
@@ -36,50 +35,97 @@
   padding: 20px;
 }
 
-/* NFT 작품 리스트 텍스트 */
+/* NFT 작품 리스트 전체 div */
 .nftList__title {
   font-size: 25px;
   font-weight: bold;
-  margin: 100px;
+  margin: 120px 100px 45px 220px;
 }
 
-.nftcardList {
-  display: flex;
+/* cards 섹션 grid */
+.grid {
+  display: grid;
+  grid-template-columns: 22% 22% 22%;
+  grid-gap: 40px;
+  align-items: center;
+  justify-content: center;
 }
 
-.nft__money {
+/* card 테두리 */
+.grid > article {
+  box-shadow: 0px 4px 8px 0px #d2a501;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* card 테두리 효과 */
+.grid > article:hover {
+  box-shadow: 0 8px 16px 0 rgba(18, 0, 120, 0.5);
+}
+
+/* card 안에 img */
+.grid > article img {
+  max-width: 100%;
+  border-radius: 5px 5px 1px 0;
+  background-size: cover;
+}
+
+/* card 안에 text들 */
+.text {
+  padding: 20px;
+}
+
+/* card 안에 각각의 text들 */
+.nftText {
+  margin: 7px 0px 7px 0px;
+}
+
+/* card 안에 NFT 이름 */
+.nftText__title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* card 안에 NFT 가격 */
+.nftText__price {
   text-align: right;
 }
 
-img {
-  border-radius: 5px 5px 0 0;
-  width: 250px;
-  height: 300px;
+/* card 안에 NFT 설명 */
+.nftText__description {
+  margin: 17px 0px 7px 0px;
 }
 
-.nftList {
-  /* border: 1px solid var(--yellow); */
-  box-shadow: 0 4px 8px 0 #d2a501;
-  transition: 0.3s;
-  border-radius: 5px;
-  margin: 35px;
-  width: 250px;
-  height: 300px;
+/* card 안에 아티스트 profile img, 작가명, 발행일 */
+.container__profile {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 10px 10px;
 }
 
-.nftList:hover,
-.container:hover {
-  box-shadow: 0 8px 16px 0 #fe97af;
+/* card 안에 아티스트 profile img */
+.container__profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  object-position: center;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
-.nft__title {
-  font-weight: 100px;
+/* card 안에 NFT 발행일 */
+.container__profile__text h2 {
+  color: #334454;
+  font-size: 0.9rem;
 }
 
-.nftcard__text {
-  padding: 2px 16px;
+/* card 안에 작가 */
+.nftText__id {
+  color: #334454;
+  font-size: 0.8rem;
+}
 
-  margin-top: 3px;
-  width: 250px;
-  height: 300px;
+/* card 안에 작가명 */
+.nftText__id b {
+  font-style: italic;
 }

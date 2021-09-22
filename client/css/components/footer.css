@@ -3,12 +3,12 @@
 
 /* footer 하단에 상시 고정 */
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 130px;
-  background-color: var(--navy);
+  margin-top: 80px;
+  background-color: var(--yellow);
 }
 
 /* 하단 footer */
@@ -26,21 +26,21 @@
 
 /* 하단 footer 텍스트 */
 .footer__li {
-  color: white;
+  color: black;
   padding: 7px 0px;
   font-size: 13px;
 }
 
 /* 하단 footer Sponsor title 텍스트 */
 .footer__sponsorTitle {
-  color: white;
+  color: black;
   font-size: 20px;
 }
 
 /* 하단 footer copyrights */
 .footer__copyrights {
   border-top: 0.5px solid rgba(0, 0, 0, 0.1);
-  color: white;
+  color: black;
   font-size: 12px;
   padding: 5px 0px;
 }
