@@ -20,8 +20,12 @@ const output = {
         res.render("profile/signUp");
     },
 
-    getProfile: (req, res) => {
+    
+    getProfile: async (req, res) => {
         res.render("profile/profile");
+        const account = new Account(req.body);
+        const response2 = await account.getProfileAll();
+        console.log("response2", response2);       
     },
 
     login: (req, res) => {
@@ -40,11 +44,18 @@ const process = {
         return res.json(response);
     },
 
+    
+
     register: async (req, res) => {
         req.body.profile_image_path = req.file.path;
 
         const account = new Account(req.body);
         const response = await account.register();
+
+        const response2 = await account.getProfile();
+        console.log(response2);
+
+        
 
         return res.json(response);
     },

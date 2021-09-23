@@ -32,3 +32,4 @@ axios({
     console.log(response.data);
     console.log(response.data.Userdata[0].user_nickname);
 });
+

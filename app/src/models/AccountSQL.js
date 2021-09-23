@@ -16,6 +16,16 @@ class AccountSQL {
         });
     }
 
+    static getAccountInfo2() {
+        return new Promise((resolve, reject) => {
+          const query = "SELECT * FROM account;";
+          db.query(query, (err, data) => {
+            if (err) reject(`${err}`);
+            else resolve(data);
+          });
+        });
+      }
+
     // Register
     static async register(account) {
         return new Promise((resolve, reject) => {
