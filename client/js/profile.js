@@ -23,12 +23,12 @@ function removeF() {
     openLink.style.display = "none";
 }
 
-// getproUser
-axios({
-    method: "get",
-    url: "https://ca6ec645-a4d6-4572-82a1-6768e39df010.mock.pstmn.io/getproUser",
-    responseType: "json",
-}).then(function (response) {
-    console.log(response.data);
-    console.log(response.data.Userdata[0].user_nickname);
-});
+// getproUser_axios_test
+// axios({
+//     method: "get",
+//     url: "https://ca6ec645-a4d6-4572-82a1-6768e39df010.mock.pstmn.io/getproUser",
+//     responseType: "json",
+// }).then(function (response) {
+//     console.log(response.data);
+//     console.log(response.data.Userdata[0].user_nickname);
+// });
