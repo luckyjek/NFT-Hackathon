@@ -1,6 +1,7 @@
-// main 페이지
+// home page
 
 // donate 버튼 누르면 donateNFT.html로 이동
 function donateBtn() {
-  location.href = "donateNFT.html";
+    console.log("donateBtn click");
+    location.href = "donateNFT";
 }

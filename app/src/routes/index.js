@@ -33,6 +33,11 @@ const home_ctrl = require("./home/home.ctrl");
 // APIs
 // HOME
 router.get("/", home_ctrl.output.home);
+router.get("/donateNFT", home_ctrl.output.donateNFT);
+router.get("/artInfo", home_ctrl.output.artInfo);
+router.get("/paymentGiver", home_ctrl.output.paymentGiver);
+router.get("/signUp", home_ctrl.output.signUp);
+
 router.get("/login", home_ctrl.output.login);
 router.get("/register", home_ctrl.output.register);
 
