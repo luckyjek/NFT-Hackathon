@@ -4,39 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="./img/DONATE.ico" />
-    <link rel="stylesheet" href="css/styles1.css" />
-    <title>Payment-Artist</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/DONATE.ico" />
+    <link rel="stylesheet" href="../../css/styles1.css" />
+    <title>My Account-Aritst</title>
+    
   </head>
   <body>
     <!-- 상단 nav bar-->
     <header class="nav">
       <!-- 서비스명 및 로고  -->
       <!-- 서비스명과 로고 클릭 시 메인 페이지로 이동 -->
-      <a class="nav__linkkk" href="index.html"><h1>Service Name</h1></a>
+      <a class="nav__linkkk" href="index"><h1>Service Name</h1></a>
       <!-- nav bar 메뉴들 -->
       <ul class="nav__menu">
         <!-- nav bar "HOME" 메뉴 버튼 -->
         <!-- "Home" 클릭 시 메인 페이지로 이동 -->
         <li class="nav__item">
-          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="index">Home</a>
         </li>
          <!-- 모든 NFT 리스트 -->
          <li class="nav__item">
-          <a class="nav__link" href="donateNFT.html">All NFTs</a>
+          <a class="nav__link" href="donateNFT">All NFTs</a>
         </li>
         <!-- nav bar "Gallery" 메뉴 버튼 -->
         <li class="nav__item">
-          <a class="nav__link" href="gallery.html">Gallery</a>
+          <a class="nav__link" href="gallery">Gallery</a>
         </li>
         <!-- nav bar "Create NFT" 메뉴 버튼 -->
         <li class="nav__item">
-          <a class="nav__link" href="createNFT.html">Create NFT</a>
+          <a class="nav__link" href="createNFT">Create NFT</a>
         </li>
         <!-- nav bar "Log in" 메뉴 버튼 -->
         <!-- Log in 클릭 시  메타마스크 연결-->
         <li class="nav__item">
-          <a class="nav__link" href="signUp.html">Log in</a>
+          <a class="nav__link" href="signUp">Log in</a>
         </li>
       </ul>
     </header>
@@ -49,46 +50,42 @@
           </div></a
         >
       </div>
-      <!-- NFT, 아티스트 정보 들어간 총 border -->
-      <div class="row">
-        <!-- NFT 상세 부분 -->
-        <div class="left">
-          <!-- NFT Card 이미지 -->
-          <div class="artInfo__cardImg">
-            <img class="artInfo__img" src="img/NFT13.jpg" />
-          </div>
-          <!-- NFT Card 제목, 아티스트 이름, NFT 넘버 -->
-          <div class="artInfo__textBox">
-            <div class="artInfo__top">
-              <div class="artInfo__title">
-                <h2 class="nftText__title">Breakfast</h2>
-                <h3 class="nftText__number">#1233664</h3>
-                <h6 class="nftText__artist">Created by Jane Doe</h6>
-              </div>
-              <div class="artInfo__price">
-                <span class="nftText__price"
-                  ><i class="fab fa-ethereum fa-sm"></i>5</span
-                >
-              </div>
+      <div class="account__nav">
+        <ul class="account__tap">
+            <!-- nav bar "HOME" 메뉴 버튼 -->
+            <!-- "Home" 클릭 시 메인 페이지로 이동 -->
+            <li class="account__account">
+              <a class="account__link artist__firstTap" href="#">My Account</a>
+            </li>
+            <!-- nav bar "Gallery" 메뉴 버튼 -->
+            <li class="account__account">
+              <a class="account__link artist__secondTap" href="#">발행한 NFT</a>
+            </li>
+      </div>
+      <div class="account__info">
+          <div class="account__infoTitle">
+              <div class="account__infoImg"><img src="" alt=""></div>
+              <div class="account__allInfo">
+              <div class="account__simleInfo">
+              <div class="account__infoName">Jone Doe</div>
+              <div class="account__infoGroup">아티스트</div>
             </div>
-          </div>
+              <div class="account__moreInfo">
+              <div class="account__infoMail">jone@amado.net</div>
+            </div>
         </div>
-        <div class="right">
-            <form>
-              <div class="payment__donate">
-              <div class="payment__form">
-                    <label>Gas Fee <i class="fab fa-ethereum fa-lg"></i> 
-                  <div class="payment__Input">
-                  <input id="number" type="number"placeholder="가스비를 입력해 주세요." step="any" required />
-                </div>
-                </label>  
-</div>
-                <div class="payment__formBtn">
-                    <input class="payment__Btn" type="submit" value="NFT 발행하기">
-                </div>
-            </div>
-              </form>
           </div>
+          <div class="account__infoBody">
+            <div class="walletAddress">Wallet Address: </div>
+              <div class="editPersonalInfo__btn"><button>개인정보 수정</button></div>
+          </div>
+      </div>
+      <div class="account__counts">
+          <div class="count">발행한 NFT 
+              <!-- <div>데이터 넣기</div> -->
+        </div>
+          <div class="count">판매된 NFT 
+              <!-- <div>데이터 넣기</div> -->
         </div>
       </div>
     </main>
@@ -113,6 +110,7 @@
         </ul>
       </div>
       <!-- 플랫폼 copyrights 텍스트 -->
+
       <div class="footer__copy">
         <div class="footer__copyrights">@ 서비스명. All Rights Reserved.</div>
       </div>

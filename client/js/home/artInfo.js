@@ -1,13 +1,3 @@
-// donate Platform 버튼 누르면 paymentPlatform.html로 이동
-function donatePlatform() {
-  location.href = "paymentPlatform.html";
-}
-
-// NFT Card 버튼 누르면 artInfo.html로 이동
-function NFTs() {
-  location.href = "artInfo.html";
-}
-
 var data = [
   {
     artist_id: "0",
@@ -55,38 +45,32 @@ var data = [
   },
 ];
 
-let nftList = "";
+let artInfoList = "";
 for (let i = 0; i < data.length; i++) {
   artistId = data[i].artist_id;
   artistName = data[i].artist_name;
   artistImage = data[i].artist_image;
   nftNum = data[i].art_num;
   artImg = data[i].art_image;
-  artName = data[i].art_name;
   artInfo = data[i].art_info;
   artDate = data[i].art_update;
   artPrice = data[i].art_price;
 
-  nftList += `
- <article id="article1" onclick="NFTs()">
- <img class="nftImgs" src="${artImg}" />
- <div class="text">
-   <h3 class="nftText nftText__title" id="nftName">${artName}</h3>
-   <h3 class="nftText nftText__price" id="nftPrice">${artPrice}</h3>
-   <p class="nftText__description" id="nftDescribe">
-   ${artInfo}
-   </p>
- </div>
-   <div class="container__profile">
-     <img class="artist__img"
-      src="${artistImage}"
-     />
-     <div class="container__profile__text">
-      <p class="nftText nftText__id" id="nftCreatedBy">Created By ${artistName}</p>
-      <h2 class="nftText nftText__date" id="nftDate">${artDate}</h2>
-     </div>
- </div>
-</article>`;
+  artInfoList += `
+<ul class="ownedNftList">
+<li class="ownedNftRow">
+  <img class="ownedNft" src="${artImg}" />
+</li>
+<li class="ownedNftRow">
+  <img class="ownedNft" src="${artImg}" />
+</li>
+<li class="ownedNftRow">
+  <img class="ownedNft" src="${artImg}" />
+</li>
+<li class="ownedNftRow">
+  <img class="ownedNft" src="${artImg}" />
+</li>
+</ul>
+`;
 }
-
-document.querySelector(".grid").innerHTML = nftList;
+document.querySelector(".artist__nftCardsList").innerHTML = artInfoList;
