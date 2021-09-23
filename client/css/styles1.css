@@ -20,6 +20,7 @@
 @import "screens/myAccountArtist.css";
 @import "screens/owndedNFT.css";
 @import "screens/signUp.css";
+@import "screens/paymentPlatform.css";
 
 html {
   height: 100%;
