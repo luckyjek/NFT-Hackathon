@@ -256,6 +256,28 @@
 }
 
 /* 프로필 업로드 */
-.input__file {
-  margin: 15px 0;
+.profile__preview {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.viewImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+
+.viewImg img {
+  width: 100px;
+  height: 100px;
+  /* overflow: hidden; */
+  object-fit: cover;
+}
+
+#inputMyFile {
+  margin-left: 15px;
+  font-size: 10px;
 }

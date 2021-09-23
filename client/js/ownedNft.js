@@ -45,7 +45,7 @@ var data = [
   },
 ];
 
-let deployedInfoList = "";
+let ownedInfoList = "";
 for (let i = 0; i < data.length; i++) {
   artistId = data[i].artist_id;
   artistName = data[i].artist_name;
@@ -57,8 +57,24 @@ for (let i = 0; i < data.length; i++) {
   artDate = data[i].art_update;
   artPrice = data[i].art_price;
 
-  deployedInfoList += ` <ul class="account__ownedNftList">
-  <li class="account__ownedNftRow">
+  ownedInfoList += ` <ul class="account__ownedNftList">
+    <li class="account__ownedNftRow">
+      <img class="account__ownedNft" src="${artImg}" />
+      <div class="account__top">
+        <div class="account__title">
+          <h2 class="account__nftTitle">${artName}</h2>
+          <h3 class="account__number">${nftNum}</h3>
+          <h6 class="account__artist">Created by ${artistName}</h6>
+        </div>
+        <div class="account__price">
+          <span class="account__price"
+            ><i class="fab fa-ethereum fa-sm"></i>${artPrice}</span
+          >
+        </div>
+      </div>
+    </li>
+   
+    <li class="account__ownedNftRow">
     <img class="account__ownedNft" src="${artImg}" />
     <div class="account__top">
       <div class="account__title">
@@ -73,7 +89,6 @@ for (let i = 0; i < data.length; i++) {
       </div>
     </div>
   </li>
- 
   <li class="account__ownedNftRow">
   <img class="account__ownedNft" src="${artImg}" />
   <div class="account__top">
@@ -88,39 +103,24 @@ for (let i = 0; i < data.length; i++) {
       >
     </div>
   </div>
-</li>
-<li class="account__ownedNftRow">
-<img class="account__ownedNft" src="${artImg}" />
-<div class="account__top">
-  <div class="account__title">
-    <h2 class="account__nftTitle">${artName}</h2>
-    <h3 class="account__number">${nftNum}</h3>
-    <h6 class="account__artist">Created by ${artistName}</h6>
+  </li>
+  <li class="account__ownedNftRow">
+  <img class="account__ownedNft" src="${artImg}" />
+  <div class="account__top">
+    <div class="account__title">
+      <h2 class="account__nftTitle">${artName}</h2>
+      <h3 class="account__number">${nftNum}</h3>
+      <h6 class="account__artist">Created by ${artistName}</h6>
+    </div>
+    <div class="account__price">
+      <span class="account__price"
+        ><i class="fab fa-ethereum fa-sm"></i>${artPrice}</span
+      >
+    </div>
   </div>
-  <div class="account__price">
-    <span class="account__price"
-      ><i class="fab fa-ethereum fa-sm"></i>${artPrice}</span
-    >
-  </div>
-</div>
-</li>
-<li class="account__ownedNftRow">
-<img class="account__ownedNft" src="${artImg}" />
-<div class="account__top">
-  <div class="account__title">
-    <h2 class="account__nftTitle">${artName}</h2>
-    <h3 class="account__number">${nftNum}</h3>
-    <h6 class="account__artist">Created by ${artistName}</h6>
-  </div>
-  <div class="account__price">
-    <span class="account__price"
-      ><i class="fab fa-ethereum fa-sm"></i>${artPrice}</span
-    >
-  </div>
-</div>
-</li>
-  </ul>
-  `;
+  </li>
+    </ul>
+    `;
 }
 
-document.querySelector(".account__nftCardsList").innerHTML = deployedInfoList;
+document.querySelector(".account__nftCardsList").innerHTML = ownedInfoList;

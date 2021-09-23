@@ -52,10 +52,12 @@
         <div class="form__container signUp__container">
           <form class="form__sign" action="#">
             <h1 class="signUp__title">Create Account</h1>
+            <!-- ID 입력 -->
             <input
+              id="signUp__id"
               class="sign__input"
               type="text"
-              placeholder="Name"
+              placeholder="ID"
               autocomplete="on"
             />
             <!-- <input
@@ -64,13 +66,23 @@
               placeholder="Email"
               autocomplete="on"
             /> -->
-            <input class="sign__input" type="password" placeholder="Password" />
+
+            <!-- 패스워드 입력 -->
             <input
+              id="signUp__ps"
+              class="sign__input"
+              type="password"
+              placeholder="Password"
+            />
+            <!-- 패스워드 확인 입력 -->
+            <input
+              id="signUp__confirmPs"
               class="sign__input"
               type="password"
               placeholder="Confirm Password"
             />
-            <div class="chk">
+            <!-- 체크박스 -->
+            <div class="chk" id="signUp__chk">
               <label
                 ><input
                   type="checkbox"
@@ -86,10 +98,16 @@
                 />기부자</label
               >
             </div>
-            <!-- 프로필 이미지 -->
-            <input class="input__file" type="file" />
+            <!-- 프로필 이미지 입력-->
+            <div class="profile__preview" id="signUp__img">
+              <div class="viewImg">
+                <!-- main-content -->
+                <img id="previewImg" src="" alt="previewImg" />
+              </div>
+              <input type="file" id="inputMyFile" onclick="profileClick()" />
+            </div>
 
-            <button class="signBtn">Sign Up</button>
+            <button class="signBtn" onclick="signUp()">Sign Up</button>
           </form>
         </div>
         <!-- 로그인 부분 -->
@@ -97,15 +115,21 @@
           <form class="form__sign" action="#">
             <h1 class="signIn__title">Sign in</h1>
             <input
+              id="signIn__id"
               class="sign__input"
-              type="email"
-              placeholder="Email"
+              type="text"
+              placeholder="ID"
               autocomplete="on"
             />
-            <input class="sign__input" type="password" placeholder="Password" />
+            <input
+              id="signIn__ps"
+              class="sign__input"
+              type="password"
+              placeholder="Password"
+            />
             <!-- 비밀번호 찾을 수 있는 기능 넣을 수 있으면 추후에 넣기 -->
-            <a class="forgotPs" href="#">Forgot your password?</a>
-            <button class="signBtn">Sign In</button>
+            <!-- <a class="forgotPs" href="#">Forgot your password?</a> -->
+            <button class="signBtn" onclick="signIn()">Sign In</button>
           </form>
         </div>
         <!-- overlay 부분 -->
