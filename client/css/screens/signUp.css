@@ -12,7 +12,7 @@
 /* 회원가입 제목 텍스트 */
 .signUp__title {
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 /* 프로필 이미지 업로드 div */
@@ -160,7 +160,7 @@
   width: 100%;
   justify-content: space-around;
   /* align-items: center; */
-  margin: 20px 0;
+  margin-top: 20px;
   font-size: 14px;
   opacity: 0.8;
 }
@@ -254,3 +254,5 @@
 .container.right-panel-active .overlay__right {
   transform: translateX(20%);
 }
+
+/* 프로필 업로드 */

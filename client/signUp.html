@@ -58,13 +58,18 @@
               placeholder="Name"
               autocomplete="on"
             />
-            <input
+            <!-- <input
               class="sign__input"
               type="email"
               placeholder="Email"
               autocomplete="on"
-            />
+            /> -->
             <input class="sign__input" type="password" placeholder="Password" />
+            <input
+              class="sign__input"
+              type="password"
+              placeholder="Confirm Password"
+            />
             <div class="chk">
               <label
                 ><input
@@ -78,22 +83,11 @@
                   type="checkbox"
                   name="categorize"
                   value="giverPersonal"
-                />기부자 (개인)</label
-              >
-              <label
-                ><input type="checkbox" name="categorize" value="giverGroup" />
-                기부자 (단체)</label
+                />기부자</label
               >
             </div>
-            <div class="profileFile">
-              <h5 class="profileImg__text">프로필 이미지 업로드</h5>
-              <input
-                type="file"
-                class="profileFile__input"
-                name="profileFile__input"
-                id="fileUpload"
-              />
-            </div>
+            <!-- 프로필 이미지 -->
+
             <button class="signBtn">Sign Up</button>
           </form>
         </div>
