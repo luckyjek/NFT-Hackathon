@@ -2,8 +2,8 @@
 <head>
   <!--profile의 주요 기능으로 이미지업로드 및 회원 탈퇴가있다.-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles_profile.css">
-  <link rel="shortcut icon" type="image/x-icon" href="./img/DONATE.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="../../img/DONATE.ico" />
+  <link rel="stylesheet" href="../../css/styles_profile.css" />
    <!--axios script-->
    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
@@ -13,26 +13,26 @@
     <header class="nav">
       <!-- 서비스명 및 로고  -->
       <!-- 서비스명과 로고 클릭 시 메인 페이지로 이동 -->
-      <a class="nav__link" href="index.html"><h1>Service Name</h1></a>
+      <a class="nav__link" href="index"><h1>Service Name</h1></a>
       <!-- nav bar 메뉴들 -->
       <ul class="nav__menu">
           <!-- nav bar "HOME" 메뉴 버튼 -->
           <!-- "Home" 클릭 시 메인 페이지로 이동 -->
           <li class="nav__item">
-              <a class="nav__link" href="index.html">Home</a>
+              <a class="nav__link" href="index">Home</a>
           </li>
           <!-- nav bar "Gallery" 메뉴 버튼 -->
           <li class="nav__item">
-              <a class="nav__link" href="gallery.html">Gallery</a>
+              <a class="nav__link" href="gallery">Gallery</a>
           </li>
           <!-- nav bar "Create NFT" 메뉴 버튼 -->
           <li class="nav__item">
-              <a class="nav__link" href="createNFT.html">Create NFT</a>
+              <a class="nav__link" href="createNFT">Create NFT</a>
           </li>
           <!-- nav bar "Log in" 메뉴 버튼 -->
           <!-- Log in 클릭 시  메타마스크 연결-->
           <li class="nav__item">
-              <a class="nav__link" href="logIn.html">Log in</a>
+              <a class="nav__link" href="logIn">Log in</a>
           </li>
       </ul>
     </header>
@@ -74,7 +74,7 @@
       
     <!--main button-->
     <div style="text-align: center; ">
-      <a href="edit_profile.html">
+      <a href="edit_profile">
         <input type="reset" class="colorBtn" value="프로필편집">
       </a>
       <input type="button" class="colorBtn" value="회원탈퇴" onclick="viewF();">
@@ -92,13 +92,13 @@
               »&nbsp;<span class="url"> 1. 같은 지갑 주소로 재가입을 할 경우, 일부 이전 정보들이 노출됩니다.<br/><br/></span>
           </p>
           <p>
-            <a class="button" href="index.html">탈퇴 유의사항을 모두 확인하였습니다</a>
+            <a class="button" href="index">탈퇴 유의사항을 모두 확인하였습니다</a>
           </p>
       </div>
     </div>
     <!--modal end-->
 
-    <script src="js/profile.js"></script>
+    <script src="../../js/profile/profile.js"></script>
 </body>
 
 </html>

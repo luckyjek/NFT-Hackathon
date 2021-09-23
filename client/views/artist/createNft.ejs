@@ -2,8 +2,8 @@
 <head>
   <title>Java Script</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles1.css">
-  <link rel="shortcut icon" type="image/x-icon" href="./img/DONATE.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="../../img/DONATE.ico" />
+  <link rel="stylesheet" href="../../css/styles1.css" />
   <!-- file_pond_other html -->
   <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
   <!-- file_pond_Add plugin styles -->
@@ -15,26 +15,26 @@
     <header class="nav">
       <!-- 서비스명 및 로고  -->
       <!-- 서비스명과 로고 클릭 시 메인 페이지로 이동 -->
-      <a class="nav__link" href="index.html"><h1>Service Name</h1></a>
+      <a class="nav__link" href="index"><h1>Service Name</h1></a>
       <!-- nav bar 메뉴들 -->
       <ul class="nav__menu">
           <!-- nav bar "HOME" 메뉴 버튼 -->
           <!-- "Home" 클릭 시 메인 페이지로 이동 -->
           <li class="nav__item">
-              <a class="nav__link" href="index.html">Home</a>
+              <a class="nav__link" href="index">Home</a>
           </li>
           <!-- nav bar "Gallery" 메뉴 버튼 -->
           <li class="nav__item">
-              <a class="nav__link" href="gallery.html">Gallery</a>
+              <a class="nav__link" href="gallery">Gallery</a>
           </li>
           <!-- nav bar "Create NFT" 메뉴 버튼 -->
           <li class="nav__item">
-              <a class="nav__link" href="createNFT.html">Create NFT</a>
+              <a class="nav__link" href="createNFT">Create NFT</a>
           </li>
           <!-- nav bar "Log in" 메뉴 버튼 -->
           <!-- Log in 클릭 시  메타마스크 연결-->
           <li class="nav__item">
-              <a class="nav__link" href="logIn.html">Log in</a>
+              <a class="nav__link" href="logIn">Log in</a>
           </li>
       </ul>
   </header>
@@ -103,19 +103,14 @@
         </div>
       </div>
     </div>
-
       <p style="text-align: center; ">
       <input type="reset" value="취소">
   </form>
       <input type="button" value="NFT발행하기" onclick="submit();agreeBtn();">
     </p>
- 
   </div>
 
-
-
-      
-      <script src="js/createNft.js"></script>
+      <script src="../../js/artist/createNft.js"></script>
       
       <!-- file_ponds_Add plugin scripts-->
       <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
