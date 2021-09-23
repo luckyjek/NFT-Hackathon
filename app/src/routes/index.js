@@ -25,11 +25,11 @@ router.get("/login", home_ctrl.output.login);
 router.get("/register", home_ctrl.output.register);
 
 router.post("/login", home_ctrl.process.login);
-// router.post(
-//     "/register",
-//     [uploadProfile.single("profile_image")],
-//     home_ctrl.process.register
-// );
+router.post(
+    "/register",
+    [uploadProfile.single("profile_image")],
+    home_ctrl.process.register
+);
 
 // ART
 // router.get("/showArt", art_ctrl.output.showArt);
