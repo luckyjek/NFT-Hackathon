@@ -27,8 +27,8 @@ const uploadArt = multer({
 });
 
 const home_ctrl = require("./home/home.ctrl");
-// const art_ctrl = require("./createNFT/art.ctrl");
-// const auth_ctrl = require("./profile/auth.ctrl");
+const art_ctrl = require("./createNFT/art.ctrl");
+const auth_ctrl = require("./profile/auth.ctrl");
 
 // APIs
 // HOME
