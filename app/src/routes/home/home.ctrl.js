@@ -7,6 +7,19 @@ const output = {
     home: (req, res) => {
         res.render("home/index");
     },
+    donateNFT: (req, res) => {
+        res.render("createNFT/donateNFT");
+    },
+    artInfo: (req, res) => {
+        res.render("createNFT/artInfo");
+    },
+    paymentGiver: (req, res) => {
+        res.render("payment/paymentGiver");
+    },
+    signUp: (req, res) => {
+        res.render("profile/signUp");
+    },
+
     login: (req, res) => {
         res.render("home/login");
     },

@@ -55,16 +55,28 @@
             <input
               class="sign__input"
               type="text"
-              placeholder="Name"
+              placeholder="Account Id"
               autocomplete="on"
+              id="account_id"
             />
             <input
+              class="sign__input"
+              type="text"
+              placeholder="Name"
+              autocomplete="on"
+              id="name"
+            />
+            <!-- <input
               class="sign__input"
               type="email"
               placeholder="Email"
               autocomplete="on"
-            />
-            <input class="sign__input" type="password" placeholder="Password" />
+              id="email"
+            /> -->
+            <input class="sign__input" type="password" placeholder="Password" id="password" />
+
+            <input class="sign__input" type="password" placeholder="Confirm Password" id="confirm_password"/>
+            <input class="sign__input" type="text" placeholder="Wallet Address" id="wallet_address"/>
             <div class="chk">
               <label
                 ><input
@@ -91,10 +103,10 @@
                 type="file"
                 class="profileFile__input"
                 name="profileFile__input"
-                id="fileUpload"
+                id="profile_image"
               />
             </div>
-            <button class="signBtn">Sign Up</button>
+            <button class="signBtn" id="registerBtn">Sign Up</button>
           </form>
         </div>
         <!-- 로그인 부분 -->

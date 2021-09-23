@@ -1,6 +1,6 @@
 "use strict";
 
-// const db = require("../config/db");
+const db = require("../config/db");
 
 // Profile
 class ArtSQL {
@@ -18,7 +18,7 @@ class ArtSQL {
     static async registerArt(art) {
         return new Promise((resolve, reject) => {
             const query =
-                "INSERT INTO artinfo(account_id, art_name, art_price, art_image_path) VALUES(?, ?, ?, ?);";
+                "INSERT INTO artinfo(account_id, art_name, art_price, art_image_path, art_description) VALUES(?, ?, ?, ?, ?);";
             db.query(
                 query,
                 [
@@ -26,6 +26,7 @@ class ArtSQL {
                     art.art_name,
                     art.art_price,
                     art.art_image_path,
+                    art.art_decription,
                 ],
                 (err) => {
                     if (err) reject(`${err}`);
