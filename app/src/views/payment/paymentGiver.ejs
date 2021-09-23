@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles1.css" />
+
     <title>Payment-Giver</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles1.css" />
+
+    <!-- Library -->
+    <script type="text/javascript" src="./lib/bignumber.min.js"></script>
+    <script type="text/javascript" src="./lib/web3.min.js"></script>
+    <script type="text/javascript" src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- 상단 nav bar-->
@@ -35,7 +42,7 @@
         <!-- nav bar "Log in" 메뉴 버튼 -->
         <!-- Log in 클릭 시  메타마스크 연결-->
         <li class="nav__item">
-          <a class="nav__link" href="signUp.html">Log in</a>
+          <a class="nav__link" href="/signUp">Log in</a>
         </li>
       </ul>
     </header>
@@ -86,7 +93,7 @@
 </div>
 <!-- Donate 버튼 -->
                 <div class="payment__formBtn">
-                    <input class="payment__Btn" type="submit" value="Donate">
+                    <input style="border: 5px solid blue;" class="payment__Btn" type="submit" value="Donate">
                 </div>
             </div>
               </form>
@@ -119,9 +126,8 @@
         <div class="footer__copyrights">@ 서비스명. All Rights Reserved.</div>
       </div>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/6478f529f2.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <script type="text/javascript" src="js/payment/paymentGiver.js"></script>
   </body>
+
 </html>
