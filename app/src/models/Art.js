@@ -8,17 +8,18 @@ class Art {
         this.body = body;
     }
 
-    // async getArtInfo() {
-    //     console.log("getArtInfo in Art.js");
-    //     try {
-    //         console.log("try");
-    //         res.send(await sys.db("getArtInfo"));
-    //     } catch (err) {
-    //         res.status(500).send({
-    //             error: err,
-    //         });
-    //     }
-    // }
+    async getArtInfo() {
+        console.log("getArtInfo in Art.js");
+        try {
+            console.log("try");
+            res.send(await sys.db("getArtInfo"));
+        } catch (err) {
+            res.status(500).send({
+                error: err,
+            });
+        }
+    }
+    
     async showArt() {
         const body = this.body;
         try {

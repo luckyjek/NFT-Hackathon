@@ -8,7 +8,6 @@ const db = require("../config/db");
 class AccountSQL {
     static getAccountInfo(account_id) {
         return new Promise((resolve, reject) => {
-            const query = "SELECT * FROM account WHERE account_id = ?;";
             db.query(query, [account_id], (err, data) => {
                 if (err) reject(`${err}`);
                 else resolve(data[0]);

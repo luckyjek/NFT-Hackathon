@@ -26,28 +26,37 @@ const uploadArt = multer({
     //limits: { fileSize: 5 * 1024 * 1024 }
 });
 
+const artist_ctrl = require("./artist/artist.ctrl");
+const giver_ctrl = require("./giver/giver.ctrl");
 const home_ctrl = require("./home/home.ctrl");
-const art_ctrl = require("./createNFT/art.ctrl");
-const auth_ctrl = require("./profile/auth.ctrl");
+const payment_ctrl = require("./payment/payment.ctrl");
+const profile_ctrl = require("./profile/profile.ctrl");
 
-// APIs
-// HOME
-router.get("/", home_ctrl.output.home);
+// Page Renders - artist folder
 router.get("/donateNFT", art_ctrl.output.donateNFT);
 router.get("/artInfo", home_ctrl.output.artInfo);
 router.get("/paymentGiver", home_ctrl.output.paymentGiver);
 router.get("/signUp", home_ctrl.output.signUp);
 
+// Page Renders - giver folder
 router.get("/profile", home_ctrl.output.getProfile);
 router.post("/getArtInfo", art_ctrl.process.getArtInfo);
-// app.post("/api/:alias", async (req, res) => {
-//   console.log("alias computed!");
-//   console.log(req.params.alias);
-//   console.log(req.body.param);
 
+// Page Renders - home folder
+router.get("/", home_ctrl.output.index);
+router.get("/artInfo", home_ctrl.output.artInfo);
+router.get("/gallery", home_ctrl.output.gallery);
+router.get("/signUp", home_ctrl.output.signUp);
+
+// Page Renders - payment folder
+router.get("/", home_ctrl.output.index);
+
+// Page Renders - profile folder
+router.get("/", home_ctrl.output.index);
+
+// APIs
 router.get("/login", home_ctrl.output.login);
 router.get("/register", home_ctrl.output.register);
-
 router.post("/login", home_ctrl.process.login);
 router.post(
     "/register",
