@@ -2,7 +2,7 @@
 
 var bcrypt = require("bcryptjs");
 
-// const db = require("../config/db");
+const db = require("../config/db");
 
 // Profile
 class AccountSQL {
