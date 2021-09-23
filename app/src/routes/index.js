@@ -20,7 +20,7 @@ const uploadArt = multer({
         cb(null, "uploads/art"); //important this is a direct path fron our current file to storage location
       },
       filename: (req, file, cb) => {
-        cb(null,file.originalname);
+        cb(null, file.originalname);
       },
     // dest: "uploads/art",
     //limits: { fileSize: 5 * 1024 * 1024 }
@@ -38,6 +38,7 @@ router.get("/artInfo", home_ctrl.output.artInfo);
 router.get("/paymentGiver", home_ctrl.output.paymentGiver);
 router.get("/signUp", home_ctrl.output.signUp);
 
+router.get("/profile", home_ctrl.output.getProfile);
 router.get("/login", home_ctrl.output.login);
 router.get("/register", home_ctrl.output.register);
 

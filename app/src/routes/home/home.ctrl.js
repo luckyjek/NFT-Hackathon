@@ -20,6 +20,10 @@ const output = {
         res.render("profile/signUp");
     },
 
+    getProfile: (req, res) => {
+        res.render("profile/profile");
+    },
+
     login: (req, res) => {
         res.render("home/login");
     },
