@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles1.css" />
-    <title>NFT List</title>
+    <title>Payment-Giver</title>
+  </head>
   <body>
-    <!-- header nav-->
+    <!-- 상단 nav bar-->
     <header class="nav">
       <!-- 서비스명 및 로고  -->
       <!-- 서비스명과 로고 클릭 시 메인 페이지로 이동 -->
-      <a class="nav__link" href="index.html"><h1>Service Name</h1></a>
+      <a class="nav__linkkk" href="index.html"><h1>Service Name</h1></a>
       <!-- nav bar 메뉴들 -->
       <ul class="nav__menu">
         <!-- nav bar "HOME" 메뉴 버튼 -->
@@ -38,40 +39,39 @@
         </li>
       </ul>
     </header>
-    <!-- header nav, footer 제외한 메인 부분 -->
     <main>
-      <!-- Go Home 버튼 -->
+      <!-- Go Back 버튼 -->
       <div>
-      <a href="index.html"><div class="backButton"><i class="fas fa-paint-brush fa-lg"><span>Go Back</span></i></div></a>
-    </div>
-      <!-- 이미지 클릭시 ETH 결제창 이동 -->
-      <div class="donatePlatform" onclick="donatePlatform()">
-        <div class="donatePlatform__container" > 
-          <div class="donatePlatform__title">
-            <span class="donatePlatform__icon"
-              ><i class="fas fa-palette"></i
-            ></span>
-            <h1>Donate</h1>
-          </div>
-          <div class="donatePlatform__body">
-            <span>누구나 쉽고 간편하게 플랫폼에 후원이 가능합니다.</span>
-          </div>
-        </div>
+        <a href="donateNFT.html"
+          ><div class="backButton">
+            <i class="fas fa-paint-brush fa-lg"><span>Go Back</span></i>
+          </div></a
+        >
       </div>
-      <!-- 작품 리스트 전체 크기 -->
-      <div class="nftList__container">
-        <!-- NFT 작품 리스트 타이틀 -->
-        <div class="nftList__row">
-          <div class="nftList__title">NFT 작품 리스트</div>
-        </div>
-
-        <!-- NFT Cards grid 적용 -->
-        <div class="grid">
+      <!-- NFT, 아티스트 정보 들어간 총 border -->
+      <div class="paymentPlatform__row">
+     
+            <form>
+              <div class="paymentPlatform__donate">
+              <div class="paymentPlatform__form">
+                    <label>Gas Fee <i class="fab fa-ethereum fa-lg"></i> 
+                  <div class="paymentPlatform__Input">
+                    <!-- step=any는 소숫점 자리도 입력할 수 있게 해준다. -->
+                  <input id="number" type="number"placeholder="가스비를 입력해 주세요." step="any" required />
+                </div>
+                </label>  
+</div>
+<!-- Donate 버튼 -->
+                <div class="payment__formBtn">
+                    <input class="payment__Btn" type="submit" value="Donate">
+                </div>
+            </div>
+              </form>
+          
         </div>
       </div>
     </main>
 
-    <!-- footer -->
     <footer class="footer">
       <div class="footer__menu">
         <!-- 플랫폼 로고 이미지 -->
@@ -92,7 +92,6 @@
         </ul>
       </div>
       <!-- 플랫폼 copyrights 텍스트 -->
-
       <div class="footer__copy">
         <div class="footer__copyrights">@ 서비스명. All Rights Reserved.</div>
       </div>
@@ -101,7 +100,5 @@
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"
     ></script>
-    <script src="js/donateNFT.js"></script>
-
   </body>
 </html>
