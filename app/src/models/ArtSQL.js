@@ -1,18 +1,11 @@
 "use strict";
 
-const db = require("../config/db");
+const sys = require("../config/db");
 
-// Profile
-class ArtSQL {
-    static getArtInfo(id) {
-        return new Promise((resolve, reject) => {
-            const query = "SELECT * FROM artinfo WHERE id = ?;";
-            db.query(query, [id], (err, data) => {
-                if (err) reject(`${err}`);
-                else resolve(data[0]);
-            });
-        });
-    }
+app.post("/api/:alias", async (req, res) => {
+  console.log("alias computed!");
+  console.log(req.params.alias);
+  console.log(req.body.param);
 
     // Register
     static async registerArt(art) {
@@ -33,8 +26,15 @@ class ArtSQL {
                     else resolve({ success: true });
                 }
             );
+    try {
+        res.send(
+            await sys.db(req.params.alias, req.body.param, req.body.where)
+        );
+    } catch (err) {
+        res.status(500).send({
+            error: err,
         });
     }
-}
+});
 
 module.exports = ArtSQL;

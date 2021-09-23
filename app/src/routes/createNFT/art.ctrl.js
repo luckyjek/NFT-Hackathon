@@ -2,9 +2,29 @@
 const multer = require("multer");
 
 const Art = require("../../models/Art");
+const sys = require("../../config/db");
 
 const output = {
-    showArt: (req, res) => {
+    donateNFT: (req, res) => {
+        // try {
+        //     const result = await sys.db("getArtInfo");
+        // console.table(result);
+
+        //     res.render("createNFT/donateNFT", { data: result });
+        // } catch (err) {
+        //     res.status(500).send({
+        //         error: err,
+        //     });
+        // }
+        res.render("createNFT/donateNFT");
+    },
+
+    showArt: async (req, res) => {
+        // console.log(req.body.param[0]);
+        const art = new Art(req.body);
+        const artList = await art.getArtList();
+        console.log(artList);
+
         res.render("showArt");
     },
     registerArt: (req, res) => {
@@ -24,6 +44,18 @@ const process = {
         };
 
         return res.json(response);
+    },
+    getArtInfo: async (req, res) => {
+        console.log("process.getArtInfo");
+        try {
+            const result = await sys.db("getArtInfo");
+            console.table(result);
+            res.send(result);
+        } catch (err) {
+            res.status(500).send({
+                error: err,
+            });
+        }
     },
 };
 

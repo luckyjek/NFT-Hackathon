@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>NFT List</title>
-  <body>
+  <body onload="getArtInfo();">
     <!-- header nav-->
     <header class="nav">
       <!-- 서비스명 및 로고  -->
@@ -64,7 +65,6 @@
         <div class="nftList__row">
           <div class="nftList__title">NFT 작품 리스트</div>
         </div>
-
         <!-- NFT Cards grid 적용 -->
         <div class="grid">
           <!-- NFT Card 한개 -->
@@ -434,6 +434,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/createNFT/donateNFT.js"></script>
-
   </body>
 </html>

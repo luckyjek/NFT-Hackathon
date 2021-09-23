@@ -7,10 +7,10 @@ const multer = require("multer");
 const uploadProfile = multer({
     destination: (req, file, cb) => {
         cb(null, "uploads/profile"); //important this is a direct path fron our current file to storage location
-      },
-      filename: (req, file, cb) => {
+    },
+    filename: (req, file, cb) => {
         cb(null, file.originalname);
-      },
+    },
     // dest: "uploads/profile",
     //limits: { fileSize: 5 * 256 * 256 }
 });
@@ -18,10 +18,10 @@ const uploadProfile = multer({
 const uploadArt = multer({
     destination: (req, file, cb) => {
         cb(null, "uploads/art"); //important this is a direct path fron our current file to storage location
-      },
-      filename: (req, file, cb) => {
+    },
+    filename: (req, file, cb) => {
         cb(null, file.originalname);
-      },
+    },
     // dest: "uploads/art",
     //limits: { fileSize: 5 * 1024 * 1024 }
 });
@@ -33,15 +33,20 @@ const auth_ctrl = require("./profile/auth.ctrl");
 // APIs
 // HOME
 router.get("/", home_ctrl.output.home);
-router.get("/donateNFT", home_ctrl.output.donateNFT);
+router.get("/donateNFT", art_ctrl.output.donateNFT);
 router.get("/artInfo", home_ctrl.output.artInfo);
 router.get("/paymentGiver", home_ctrl.output.paymentGiver);
 router.get("/signUp", home_ctrl.output.signUp);
 
 router.get("/profile", home_ctrl.output.getProfile);
+router.post("/getArtInfo", art_ctrl.process.getArtInfo);
+// app.post("/api/:alias", async (req, res) => {
+//   console.log("alias computed!");
+//   console.log(req.params.alias);
+//   console.log(req.body.param);
+
 router.get("/login", home_ctrl.output.login);
 router.get("/register", home_ctrl.output.register);
-
 
 router.post("/login", home_ctrl.process.login);
 router.post(

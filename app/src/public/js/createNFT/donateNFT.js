@@ -1,6 +1,26 @@
 // All NFTs 페이지
 "use strict";
 
+axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
+axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+
+let artList = [];
+
+function getArtInfo() {
+    axios({
+        method: "post",
+        url: "/getArtInfo",
+    })
+        .catch((e) => {
+            console.log(e);
+        })
+        .then(function (res) {
+            artList = res.data;
+            console.table(artList);
+        });
+}
+
 var nfts = document.getElementsByClassName("nft");
 
 Array.from(nfts).forEach((nft) => {
