@@ -45,62 +45,58 @@
     <div class="container">
       <!--profile 사진부분 -->
       <div>
-      <div class="text view-content">
-        <!-- main-content -->
-        <img id="imgPreview" src=""alt="Preview">
+        <div class="text view-content">
+          <!-- main-content -->
+          <img id="imgPreview" src=""alt="Preview">
+        </div>
       </div>
-    </div>
       <!--profile input부분 -->
 
       <div class="con main-container">
-          <!-- nickName -->
-            <div style="margin-bottom: 10px;" >닉네임</div>
-            <div class="input-group mb-3" >
-              <br/>
-              <input type="text" class="form-control" id="inputGroup" placeholder="luckyjek" readonly>
-            </div>
-            <!--Pub_Key_addr-->
-            <div style="margin-bottom: 10px;">지갑주소</div>  
-            <div class="input-group mb-3">
-              <input type="text" class="form-control"  id="eth-v" placeholder="0x20e2017939398293e29274s" readonly>
-            </div>
-            <!--email_addr-->
-            <div style="margin-bottom: 10px;">이메일주소</div>  
-            <div class="input-group">
-              <input type="text" class="form-control" id="email-e" placeholder="luckyjek@gmail.com" readonly>
-            </div>
-        </div>
+        <!-- nickName -->
+        <div style="margin-bottom: 10px;" >닉네임</div>
+          <div class="input-group mb-3" >
+            <br/>
+            <div type="text" class="form-control" id="artist_name" readonly></div>
+          </div>
+        <!--Pub_Key_addr-->
+        <div style="margin-bottom: 10px;">지갑주소</div>  
+          <div class="input-group mb-3">
+            <div type="text" class="form-control"  id="wallet_addr"readonly></div>
+          </div>
+        <!--email_addr-->
+        <div style="margin-bottom: 10px;">이메일주소</div>  
+          <div class="input-group">
+            <div type="text" class="form-control" id="user_email" readonly></div>
+          </div>
+      </div>
     </div>
       
-          <!--main button-->
-      <div style="text-align: center; ">
-        <a href="edit_profile.html">
-          <input type="reset" class="colorBtn" value="프로필편집">
-        </a>
-        <input type="button" class="colorBtn" value="회원탈퇴" onclick="viewF();">
-      </div>
+    <!--main button-->
+    <div style="text-align: center; ">
+      <a href="edit_profile.html">
+        <input type="reset" class="colorBtn" value="프로필편집">
+      </a>
+      <input type="button" class="colorBtn" value="회원탈퇴" onclick="viewF();">
+    </div>
 
       
-  <!--modal start-->
-  <div class="open-link pointer-lock-close overlay">
-    <div id="foo">
-        <button class="close" onclick="removeF()">×</button>
-        <h3>탈퇴 유의사항</h3><br/>
-        <p>
-            »&nbsp;<span class="url"> 1. 보유중인  NFT는 탈퇴 후에도 사라지지 않습니다. <br/><br/></span>
-            »&nbsp;<span class="url"> 1. 탈퇴 후 30일 동안 재가입이 불가능합니다.<br/><br/></span>
-            »&nbsp;<span class="url"> 1. 같은 지갑 주소로 재가입을 할 경우, 일부 이전 정보들이 노출됩니다.<br/><br/></span>
-        </p>
-        <p>
-            <a
-                class="button"
-                href="index.html"
-                >탈퇴 유의사항을 모두 확인하였습니다</a
-            >
-        </p>
+    <!--modal start-->
+    <div class="open-link pointer-lock-close overlay">
+      <div id="foo">
+          <button class="close" onclick="removeF()">×</button>
+          <h3>탈퇴 유의사항</h3><br/>
+          <p>
+              »&nbsp;<span class="url"> 1. 보유중인  NFT는 탈퇴 후에도 사라지지 않습니다. <br/><br/></span>
+              »&nbsp;<span class="url"> 1. 탈퇴 후 30일 동안 재가입이 불가능합니다.<br/><br/></span>
+              »&nbsp;<span class="url"> 1. 같은 지갑 주소로 재가입을 할 경우, 일부 이전 정보들이 노출됩니다.<br/><br/></span>
+          </p>
+          <p>
+            <a class="button" href="index.html">탈퇴 유의사항을 모두 확인하였습니다</a>
+          </p>
+      </div>
     </div>
-  </div>
-  <!--modal end-->
+    <!--modal end-->
 
     <script src="js/profile.js"></script>
 </body>
