@@ -21,7 +21,7 @@ const output = {
     },
 
     getProfile: (req, res) => {
-        res.render("home/profile");
+        res.render("profile/profile");
     },
 
     login: (req, res) => {
