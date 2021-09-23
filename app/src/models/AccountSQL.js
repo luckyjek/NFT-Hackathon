@@ -21,7 +21,7 @@ class AccountSQL {
           const query = "SELECT * FROM account;";
           db.query(query, (err, data) => {
             if (err) reject(`${err}`);
-            else resolve(data[0]);
+            else resolve(data);
           });
         });
       }
