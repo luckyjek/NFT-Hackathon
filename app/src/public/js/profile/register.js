@@ -4,7 +4,7 @@ const account_id = document.querySelector("#account_id"),
   name_str = document.querySelector("#name"),
   password = document.querySelector("#password"),
   confirmPassword = document.querySelector("#confirm_password"),
-  emali = document.querySelector("#email"),
+  // emali = document.querySelector("#email"),
   profile_image = document.querySelector("#profile_image"),
   wallet_address = document.querySelector("#wallet_address"),
   registerBtn = document.querySelector("#button");
@@ -20,7 +20,7 @@ function register() {
     account_id: account_id.value,
     name: name_str.value,
     password: password.value,
-    email: emali.value,
+    // email: emali.value,
     wallet_address: wallet_address.value
   };
 
