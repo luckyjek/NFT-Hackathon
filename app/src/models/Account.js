@@ -23,6 +23,18 @@ class Account {
       }
   }
 
+  async getProfileAll() {
+    // const client = this.body;
+    try {
+        const user = await AccountSQL.getAccountInfo2();
+        if (user) {
+          return { success: true, user };
+        }
+    } catch (err) {
+        return { success: false, err };
+      }
+  }
+
   async login() {
     const client = this.body;
     try {

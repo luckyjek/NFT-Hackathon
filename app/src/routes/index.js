@@ -42,6 +42,7 @@ router.get("/profile", home_ctrl.output.getProfile);
 router.get("/login", home_ctrl.output.login);
 router.get("/register", home_ctrl.output.register);
 
+
 router.post("/login", home_ctrl.process.login);
 router.post(
     "/register",
