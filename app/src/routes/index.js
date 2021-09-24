@@ -57,6 +57,10 @@ router.get("/myAccountArtist", profile_ctrl.output.myAccountArtist);
 router.get("/myAccountGiver", profile_ctrl.output.myAccountGiver);
 router.get("/profile", profile_ctrl.output.profile);
 
+router.post("/getArtList", giver_ctrl.process.getArtList);
+
+router.get("/images/:type/:path", giver_ctrl.process.getImage);
+
 // APIs
 // router.get("/login", home_ctrl.output.login);
 // router.get("/register", home_ctrl.output.register);

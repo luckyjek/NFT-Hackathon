@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="img/DONATE.ico" />
     <link rel="stylesheet" href="css/styles1.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
     <title>NFT List</title>
-  <body>
+  <body onload="getArtList();">
     <!-- header nav-->
     <header class="nav">
       <!-- 서비스명 및 로고  -->
@@ -69,6 +71,28 @@
 
         <!-- NFT Cards grid 적용 -->
         <div class="grid">
+          <article id="article1" onclick="NFTs();">
+            <!-- <img src="img/NFT1.jpg"> -->
+            <div class="text">
+              <h3 class="nftText nftText__title" id="nftName"></h3>
+              <h3 class="nftText nftText__price" id="nftPrice">5ETH</h3>
+              <p class="nftText__description" id="nftDescribe">
+                이 작품은 저의 초기작입니다. 바다 밖에서는 살지 못하지만, 물밖의
+                세상도 궁금한 어린 고래를 그렸습니다. 일상을 탈출하고 싶은 제
+                마음을 표현했습니다.
+              </p>
+            </div>
+              <!-- NFT Card 내 아티스트 이미지, 이름, 발행일 -->
+              <div class="container__profile">
+                <!-- <img src="img/artist.jpg" alt="people"> -->
+                <div class="container__profile__text">
+                 <p class="nftText nftText__id" id="nftCreatedBy">Created By <b>Jane Doe</b></p>
+                 <h2 class="nftText nftText__date" id="nftDate">2021.09.11</h2>
+                </div>
+            </div>
+          </article>
+          
+
         </div>
       </div>
     </main>
@@ -102,6 +126,6 @@
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"
     ></script>
-    <script src="js/giver/donateNFT.js"></script>
+    <script src="js/giver/donateNft.js"></script>
   </body>
 </html>

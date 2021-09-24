@@ -1,7 +1,7 @@
 "use strict";
 // const multer = require("multer");
 const sys = require("../../config/db");
-
+const fs = require("fs");
 const output = {
     donateNft: (req, res) => {
         res.render("giver/donateNft");
@@ -13,27 +13,34 @@ const output = {
 };
 
 const process = {
-    // registerArt: async (req, res) => {
-    //     req.body.art_image_path = req.file.path;
-    //     const art = new Art(req.body);
-    //     const response = await art.registerArt();
-    //     const url = {
-    //         method: "POST",
-    //         path: "/registerArt",
-    //     };
-    //     return res.json(response);
-    // },
-    // getArtInfo: async (req, res) => {
-    //     console.log("process.getArtInfo");
-    //     try {
-    //         const result = await sys.db("getArtInfo");
-    //         console.table(result);
-    //     } catch (err) {
-    //         res.status(500).send({
-    //             error: err,
-    //         });
-    //     }
-    // },
+    getArtList: async (req, res) => {
+        console.log("process.getArtInfo");
+        try {
+            const result = await sys.db("getArtList");
+            console.table(result);
+            res.send(result);
+        } catch (err) {
+            res.status(500).send({
+                error: err,
+            });
+        }
+    },
+
+    getImage: (req, res) => {
+        const { type, path } = req.params;
+        const filePath = `uploads/${type}/${path}`;
+
+        console.log(filePath);
+
+        if (!fs.existsSync(filePath))
+            res.send(404, {
+                error: "Can not found file.",
+            });
+        else {
+            res.header("Content-Type", "image/jpg");
+            fs.createReadStream(filePath).pipe(res);
+        }
+    },
 };
 
 module.exports = {
