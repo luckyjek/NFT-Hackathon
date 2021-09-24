@@ -1,19 +1,15 @@
 "use strict";
-console.log("use script");
-
 axios.defaults.baseURL = "http://localhost:5000";
 axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
-let art = [];
-
 function getArt() {
-    console.log("getArt");
     axios({
         method: "post",
         url: "/getArt",
         data: {
-            param: [1],
+            // 2번이 NFT1.jpg
+            param: [2],
         },
     })
         .catch((e) => {
@@ -21,9 +17,20 @@ function getArt() {
             console.log(e);
         })
         .then(function (res) {
-            art = res.data;
-            console.log(art);
+            let art = res.data[0];
+            let imagePath = art.art_image_path;
+            console.log(imagePath);
+            getImage(imagePath);
         });
+}
+
+function getImage(imagePath) {
+    const cardImgDiv = document.getElementsByClassName("artInfo__cardImg")[0];
+
+    // download/${m.type}/${m.path}
+    let imageHTML = `<img class="artInfo__img" src="/images/${imagePath}"} />`;
+
+    cardImgDiv.innerHTML = imageHTML;
 }
 
 // var data = [

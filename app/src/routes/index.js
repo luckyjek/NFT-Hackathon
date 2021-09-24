@@ -60,7 +60,10 @@ router.get("/profile", profile_ctrl.output.profile);
 // APIs
 router.post("/getArtList", giver_ctrl.process.getArtList);
 router.post("/getArt", giver_ctrl.process.getArt);
-// router.get("/login", home_ctrl.output.login);
+
+// APIs
+router.get("/images/:type/:path", giver_ctrl.process.getImage);
+
 // router.get("/register", home_ctrl.output.register);
 // router.post("/login", home_ctrl.process.login);
 // router.post(
