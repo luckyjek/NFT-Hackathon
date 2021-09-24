@@ -23,17 +23,17 @@ const process = {
     //     };
     //     return res.json(response);
     // },
-    // getArtInfo: async (req, res) => {
-    //     console.log("process.getArtInfo");
-    //     try {
-    //         const result = await sys.db("getArtInfo");
-    //         console.table(result);
-    //     } catch (err) {
-    //         res.status(500).send({
-    //             error: err,
-    //         });
-    //     }
-    // },
+    // router.post(
+    //     "/register",
+    //     [uploadProfile.single("profile_image")],
+    //     home_ctrl.process.register
+    // );
+    // router.post("/showArt", art_ctrl.process.registerArt);
+    // router.post(
+    //     "/registerArt",
+    //     [auth_ctrl.verifyToken, uploadArt.single("art_image")],
+    //     art_ctrl.process.registerArt
+    // );
 };
 
 module.exports = {
