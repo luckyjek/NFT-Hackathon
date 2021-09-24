@@ -62,7 +62,12 @@ router.post("/getArtList", giver_ctrl.process.getArtList);
 router.get("/images/:type/:path", giver_ctrl.process.getImage);
 
 // APIs
-// router.get("/login", home_ctrl.output.login);
+router.post("/getArtList", giver_ctrl.process.getArtList);
+router.post("/getArt", giver_ctrl.process.getArt);
+
+// APIs
+router.get("/images/:type/:path", giver_ctrl.process.getImage);
+
 // router.get("/register", home_ctrl.output.register);
 // router.post("/login", home_ctrl.process.login);
 // router.post(

@@ -26,6 +26,18 @@ const process = {
         }
     },
 
+    getArt: async (req, res) => {
+        try {
+            const result = await sys.db("getArt", req.body.param[0]);
+            console.table(result);
+            res.send(result);
+        } catch (err) {
+            res.status(500).send({
+                error: err,
+            });
+        }
+    },
+
     getImage: (req, res) => {
         const { type, path } = req.params;
         const filePath = `uploads/${type}/${path}`;
