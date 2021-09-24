@@ -1,3 +1,33 @@
+//initialize the plugins
+FilePond.registerPlugin(
+    FilePondPluginImagePreview,
+    FilePondPluginImageResize,
+    FilePondPluginImageTransform
+);
+
+// Get a reference to the file input element
+const inputElement = document.querySelector('input[type="file"]');
+
+// Create a FilePond instance
+const pond = FilePond.create(inputElement, {
+    imageResizeTargetWidth: 256,
+    imageResizeMode: "contain",
+
+    //callback when the image is added
+    onaddfile: (err, fileItem) => {
+        console.log(err, fileItem.getMetadata("resize"));
+    },
+    imageTransformVariants: {
+        thumb_medium_: (transforms) => {
+            transforms.resize.size.width = 512;
+            return transforms;
+        },
+        thumb_small_: (transforms) => {
+            transforms.resize.size.width = 64;
+            return transforms;
+        },
+    },
+});
 console.log("createNft 연결");
 
 function submit() {
