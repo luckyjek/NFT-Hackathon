@@ -4,15 +4,11 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="shortcut icon"
-            type="image/x-icon"
-            href="img/DONATE.ico"
-        />
+        <link rel="shortcut icon" type="image/x-icon" href="img/DONATE.ico" />
         <link rel="stylesheet" href="css/styles1.css" />
         <title>NFT Details</title>
     </head>
-    <body>
+    <body onload="getArt();">
         <!-- 상단 nav bar-->
         <header class="nav">
             <!-- 서비스명 및 로고  -->
@@ -47,60 +43,77 @@
         <main>
             <!-- Go Back 버튼 -->
             <div>
-                <a href="donateNft"
-                    ><div class="backButton">
+                <a href="donateNft">
+                    <div class="backButton">
                         <i class="fas fa-paint-brush fa-lg"
-                            ><span>Go Back</span></i
+                            ><span>Go Back</span>
+                        </i>
+                    </div>
+                </a>
+            </div>
+            <!-- NFT, 아티스트 정보 들어간 총 border -->
+            <div class="row">
+                <!-- NFT 상세 부분 -->
+                <div class="left">
+                    <!-- NFT Card 이미지 -->
+                    <div class="artInfo__cardImg">
+                        <img class="artInfo__img" src="img/NFT1.jpg" />
+                    </div>
+                    <!-- NFT Card 제목, 아티스트 이름, NFT 넘버 -->
+                    <div class="artInfo__textBox">
+                        <div class="artInfo__top">
+                            <div class="artInfo__title">
+                                <h2 class="nftText__title">고래</h2>
+                                <h3 class="nftText__number">#123456678</h3>
+                                <h6 class="nftText__artist">
+                                    Created by Jane Doe
+                                </h6>
+                            </div>
+                            <div class="artInfo__price">
+                                <span class="nftText__price"
+                                    ><i class="fab fa-ethereum fa-sm"></i
+                                    >5</span
+                                >
+                            </div>
+                        </div>
+                        <div class="artInfo__description">
+                            <h5>작품 설명</h5>
+                            <p class="nftText__description">
+                                이 작품은 저의 초기작입니다. 바다 밖에서는 살지
+                                못하지만, 물밖의 세상도 궁금한 어린 고래를
+                                그렸습니다. 일상을 탈출하고 싶은 제 마음을
+                                표현했습니다.
+                            </p>
+                        </div>
+                        <div class="artInfo__btn">
+                            <button
+                                class="nftText__btn"
+                                onclick="artInfo__donateBtn()"
+                            >
+                                Donate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="artistProfile">
+                        <div class="artistProfile__imgs">
+                            <img
+                                class="artistProfile__img"
+                                src="img/artist.jpg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <div class="artist__nftList">
+                        <span class="artist__nftListTitle"
+                            >이 아티스트가 발행한 NFT</span
                         >
-                    </div></a
-                >
+                    </div>
+                    <div class="artist__nftCardsList"></div>
+                </div>
             </div>
-
-
-      <!-- NFT, 아티스트 정보 들어간 총 border -->
-      <div class="row">
-        <!-- NFT 상세 부분 -->
-        <div class="left">
-          <!-- NFT Card 이미지 -->
-          <div class="artInfo__cardImg">
-            <img class="artInfo__img" src="img/NFT1.jpg" />
-          </div>
-          <!-- NFT Card 제목, 아티스트 이름, NFT 넘버 -->
-          <div class="artInfo__textBox">
-            <div class="artInfo__top">
-              <div class="artInfo__title">
-                <h2 class="nftText__title">고래</h2>
-                <h3 class="nftText__number">#123456678</h3>
-                <h6 class="nftText__artist">Created by Jane Doe</h6>
-              </div>
-              <div class="artInfo__price">
-                <span class="nftText__price"
-                  ><i class="fab fa-ethereum fa-sm"></i>5</span
-                >
-              </div>
-            </div>
-            <div class="artInfo__description">
-              <h5>작품 설명</h5>
-              <p class="nftText__description">
-                이 작품은 저의 초기작입니다. 바다 밖에서는 살지 못하지만, 물밖의
-                세상도 궁금한 어린 고래를 그렸습니다. 일상을 탈출하고 싶은 제
-                마음을 표현했습니다.
-              </p>
-            </div>
-            <div class="artInfo__btn">
-              <button class="nftText__btn" onclick="artInfo__donateBtn()">
-                Donate
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="right">
-          <div class="artistProfile">
-            <div class="artistProfile__imgs">
-              <img class="artistProfile__img" src="img/artist.jpg" alt="" />
-
-            </div>
-        <main>
+        </main>
         <footer class="footer">
             <div class="footer__menu">
                 <!-- 플랫폼 로고 이미지 -->
@@ -120,43 +133,6 @@
                     <li class="footer__li">sponsor해주는곳 로고 넣기</li>
                 </ul>
             </div>
-          </div>
-          <div class="artist__nftList">
-            <span class="artist__nftListTitle">이 아티스트가 발행한 NFT</span>
-          </div>
-          <div class="artist__nftCardsList"></div>
-        </div>
-      </div>
-    </main>
-    <footer class="footer">
-      <div class="footer__menu">
-        <!-- 플랫폼 로고 이미지 -->
-        <ul class="footer__brandLogo">
-          <li class="footer__li">로고 이미지 넣기</li>
-        </ul>
-        <!-- 플랫폼 대표 전화, 주소, 이메일 입력 -->
-        <ul class="footer__info">
-          <li class="footer__li">상담센터 번호</li>
-          <li class="footer__li">대표전화</li>
-          <li class="footer__li">주소</li>
-          <li class="footer__li">Email</li>
-        </ul>
-        <!-- 플랫폼 스폰서 기업 로고 -->
-        <ul class="footer__sponsor">
-          <h5 class="footer__sponsorTitle">Sponsor</h5>
-          <li class="footer__li">sponsor해주는곳 로고 넣기</li>
-        </ul>
-      </div>
-      <!-- 플랫폼 copyrights 텍스트 -->
-      <div class="footer__copy">
-        <div class="footer__copyrights">@ 서비스명. All Rights Reserved.</div>
-      </div>
-    </footer>
-    <script
-      src="https://kit.fontawesome.com/6478f529f2.js"
-      crossorigin="anonymous"
-    ></script>
-
             <!-- 플랫폼 copyrights 텍스트 -->
             <div class="footer__copy">
                 <div class="footer__copyrights">
@@ -164,6 +140,8 @@
                 </div>
             </div>
         </footer>
+        <!-- import scripts  -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script
             src="https://kit.fontawesome.com/6478f529f2.js"
             crossorigin="anonymous"
