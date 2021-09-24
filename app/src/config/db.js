@@ -1,7 +1,6 @@
 const mysql = require("mysql");
 let sql = require("./sql.js");
 
-// connect mysql
 const dbPool = mysql.createConnection({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
@@ -9,7 +8,6 @@ const dbPool = mysql.createConnection({
     database: process.env.DATABASE_DB,
 });
 
-// DB 연결확인
 dbPool.connect((error) => {
     if (error) {
         console.log(error);
@@ -17,8 +15,6 @@ dbPool.connect((error) => {
         console.log("MYSQL Connected...");
     }
 });
-
-// console.log(sql);
 
 const sys = {
     async db(alias, param = [], where = "") {
