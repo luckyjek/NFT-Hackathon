@@ -33,6 +33,7 @@ function getArtList() {
                 let art_price = artList[i].art_price;
                 let art_image_path = artList[i].art_image_path;
                 let art_description = artList[i].art_description;
+                let artist_img = artList[i].artist_img;
 
                 artSelectList += `
                      <article id="article1" onclick="NFTs()">
@@ -46,7 +47,7 @@ function getArtList() {
                      </div>
                        <div class="container__profile">
                          <img class="artist__img"
-                          src="/images/profile/4.jpg"
+                          src="${artist_img}"
                          />
                          <div class="container__profile__text">
                           <p class="nftText nftText__id" id="nftCreatedBy">Created By ${account_id}</p>
@@ -55,7 +56,9 @@ function getArtList() {
                      </div>
                     </article>`;
             }
-
+            //     <img class="artist__img"
+            //     src="/images/profile/4.jpg"
+            //    />
             document.querySelector(".grid").innerHTML = artSelectList;
         });
     // .catch((error) => console.log(" catch 에러!"));
@@ -63,3 +66,4 @@ function getArtList() {
 
 //http://localhost:5000/donateNft
 //clubList.ejs에 DB에서 조회한 클럽목록을 넘기는 예제소스
+// home page
