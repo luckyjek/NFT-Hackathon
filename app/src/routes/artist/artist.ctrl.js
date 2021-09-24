@@ -4,11 +4,11 @@ const sys = require("../../config/db");
 
 const output = {
     craeteNft: (req, res) => {
-        res.render("artist/donateNFT");
+        res.render("artist/craeteNft");
     },
 
     deployedNft: (req, res) => {
-        res.render("artist/donateNFT");
+        res.render("artist/deployedNft");
     },
 };
 
