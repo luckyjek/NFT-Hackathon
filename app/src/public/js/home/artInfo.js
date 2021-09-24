@@ -27,7 +27,6 @@ function getArt() {
 function getImage(imagePath) {
     const cardImgDiv = document.getElementsByClassName("artInfo__cardImg")[0];
 
-    // download/${m.type}/${m.path}
     let imageHTML = `<img class="artInfo__img" src="/images/${imagePath}"} />`;
 
     cardImgDiv.innerHTML = imageHTML;
