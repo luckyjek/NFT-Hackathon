@@ -4,17 +4,26 @@ axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
 let account;
+let art_id;
+
 // web3 version : 1.3.6
 const web3 = new Web3(Web3.givenProvider || "http://localhost:5000");
 console.log("insert web3", web3.version);
 
+function getArtId() {
+    var url_string = window.location.href.toLocaleLowerCase();
+    var url = new URL(url_string);
+    art_id = url.searchParams.get("art_id");
+}
+
 function getArt() {
+    getArtId();
     axios({
         method: "post",
         url: "/getArt",
         data: {
             // 2번이 NFT1.jpg
-            param: [2],
+            param: [art_id],
         },
     })
         .catch((e) => {

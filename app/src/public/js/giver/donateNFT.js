@@ -6,54 +6,44 @@ axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
 let artList = [];
-var nfts = document.getElementsByClassName("nft");
-
-Array.from(nfts).forEach((nft) => {
-  console.log(nft);
-  nft.addEventListener("click", function (event) {
-    console.log("click");
-    // console.log(event);
-    location.href = "artInfo";
-  });
-});
 
 // DB에서 아트리스트 불러오기
 function getArtList() {
-  axios({
-    method: "post",
-    url: "/getArtList",
-  })
-    .catch((e) => {
-      console.log("catch");
-      console.log(e);
-      // s;
+    axios({
+        method: "post",
+        url: "/getArtList",
     })
-    .then(function (res) {
-      // console.log("res");
-      artList = res.data;
-      // console.table(artList);
+        .catch((e) => {
+            console.log("catch");
+            console.log(e);
+            // s;
+        })
+        .then(function (res) {
+            // console.log("res");
+            artList = res.data;
+            // console.table(artList);
 
-      // 불러온 아트리스트 그리기
-      loadArtList(artList);
-    });
+            // 불러온 아트리스트 그리기
+            loadArtList(artList);
+        });
 }
 
 // 아트리스트 그리기
 function loadArtList(artList) {
-  let artSelectList = "";
+    let artSelectList = "";
 
-  for (let i = 0; i < artList.length; i++) {
-    let art_id = artList[i].art_id;
-    let account_id = artList[i].account_id;
-    let art_name = artList[i].art_name;
-    let art_created_at = artList[i].art_created_at;
-    let art_price = artList[i].art_price;
-    let art_image_path = artList[i].art_image_path;
-    let art_description = artList[i].art_description;
-    let artist_img = artList[i].artist_img;
+    for (let i = 0; i < artList.length; i++) {
+        let art_id = artList[i].art_id;
+        let account_id = artList[i].account_id;
+        let art_name = artList[i].art_name;
+        let art_created_at = artList[i].art_created_at;
+        let art_price = artList[i].art_price;
+        let art_image_path = artList[i].art_image_path;
+        let art_description = artList[i].art_description;
+        let artist_img = artList[i].artist_img;
 
-    artSelectList += `
-             <article id="article1" onclick="NFTs()">
+        artSelectList += `
+             <article id="${art_id}" onclick="linkClickEvent(this.id);">
              <img class="nftImgs" src="/images/${art_image_path}"} />
              <div class="text">
                <h3 class="nftText nftText__title" id="nftName">${art_name}</h3>
@@ -72,16 +62,17 @@ function loadArtList(artList) {
                  </div>
              </div>
             </article>`;
-  }
-  document.querySelector(".grid").innerHTML = artSelectList;
+    }
+    document.querySelector(".grid").innerHTML = artSelectList;
+    // addClickListener();
+}
+
+function linkClickEvent(element) {
+    // console.log(element);
+    location.href = `artInfo?art_id=${element}`;
 }
 
 // donate Platform 버튼 누르면 paymentPlatform.html로 이동
 function donatePlatform() {
-  location.href = "paymentPlatform";
-}
-
-// NFT Card 버튼 누르면 artInfo.html로 이동
-function NFTs() {
-  location.href = "artInfo";
+    location.href = "paymentPlatform";
 }
