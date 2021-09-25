@@ -83,11 +83,12 @@
 }
 
 /* 이더 아이콘 */
-.artInfo__price i {
+.artInfo__price {
     margin-right: 7px;
+}
+i {
     color: #fd6588;
 }
-
 /* 작품 설명 타이틀 */
 .artInfo__description h5 {
     font-weight: 600;
