@@ -1,4 +1,10 @@
 /* "Go Home" or "Go Back" icon */
+
+.backButton {
+  border-style: none;
+  background: none;
+}
+
 .backButton i {
   display: inline-block;
   margin: 22px;
