@@ -2,29 +2,18 @@
 
 const express = require("express");
 const router = express.Router();
-const multer = require("multer");
+// const multer = require("multer");
 
-const uploadProfile = multer({
-    destination: (req, file, cb) => {
-        cb(null, "uploads/profile"); //important this is a direct path fron our current file to storage location
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname);
-    },
-    // dest: "uploads/profile",
-    //limits: { fileSize: 5 * 256 * 256 }
-});
-
-const uploadArt = multer({
-    destination: (req, file, cb) => {
-        cb(null, "uploads/art"); //important this is a direct path fron our current file to storage location
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname);
-    },
-    // dest: "uploads/art",
-    //limits: { fileSize: 5 * 1024 * 1024 }
-});
+// const uploadArt = multer({
+//     destination: (req, file, cb) => {
+//         cb(null, "uploads/art"); //important this is a direct path fron our current file to storage location
+//     },
+//     filename: (req, file, cb) => {
+//         cb(null, file.originalname);
+//     },
+//     // dest: "uploads/art",
+//     //limits: { fileSize: 5 * 1024 * 1024 }
+// });
 
 const artist_ctrl = require("./artist/artist.ctrl");
 const giver_ctrl = require("./giver/giver.ctrl");
@@ -32,13 +21,23 @@ const home_ctrl = require("./home/home.ctrl");
 const payment_ctrl = require("./payment/payment.ctrl");
 const profile_ctrl = require("./profile/profile.ctrl");
 
+/**
+ * @title 페이지 라우터
+ * @description 각 URL에 따라 요청한 페이지를 연결해줍니다.
+ *
+ * @example
+ * => 만약 요청된 페이지가 "localhost:5000/createNft"과 같다면,
+ * => 해당 요청은 views 폴더 내에 위치한 createNft.ejs 요청한 것을 뜻합니다.
+ * => 따라서, 서버는 해당 페이지 요청을 컨트롤러(artist_ctrl)에서 전달하여,
+ * => 컨트롤러는 해당 페이지를 클라이언트에게 output(송출) 합니다.
+ */
 // Page Renders - artist folder
 router.get("/craeteNft", artist_ctrl.output.craeteNft);
 router.get("/deployedNft", artist_ctrl.output.deployedNft);
 
 // Page Renders - giver folder
 router.get("/donateNft", giver_ctrl.output.donateNft);
-router.post("/ownedNft", giver_ctrl.output.ownedNft);
+router.get("/ownedNft", giver_ctrl.output.ownedNft);
 
 // Page Renders - home folder
 router.get("/artInfo", home_ctrl.output.artInfo);
@@ -57,34 +56,24 @@ router.get("/myAccountArtist", profile_ctrl.output.myAccountArtist);
 router.get("/myAccountGiver", profile_ctrl.output.myAccountGiver);
 router.get("/profile", profile_ctrl.output.profile);
 
-router.post("/getArtList", giver_ctrl.process.getArtList);
-
-router.get("/images/:type/:path", giver_ctrl.process.getImage);
-
-// APIs
+/**
+ * @title APIs
+ * @description 데이터베이스 및 서버 스토리지에 데이터를 저장하거나 요청합니다.
+ *
+ * @example1 /getArtList :
+ * @example2 /registerArt : *
+ * @example3 /images/:alias :
+ */
+// router.post("/registerArt", artist_ctrl.process.registerArt);
 router.post("/getArtList", giver_ctrl.process.getArtList);
 router.post("/getArt", giver_ctrl.process.getArt);
 
-// APIs
+router.post("/registUser", home_ctrl.process.registerUser);
+// router.post("/getUserList", giver_ctrl.process.getUserList);
+// router.post("/getUser", giver_ctrl.process.getUser);
+
 router.get("/images/:type/:path", giver_ctrl.process.getImage);
 
-// router.get("/register", home_ctrl.output.register);
 // router.post("/login", home_ctrl.process.login);
-// router.post(
-//     "/register",
-//     [uploadProfile.single("profile_image")],
-//     home_ctrl.process.register
-// );
-
-// ART
-// router.get("/showArt", art_ctrl.output.showArt);
-// router.get("/registerArt", art_ctrl.output.registerArt);
-
-// router.post("/showArt", art_ctrl.process.registerArt);
-// router.post(
-//     "/registerArt",
-//     [auth_ctrl.verifyToken, uploadArt.single("art_image")],
-//     art_ctrl.process.registerArt
-// );
 
 module.exports = router;

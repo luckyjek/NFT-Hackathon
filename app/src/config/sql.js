@@ -17,4 +17,8 @@ module.exports = {
     registerArt: {
         query: "INSERT INTO t_art set ?",
     },
+    registerAccount2: {
+        query: `INSERT INTO t_account(account_id, wallet_address, profile_image_path, email, password) 
+        VALUES(?, ?, ?, ?, ?)`,
+    },
 };
