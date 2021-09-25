@@ -77,9 +77,9 @@ function loadArtList(artList) {
 }
 
 // donate Platform 버튼 누르면 paymentPlatform.html로 이동
-// function donatePlatform() {
-//     location.href = "paymentPlatform";
-// }
+function donatePlatform() {
+  location.href = "paymentPlatform";
+}
 
 // NFT Card 버튼 누르면 artInfo.html로 이동
 function NFTs() {
