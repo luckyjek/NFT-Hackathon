@@ -83,15 +83,21 @@
 }
 
 /* 이더 아이콘 */
-.artInfo__price i {
+/* .artInfo__price i {
   margin-right: 7px;
   color: #fd6588;
+   */
+.artInfo__price {
+    margin-right: 7px;
+}
+i {
+    color: #fd6588;
 }
 
 /* 작품 설명 타이틀 */
 .artInfo__description h5 {
-  font-weight: 600;
-  margin-top: 70px;
+    font-weight: 600;
+    margin-top: 40px;
 }
 
 /* 작품 설명 텍스트 */
@@ -101,8 +107,8 @@
 
 /* NFT 버튼 div*/
 .artInfo__btn {
-  text-align: center;
-  margin: 50px;
+    text-align: center;
+    margin: 10px;
 }
 
 /* NFT 버튼 */
@@ -156,20 +162,20 @@
 
 /* 아티스트가 발행한 NFT title 텍스트 위의 border line */
 .artist__nftList {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-  width: 90%;
-  margin: auto;
-  margin-top: 35px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 90%;
+    margin: auto;
+    margin-top: 35px;
 }
 
 /* 아티스트가 발행한 NFT title 텍스트 */
 .artist__nftListTitle {
-  display: flex;
-  margin-top: 35px;
-  padding-left: 25px;
-  font-weight: bold;
-  font-size: large;
+    display: flex;
+    margin-top: 35px;
+    padding-left: 25px;
+    font-weight: bold;
+    font-size: large;
 }
 
 /* 아티스트가 소유한 NFT cards의 전체 border */
@@ -181,11 +187,11 @@
 
 /* NFT가 들어갈 4개의 틀 (세로줄) */
 .ownedNftList {
-  width: 95%;
-  height: 23%;
-  margin: auto;
-  margin-top: 5px;
-  text-align: center;
+    width: 95%;
+    height: 23%;
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
 }
 
 /* NFT 이미지 각각의 틀 */

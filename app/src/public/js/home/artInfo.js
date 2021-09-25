@@ -5,7 +5,6 @@ axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
 let account;
 let art_id;
-
 // web3 version : 1.3.6
 const web3 = new Web3(Web3.givenProvider || "http://localhost:5000");
 console.log("insert web3", web3.version);
@@ -13,7 +12,9 @@ console.log("insert web3", web3.version);
 function getArtId() {
     var url_string = window.location.href.toLocaleLowerCase();
     var url = new URL(url_string);
+    console.log(url);
     art_id = url.searchParams.get("art_id");
+    console.log("get!", art_id);
 }
 
 function getArt() {
