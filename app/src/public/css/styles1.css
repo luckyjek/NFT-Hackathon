@@ -14,11 +14,11 @@
 
 /* screens */
 @import "screens/main.css";
-@import "screens/donateNFT.css";
+@import "screens/donateNft.css";
 @import "screens/artInfo.css";
 @import "screens/myAccountGiver.css";
 @import "screens/myAccountArtist.css";
-@import "screens/owndedNFT.css";
+@import "screens/owndedNft.css";
 @import "screens/signUp.css";
 @import "screens/paymentPlatform.css";
 
