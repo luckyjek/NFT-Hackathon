@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-    <!--레드카펫 그리고, 버튼 누르면 홈으로 나가기 -->
-
+<html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,12 +11,9 @@
             href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
             rel="stylesheet"
         />
-        <!--axios script-->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <title>Gallery</title>
     </head>
-
-    <body>
+    <body onload="getArtList();">
         <!--회색 막대기-->
         <div class="progress-bar-con">
             <!--하늘색 막대기-->
@@ -28,6 +23,7 @@
         <div class="gallery">
             <!--stage-->
             <div class="stage">
+                <!--레드카펫 그리고, 버튼 누르면 홈으로 나가기 -->
                 <div>
                     <button class="goHomeBtn" onclick="location.href='/'">
                         GoHome
@@ -38,30 +34,18 @@
                     <!--왼쪽벽-->
                     <section class="wall wall-left">
                         <div class="wall-grid-items">
-                            <!-- <div class="grid-item-con"> -->
-                            <!-- <div class="grid-item"> -->
-                            <!-- <img src="" alt="" /> -->
-                            <!-- </div> -->
-                            <!-- <button
-                                    class="item-button-left"
-                                    onclick="viewF()"
-                                ></button> -->
-                            <!-- </div> -->
+                            <!-- 자바스크립트 그리기 영역 -->
+                            <!-- 자바스크립트 그리기 영역 -->
+                            <!-- 자바스크립트 그리기 영역 -->
                         </div>
                     </section>
                     <!--왼쪽벽 끝-->
                     <!--오른쪽 벽 -->
                     <section class="wall wall-right">
                         <div class="wall-grid-items2">
-                            <!-- <div class="grid-item-con">
-                                <div class="grid-item">
-                                    <img src="./img/sky_test.jpg" alt="" />
-                                </div>
-                                <button
-                                    class="item-button-right"
-                                    onclick="viewF()"
-                                ></button>
-                            </div> -->
+                            <!-- 자바스크립트 그리기 영역 -->
+                            <!-- 자바스크립트 그리기 영역 -->
+                            <!-- 자바스크립트 그리기 영역 -->
                         </div>
                     </section>
                     <!--오른쪽 벽  끝-->
@@ -99,16 +83,13 @@
                 </div>
             </div>
         </div>
+
         <!--modal start-->
         <div class="open-link pointer-lock-close overlay">
             <div id="foo">
                 <button class="close" onclick="removeF()">×</button>
                 <h3>Open External Link</h3>
-                <p>
-                    »&nbsp;<span class="url"
-                        >http://127.0.0.1:5500/client/paymentGiver.html
-                    </span>
-                </p>
+                <p>»&nbsp;<span class="url">http://127.0.0.1:5000 </span></p>
                 <p>
                     <a class="button" target="_blank" href="paymentGiver"
                         >Open</a
@@ -117,6 +98,9 @@
             </div>
         </div>
         <!--modal end-->
+
+        <!-- import libraries  -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="js/home/wall3d.js"></script>
         <script src="js/home/video.js"></script>
     </body>
