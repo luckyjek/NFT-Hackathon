@@ -43,13 +43,14 @@
 /* 서비스명 */
 .footer__brandLogo span {
   font-size: 60px;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 /* 회사 정보 */
 .footer__info li {
   margin: 4px 7px;
   font-weight: 15px;
+  opacity: 0.8;
 }
 
 /* 하단 footer 텍스트 */
