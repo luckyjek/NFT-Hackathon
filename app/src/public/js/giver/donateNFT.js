@@ -6,16 +6,7 @@ axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
 let artList = [];
-var nfts = document.getElementsByClassName("nft");
-
-Array.from(nfts).forEach((nft) => {
-    console.log(nft);
-    nft.addEventListener("click", function (event) {
-        console.log("click");
-        // console.log(event);
-        location.href = "artInfo";
-    });
-});
+var nfts;
 
 // DB에서 아트리스트 불러오기
 function getArtList() {
@@ -53,7 +44,7 @@ function loadArtList(artList) {
         let artist_img = artList[i].artist_img;
 
         artSelectList += `
-             <article id="article1" onclick="NFTs()">
+             <article id="${art_id}" onclick="linkClickEvent(this.id);">
              <img class="nftImgs" src="/images/${art_image_path}"} />
              <div class="text">
                <h3 class="nftText nftText__title" id="nftName">${art_name}</h3>
@@ -74,7 +65,26 @@ function loadArtList(artList) {
             </article>`;
     }
     document.querySelector(".grid").innerHTML = artSelectList;
+    // addClickListener();
 }
+
+function linkClickEvent(element) {
+    // console.log(element);
+    location.href = `artInfo?art_id=${element}`;
+}
+
+// function addClickListener() {
+//     nfts = document.getElementsByTagName("article");
+//     console.log(nfts);
+
+//     Array.from(nfts).forEach((nft) => {
+//         console.log(nft);
+
+//         nft.addEventListener("click", function (event) {
+//             console.log(event.closest("article").attr("id"));
+//         });
+//     });
+// }
 
 // donate Platform 버튼 누르면 paymentPlatform.html로 이동
 function donatePlatform() {
@@ -82,6 +92,6 @@ function donatePlatform() {
 }
 
 // NFT Card 버튼 누르면 artInfo.html로 이동
-function NFTs() {
-    location.href = "artInfo";
-}
+// function NFTs() {
+// location.href = "artInfo";
+// }
