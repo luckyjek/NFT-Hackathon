@@ -1,15 +1,16 @@
 .__create__container {
     margin: auto;
-    margin-top: 60px;
+    height: 1100px;
     box-sizing: border-box;
-    border: 3px solid rgb(248, 32, 32);
-    width: 800px;
-    height: 900px;
+    background: #f5f5f5;
+    box-shadow: 5px 5px 7px 5px;
+    margin-bottom: 300px;
 }
 
 .second-container {
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -20,14 +21,12 @@
 
 /*make new nft*/
 .main-container {
-    /* position: absolute; */
-    /* border: 3px solid red; */
-    width: 600px;
-    height: 500px;
+    width: 500px;
+    height: 350px;
     padding: 20px;
 }
+
 .text {
-    /* margin: 20px; */
     margin-bottom: 20px;
 }
 
@@ -43,15 +42,14 @@
 
 /*show image-box*/
 .view-content {
-    /* position: absolute; */
     border: 4px solid blue;
     width: 300px;
     height: 300px;
 }
 
 .main-info {
-    padding: 40px;
-    /* border: 1px solid darkgreen; */
+    padding: 20px;
+    padding-top: 120px;
 }
 
 .test-text {
@@ -69,17 +67,37 @@
 
 .box-color-1 {
     color: gray;
-    padding: 30px;
+    /* padding: 30px; */
     text-align: left;
-    /* text-align: center; */
     width: 800px;
     height: 100px;
+    line-height: 25px;
 }
 .box-color-2 {
     color: gray;
-    padding: 10px;
+    /* padding: 10px; */
     text-align: left;
-    /* text-align: center; */
     width: 800px;
     height: 100px;
+    line-height: 25px;
+}
+
+/* NFT 버튼 div*/
+.artInfo__btn {
+    text-align: center;
+    margin: 10px;
+}
+
+/* NFT 버튼 */
+.nftText__btn {
+    padding: 10px 15px;
+    margin-top: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    border-color: wheat;
+    text-shadow: 0px -2px rgba(0, 0, 0, 0.44);
+    background-color: var(--pink);
+    border-bottom: 7px solid #ff709c;
 }

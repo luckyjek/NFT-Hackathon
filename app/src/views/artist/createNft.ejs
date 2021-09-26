@@ -11,7 +11,7 @@
             crossorigin="anonymous"
         />
         <link rel="shortcut icon" type="image/x-icon" href="img/DONATE.ico" />
-        <link rel="stylesheet" href="css/styles1.css" />
+        <link rel="stylesheet" href="css/styles3.css" />
         <!-- file_pond_other html -->
         <link
             href="https://unpkg.com/filepond@^4/dist/filepond.css"
@@ -24,7 +24,7 @@
         />
         <title>Java Script</title>
     </head>
-    <body class="home">
+    <body class="home" onload="getArtList();">
         <!-- 상단 nav bar -->
         <header class="nav">
             <!-- 서비스명 및 로고  -->
@@ -46,7 +46,7 @@
                 </li>
                 <!-- nav bar "Gallery" 메뉴 버튼 -->
                 <li class="nav__item">
-                    <a class="nav__link" href="/gallery">Gallery</a>
+                    <a class="nav__link glow" href="/gallery">Gallery</a>
                 </li>
                 <!-- nav bar "Create NFT" 메뉴 버튼 -->
                 <li class="nav__item">
@@ -59,27 +59,30 @@
                 </li>
             </ul>
         </header>
+        <div>
+            <button onClick="history.go(-1)" class="backButton">
+                <i class="fas fa-paint-brush fa-lg"><span>Go Back</span></i>
+            </button>
+        </div>
         <main class="__create__container">
             <!-- Go Back 버튼 -->
-            <div>
-                <button onClick="history.go(-1)" class="backButton">
-                    <i class="fas fa-paint-brush fa-lg"><span>Go Back</span></i>
-                </button>
-            </div>
-            <div>
+            <!-- Go Back 버튼 end -->
+            <div class="con second-container">
                 <!--new-nft start-->
-                <div class="con second-container">
+                <div
+                    calss="text"
+                    style="font-size: 30px; text-align: left; margin-top: 30px"
+                >
+                    새로운 NFT 발행하기
+                </div>
+                <div>
+                    <!--main-container-->
                     <div class="con main-container">
-                        <div calss="text" style="margin-bottom: 20px">
-                            새로운 NFT 발행하기
-                        </div>
-                        <!--파일업로드-->
-                        <div class="text file-upload">
+                        <div class="text file-upload" style="margin: 5px">
                             파일 업로드<br />
                             NFT에 넣을 이미지/영상 파일을 업로드해주세요.
                         </div>
                         <input type="file" />
-                        <!--배경색-->
                         <div class="test">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-1"
@@ -105,7 +108,29 @@
                                     aria-describedby="inputGroup-sizing-default"
                                 />
                             </div>
-
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">시리얼 넘버</span
+                                ><br />
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="eth-v"
+                                    aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default"
+                                />
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-1"
+                                    >명언</span
+                                ><br />
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputGroup"
+                                    aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default"
+                                />
+                            </div>
                             <div class="input-group">
                                 <span class="input-group-text">작품설명</span>
                                 <textarea
@@ -118,6 +143,7 @@
                     </div>
                 </div>
 
+                <!--third-container-->
                 <div class="third-container">
                     <div class="text main-info">
                         <!--첫번째 NFT발행 수집및 이용 정보-->
@@ -177,9 +203,11 @@
                         </div>
                     </div>
                 </div>
+
                 <p style="text-align: center">
-                    <input type="reset" value="취소" />
+                    <input class="nftText__btn" type="reset" value="취소" />
                     <input
+                        class="nftText__btn"
                         type="button"
                         value="NFT발행하기"
                         onclick="submit();agreeBtn();"
@@ -188,57 +216,14 @@
             </div>
         </main>
 
-        <!-- footer -->
-        <footer class="footer">
-            <div class="footer__div">
-                <div class="footer__menu">
-                    <!-- 플랫폼 로고 이미지 -->
-                    <ul class="footer__brandLogo">
-                        <li class="footer__li">
-                            <span>AmaDo</span>
-                        </li>
-                    </ul>
-                    <!-- 플랫폼 대표 전화, 주소, 이메일 입력 -->
-                    <ul class="footer__info">
-                        <li class="footer__li">
-                            상담센터 <span>070-123-4567</span>
-                        </li>
-                        <li class="footer__li">
-                            대표전화 <span>02-123-4567</span>
-                        </li>
-                        <li class="footer__li">
-                            주소
-                            <span
-                                >서울특별시 영등포구 양산로 53 월드메르디앙
-                                비즈센터</span
-                            >
-                        </li>
-                        <li class="footer__li">
-                            Email <span>ssjd6111@amado.com</span>
-                        </li>
-                    </ul>
-                    <!-- sns 로고-->
-                    <ul class="footer__sns">
-                        <li class="footer__li">
-                            <span><i class="fab fa-twitter fa-2x"></i> </span
-                            ><span><i class="fab fa-instagram fa-2x"></i></span>
-                            <span
-                                ><i class="fab fa-facebook-square fa-2x"></i
-                            ></span>
-                            <span><i class="fab fa-youtube fa-2x"></i></span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- 플랫폼 copyrights 텍스트 -->
+        <!-- footer 제거-->
 
-                <div class="footer__copy">
-                    <div class="footer__copyrights">
-                        @ AmaDo. All Rights Reserved.
-                    </div>
-                </div>
-            </div>
-        </footer>
         <!-- file_ponds_Add plugin scripts-->
+        <script
+            type="text/javascript"
+            src="https://kit.fontawesome.com/6478f529f2.js"
+            crossorigin="anonymous"
+        ></script>
         <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
         <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
         <script src="https://unpkg.com/filepond-plugin-image-transform/dist/filepond-plugin-image-transform.js"></script>

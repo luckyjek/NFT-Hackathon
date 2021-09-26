@@ -1,0 +1,25 @@
+/* 폰트 스타일 (구글 폰트) */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
+
+@import "reset.css";
+@import "variables.css";
+
+/* components - 은경 */
+@import "components/backButton.css";
+@import "components/nav.css";
+@import "components/footer.css";
+@import "screens/createNft.css";
+body {
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    /* height: 10000px; */
+    font-family: "Baloo Paaji 2", "Noto Sans KR", sans-serif;
+}
+
+i {
+    color: palevioletred;
+}
