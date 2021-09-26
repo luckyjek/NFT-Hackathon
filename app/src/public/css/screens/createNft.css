@@ -1,10 +1,10 @@
-.container {
+.__create__container {
     margin: auto;
     margin-top: 60px;
     box-sizing: border-box;
-    border: 1px solid black;
-    width: 1000px;
-    height: 1100px;
+    border: 3px solid rgb(248, 32, 32);
+    width: 800px;
+    height: 900px;
 }
 
 .second-container {

@@ -7,16 +7,9 @@
         <link rel="shortcut icon" type="image/x-icon" href="img/DONATE.ico" />
         <link rel="stylesheet" href="css/styles1.css" />
         <title>NFT Details</title>
-        <style>
-            .test1 {
-                border: solid 5px blue;
-            }
-            .test2 {
-                border: solid 10px red;
-            }
-        </style>
     </head>
     <body class="home" onload="getArt();">
+        <!-- <body class="home"> -->
         <!-- modal -->
         <!-- <div class="artInfoModal">
       <button onclick="goToOwnedNft()" ; class="artInfoModal__btn">
@@ -44,7 +37,7 @@
                 </li>
                 <!-- nav bar "Gallery" 메뉴 버튼 -->
                 <li class="nav__item">
-                    <a class="nav__link" href="/gallery">Gallery</a>
+                    <a class="nav__link glow" href="/gallery">Gallery</a>
                 </li>
                 <!-- nav bar "Create NFT" 메뉴 버튼 -->
                 <li class="nav__item">
@@ -66,18 +59,24 @@
                 </button>
             </div>
             <!-- NFT, 아티스트 정보 들어간 총 border -->
-            <div class="artInfo-con">
-                <div class="row test1">
-                    <!-- NFT 상세 부분 -->
-                    <!--오른쪽 부분_아티스트-->
-                    <div class="left test2">
-                        <!-- 메인 아트 이미지 -->
-                    </div>
-                    <!-- NFT 상세 부분 -->
-                    <!--오른쪽 부분_아티스트-->
-                    <div class="right test2">
-                        <!-- 관련 user발행된 NFT 전부보여주기 -->
-                    </div>
+            <div class="row">
+                <!-- NFT 상세 부분 -->
+            </div>
+
+            <!--modal start-->
+            <div id="addressChk" class="open-link pointer-lock-close overlay2">
+                <div class="artInfo__p">
+                    <span class="chkBox"
+                        >현재 이 주소로 <br />NFT를 소유하는 것이
+                        맞습니까?</span
+                    ><br />
+                    <span class="chkBox"
+                        >확인 버튼을 누른 이후에는 주소 변경이 불가합니다.</span
+                    >
+                </div>
+                <div class="artInfo__p2">
+                    <button class="chkBtn" onclick="cancel()">취소</button>
+                    <button class="chkBtn" onclick="ok()">확인</button>
                 </div>
             </div>
             <!--modal end-->
