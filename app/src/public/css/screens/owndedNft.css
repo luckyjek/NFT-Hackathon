@@ -6,13 +6,17 @@
 }
 
 .container-owndNft {
-    height: 250px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
 }
-
+.mynft {
+    /* border: 2px solid red; */
+    background-color: rgb(255, 255, 255);
+    height: 280px;
+}
 .row-owndNft {
     /* border: 0.5rem outset rgb(29, 243, 75); */
     height: 100px;
@@ -63,10 +67,6 @@
     color: black;
     cursor: pointer;
     border-bottom: 1px solid rebeccapurple;
-}
-
-.getNft__card {
-    /* border: 2px solid red; */
 }
 
 /* 이름 및 지갑 주소가 담긴 border */
