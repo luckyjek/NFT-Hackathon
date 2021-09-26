@@ -67,6 +67,7 @@ router.get("/profile", profile_ctrl.output.profile);
 // router.post("/registerArt", artist_ctrl.process.registerArt);
 router.post("/getArtList", giver_ctrl.process.getArtList);
 router.post("/getArt", giver_ctrl.process.getArt);
+router.post("/getAccount", home_ctrl.process.getAccount);
 
 router.post("/registUser", home_ctrl.process.registerUser);
 // router.post("/getUserList", giver_ctrl.process.getUserList);
