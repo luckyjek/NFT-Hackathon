@@ -4,6 +4,12 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
         <link rel="shortcut icon" type="image/x-icon" href="img/DONATE.ico" />
         <link rel="stylesheet" href="css/styles1.css" />
         <title>Owned NFT</title>
@@ -43,82 +49,135 @@
                 </li>
             </ul>
         </header>
-
+        <!-- Go Back 버튼 -->
+        <div class="mynft-banner">
+            <button onClick="history.go(-1)" class="backButton">
+                <i class="fas fa-paint-brush fa-lg"><span>Go Back</span></i>
+            </button>
+        </div>
         <main>
-            <!-- Go Back 버튼 -->
-            <div>
-                <button onClick="history.go(-1)" class="backButton">
-                    <i class="fas fa-paint-brush fa-lg"><span>Go Back</span></i>
-                </button>
-            </div>
-
-            <div class="mynft-banner">
-                <div class="container">
-                    <div class="row">
-                        <div class="text-center col">
-                            <center>
-                                <div class="profile-thumb l"></div>
-                            </center>
-                        </div>
+            <div class="mynft-main">
+                <div class="container-owndNft">
+                    <div class="artistProfile__imgs">
+                        <img
+                            class="artistProfile__img"
+                            src="undefined"
+                            alt=""
+                        />
                     </div>
                 </div>
-                <div>
-                    <div class="row"></div>
+            </div>
+            <div>
+                <!-- <div class="row-owndNft"> -->
+                <div class="row-owndNft1">0x648e292x983...</div>
+                <div class="row-owndNft2">Jone Doa</div>
+                <!-- button 이후 추가로 하려면 하기-->
+                <!-- </div> -->
+            </div>
+
+            <div class="container-owndNft2">
+                <div class="getNft"><p class="getNft__text">소유한NFT</p></div>
+                <div class="getNft__card">
+                    <!-- <div class="grid" style="justify-content: space-between"> -->
+                    <div class="grid" style="justify-content: space-evenly">
+                        <article id="1" onclick="linkClickEvent(this.id);">
+                            <img
+                                class="nftImgs"
+                                src="/images/art\NFT2.jpg"
+                                }=""
+                            />
+                            <div class="text">
+                                <h3 class="nftText nftText__title" id="nftName">
+                                    Green
+                                </h3>
+                                <h3>#1214535</h3>
+                                <div class="donate__price">price</div>
+                                <div class="donate__eth">
+                                    <h3 id="nftPrice">
+                                        <i
+                                            class="fab fa-ethereum fa-sm"
+                                            aria-hidden="true"
+                                        ></i>
+                                        5
+                                    </h3>
+                                </div>
+                                <p
+                                    class="nftText__description"
+                                    id="nftDescribe"
+                                >
+                                    "green..."
+                                </p>
+                            </div>
+                            <div class="container__profile">
+                                <img class="artist__img" src="undefined" />
+                                <div class="container__profile__text">
+                                    <p
+                                        class="nftText nftText__id"
+                                        id="nftCreatedBy"
+                                    >
+                                        Created By undefined
+                                    </p>
+                                    <h2
+                                        class="nftText nftText__date"
+                                        id="nftDate"
+                                    >
+                                        2021-09-21T09:38:36.000Z
+                                    </h2>
+                                </div>
+                            </div>
+                        </article>
+                        <article id="2" onclick="linkClickEvent(this.id);">
+                            <img
+                                class="nftImgs"
+                                src="/images/art\NFT1.jpg"
+                                }=""
+                            />
+                            <div class="text">
+                                <h3 class="nftText nftText__title" id="nftName">
+                                    Remon
+                                </h3>
+                                <h3>#1214536</h3>
+                                <div class="donate__price">price</div>
+                                <div class="donate__eth">
+                                    <h3 id="nftPrice">
+                                        <i
+                                            class="fab fa-ethereum fa-sm"
+                                            aria-hidden="true"
+                                        ></i>
+                                        10
+                                    </h3>
+                                </div>
+                                <p
+                                    class="nftText__description"
+                                    id="nftDescribe"
+                                >
+                                    "I Love Remon"
+                                </p>
+                            </div>
+                            <div class="container__profile">
+                                <img class="artist__img" src="undefined" />
+                                <div class="container__profile__text">
+                                    <p
+                                        class="nftText nftText__id"
+                                        id="nftCreatedBy"
+                                    >
+                                        Created By undefined
+                                    </p>
+                                    <h2
+                                        class="nftText nftText__date"
+                                        id="nftDate"
+                                    >
+                                        2021-09-22T09:38:36.000Z
+                                    </h2>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
-            <div class="container"></div>
         </main>
 
-        <!-- footer -->
-        <footer class="footer">
-            <div class="footer__div">
-                <div class="footer__menu">
-                    <!-- 플랫폼 로고 이미지 -->
-                    <ul class="footer__brandLogo">
-                        <li class="footer__li">
-                            <span>AmaDo</span>
-                        </li>
-                    </ul>
-                    <!-- 플랫폼 대표 전화, 주소, 이메일 입력 -->
-                    <ul class="footer__info">
-                        <li class="footer__li">
-                            상담센터 <span>070-123-4567</span>
-                        </li>
-                        <li class="footer__li">
-                            대표전화 <span>02-123-4567</span>
-                        </li>
-                        <li class="footer__li">
-                            주소
-                            <span
-                                >서울특별시 영등포구 양산로 53 월드메르디앙
-                                비즈센터</span
-                            >
-                        </li>
-                        <li class="footer__li">
-                            Email <span>ssjd6111@amado.com</span>
-                        </li>
-                    </ul>
-                    <!-- sns 로고 -->
-                    <ul class="footer__sns">
-                        <li class="footer__li">
-                            <span><i class="fab fa-twitter fa-2x"></i> </span
-                            ><span><i class="fab fa-instagram fa-2x"></i></span>
-                            <span
-                                ><i class="fab fa-facebook-square fa-2x"></i
-                            ></span>
-                            <span><i class="fab fa-youtube fa-2x"></i></span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- 플랫폼 copyrights 텍스트 -->
-
-                <div class="footer__copy">
-                    <div class="footer__copyrights">
-                        @ AmaDo. All Rights Reserved.
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <!--remove _ footer-->
         <script
             src="https://kit.fontawesome.com/6478f529f2.js"
             crossorigin="anonymous"

@@ -135,10 +135,9 @@ i {
 /* artist 프로필 img border */
 .artistProfile__imgs {
     font-weight: bold;
-    width: 350px;
+    width: auto;
     height: 150px;
-    margin: 0;
-    margin-left: 50px;
+    margin: 40px;
 }
 
 /* artist 프로필 img */
