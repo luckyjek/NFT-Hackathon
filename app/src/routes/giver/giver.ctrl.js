@@ -1,7 +1,7 @@
 "use strict";
-// const multer = require("multer");
-const sys = require("../../config/db");
+const { sys } = require("../../config/db");
 const fs = require("fs");
+
 const output = {
     donateNft: (req, res) => {
         res.render("giver/donateNft");

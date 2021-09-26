@@ -1,11 +1,9 @@
 /* art(NFT) info 및 아티스트가 소유한 다양한 NFT page css*/
 .row {
     display: flex;
-
     width: auto;
     height: 1000px;
 }
-
 /* left & right layout */
 .left {
     height: auto;
@@ -15,7 +13,7 @@
 .right {
     height: auto;
     width: 50%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 /* card img background */

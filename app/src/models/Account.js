@@ -1,8 +1,8 @@
 "use strict";
-
 const auth = require("../config/auth");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
+const AccountSQL = require("./AccountSQL");
 
 class Account {
     constructor(body) {
@@ -22,9 +22,9 @@ class Account {
     }
 
     async getProfileAll() {
-        // const client = this.body;
+        const clients = this.body;
         try {
-            const user = await AccountSQL.getAccountInfo2();
+            const user = await AccountSQL.getAccountInfo2(clients);
             if (user) {
                 return { success: true, user };
             }
@@ -69,6 +69,7 @@ class Account {
 
     async register() {
         const client = this.body;
+        console.log(client);
         try {
             const response = await AccountSQL.register(client);
             return response;
@@ -76,21 +77,6 @@ class Account {
             return { success: false, err };
         }
     }
-    // / db.query(
-    //   query,
-    //   [
-    //       account.account_id,
-    //       account.wallet_address,
-    //       account.profile_image_path,
-    //       account.email,
-    //       bcrypt.hashSync(account.password, 8),
-    //   ],
-
-    //   (err) => {
-    //       if (err) reject(`${err}`);
-    //       else resolve({ success: true });
-    //   }
-    // );
 }
 
 module.exports = Account;

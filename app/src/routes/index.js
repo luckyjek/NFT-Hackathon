@@ -1,19 +1,26 @@
 "use stirct";
-
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
+const axios = require("axios");
+// const fs = require("fs")
+const artist_ctrl = require("./artist/artist.ctrl");
+const giver_ctrl = require("./giver/giver.ctrl");
+const home_ctrl = require("./home/home.ctrl");
+const payment_ctrl = require("./payment/payment.ctrl");
+const profile_ctrl = require("./profile/profile.ctrl");
 
-const uploadProfile = multer({
+const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "uploads/profile"); //important this is a direct path fron our current file to storage location
+        console.log(file.fieldname);
+        cb(null, `uploads/${file.fieldname}`);
     },
     filename: (req, file, cb) => {
         cb(null, file.originalname);
     },
-    // dest: "uploads/profile",
-    //limits: { fileSize: 5 * 256 * 256 }
 });
+
+var upload = multer({ storage: storage });
 
 // const uploadArt = multer({
 //     destination: (req, file, cb) => {
@@ -26,11 +33,29 @@ const uploadProfile = multer({
 //     //limits: { fileSize: 5 * 1024 * 1024 }
 // });
 
-const artist_ctrl = require("./artist/artist.ctrl");
-const giver_ctrl = require("./giver/giver.ctrl");
-const home_ctrl = require("./home/home.ctrl");
-const payment_ctrl = require("./payment/payment.ctrl");
-const profile_ctrl = require("./profile/profile.ctrl");
+const testAuthentication = () => {
+    const pinataEndPoint = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
+
+    let data = new FormData();
+
+    return axios({
+        method: "post",
+        data,
+        url: pinataEndPoint,
+        headers: {
+            "Content-Type": `multipart/form-data; boundary=(See JavaScript example below)`,
+            pinata_api_key: process.env.PINATA_API_KEY,
+            pinata_secret_api_key: process.env.PINATA_SECRET_API_KEY,
+        },
+    })
+        .then(function (res) {
+            // console.log(res.data);
+            return res.data.message;
+        })
+        .catch(function (err) {
+            return err;
+        });
+};
 
 /**
  * @title 페이지 라우터
@@ -43,7 +68,7 @@ const profile_ctrl = require("./profile/profile.ctrl");
  * => 컨트롤러는 해당 페이지를 클라이언트에게 output(송출) 합니다.
  */
 // Page Renders - artist folder
-router.get("/craeteNft", artist_ctrl.output.craeteNft);
+router.get("/createNft", artist_ctrl.output.createNft);
 router.get("/deployedNft", artist_ctrl.output.deployedNft);
 
 // Page Renders - giver folder
@@ -75,26 +100,25 @@ router.get("/profile", profile_ctrl.output.profile);
  * @example2 /registerArt : *
  * @example3 /images/:alias :
  */
-// router.post("/registerArt", artist_ctrl.process.registerArt);
+router.get("/images/:type/:path", giver_ctrl.process.getImage);
 router.post("/getArtList", giver_ctrl.process.getArtList);
 router.post("/getArt", giver_ctrl.process.getArt);
 router.post("/getSpecifiedArtList", giver_ctrl.process.getSpecifiedArtList);
-// router.post("/getAccount", home_ctrl.process.getAccount);
 
-router.post(
-    "/registerUser",
-    [uploadProfile.single("profile_image")],
-    (req, res) => {
-        // console.log(req.body);
-        console.log(req.file, req.files);
-    }
-    // home_ctrl.process.registerUser
-);
-// router.post("/getUserList", giver_ctrl.process.getUserList);
-// router.post("/getUser", giver_ctrl.process.getUser);
+router.post("/login", home_ctrl.process.login);
 
-router.get("/images/:type/:path", giver_ctrl.process.getImage);
+router.post("/signUp", upload.single("profile"), home_ctrl.process.signUp);
 
-// router.post("/login", home_ctrl.process.login);
+// router.post(
+//     "/registerArt",
+//     [auth_ctrl.verifyToken, uploadArt.single("art_image")],
+//     art_ctrl.process.registerArt
+// );
+
+router.post("/registerArt", async (req, res) => {
+    var res = await testAuthentication();
+    console.log(res);
+    // home_ctrl.process.signUp
+});
 
 module.exports = router;

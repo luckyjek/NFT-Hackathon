@@ -22,7 +22,7 @@ function getArtList() {
         .then(function (res) {
             // console.log("res");
             artList = res.data;
-            // console.table(artList);
+            console.table(artList);
 
             // 불러온 아트리스트 그리기
             loadArtList(artList);
@@ -41,7 +41,7 @@ function loadArtList(artList) {
         let art_price = artList[i].art_price;
         let art_image_path = artList[i].art_image_path;
         let art_description = artList[i].art_description;
-        let artist_img = artList[i].artist_img;
+        let artist_img = artList[i].profile_image_path;
 
         artSelectList += `
              <article id="${art_id}" onclick="linkClickEvent(this.id);">
@@ -55,7 +55,7 @@ function loadArtList(artList) {
              </div>
                <div class="container__profile">
                  <img class="artist__img"
-                  src="${artist_img}"
+                  src="/images/${artist_img}"
                  />
                  <div class="container__profile__text">
                   <p class="nftText nftText__id" id="nftCreatedBy">Created By ${account_id}</p>

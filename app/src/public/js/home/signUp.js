@@ -12,39 +12,6 @@ signInButton.addEventListener("click", () => {
     container.classList.remove("right-panel-active");
 });
 
-// // 프로필 이미지 미리보기
-// function profileClick() {
-//     document
-//         .querySelector("#inputMyFile")
-//         .addEventListener("change", function () {
-//             // console.log(this.files);
-//             const reader = new FileReader();
-//             reader.addEventListener("load", () => {
-//                 // console.log(reader.result);
-//                 localStorage.setItem("recent-image", reader.result);
-//             });
-//             reader.readAsDataURL(this.files[0]);
-//         });
-
-//     document.addEventListener("DOMContentLoaded", () => {
-//         const recentImageDataUrl = localStorage.getItem("recent-image");
-//         if (recentImageDataUrl) {
-//             document
-//                 .querySelector("#previewImg")
-//                 .setAttribute("src", recentImageDataUrl);
-//         }
-//     });
-// }
-
-// profileClick();
-// let userId = document.getElementById("signUp-id").value;
-// let userName = document.getElementById("signUp-name").value;
-// let userAddress = document.getElementById("signUp-address").value;
-// let userPs = document.getElementById("signUp-ps").value;
-// let userConfirmPs = document.getElementById("signUp-confirmPs").value;
-// let userImg = document.getElementById("signUp-img").value;
-// let userType = document.querySelector('input[name="categorize"]:checked');
-
 const userId = document.querySelector("#signUp-id"),
     userName = document.querySelector("#signUp-name"),
     userPs = document.querySelector("#signUp-ps"),
@@ -64,32 +31,18 @@ function register() {
     if (userPs.value !== userConfirmPs.value)
         return alert("Incorrect password.");
 
-    const req = {
-        user_id: userId.value,
-        user_name: userName.value,
-        user_password: userPs.value,
-        user_address: userAddress.value,
-        user_type: userType,
-    };
+    const req = new FormData();
 
-    fetch("/files", {
-        method: "POST",
-        body: new FormData(profile_image.file),
-    })
-        .then((res) => res.json())
-        .then((res) => {
-            console.log("Success:", res);
-        })
-        .catch((err) => {
-            console.error("File upload error");
-        });
+    req.append("user_id", userId.value);
+    req.append("user_name", userName.value);
+    req.append("user_password", userPs.value);
+    req.append("user_address", userAddress.value);
+    req.append("user_type", userType);
+    req.append("profile", profile_image.files[0]);
 
-    fetch("/registerUser", {
+    fetch("/signUp", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(req),
+        body: req,
     })
         .then((res) => res.json())
         .then((res) => {
