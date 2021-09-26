@@ -30,10 +30,11 @@ function getArt() {
     .catch((e) => {
       console.log(e);
     })
+    .catch((e) => {
+      console.log(e);
+    })
     .then(function (res) {
       let art = res.data[0];
-
-      let artId = art.art_id;
       let imagePath = art.art_image_path;
       let accountId = art.account_id;
       let artName = art.art_name;
@@ -42,6 +43,7 @@ function getArt() {
       let artDescription = art.art_description;
       let artistImg = art.artist_img;
       let serialNumber = art.serial_number;
+      let artistQuotes = art.artist_quotes;
       // getImage(imagePath);
       console.log(art);
 
@@ -94,6 +96,12 @@ function getArt() {
                 <div class="artistProfile__imgs">
                   <img class="artistProfile__img" src="${artistImg}" alt="" />
                 </div>
+                <div class="artistProfile__info">
+              <h4 class="artistProfile__name">${accountId}</h4>
+              <p>
+                ${artistQuotes}
+              </p>
+            </div>
               </div>
     
               <!--오른쪽 부분 아티스트가 발행한 NFT 리스트.. ? -->
@@ -105,7 +113,9 @@ function getArt() {
               <div class="artist__nftCardsList">
                 <div id="box">
                   <div class="card">
-                    <div class="thumb"></div>
+                    <div class="thumb">
+                      <img class="artInfo__img thumb" src="/images/${imagePath}"} />
+                    </div>
                     <div class="infos">
                       <h2 class="title">블루,핑크그녀</h2>
                       <h3 class="composition">
@@ -124,7 +134,9 @@ function getArt() {
                     </div>
                   </div>
                   <div class="card">
-                    <div class="thumb2"></div>
+                    <div class="thumb2">
+                      <img class="artInfo__img thumb" src="/images/${imagePath}"} />
+                    </div>
                     <div class="infos">
                       <h2 class="title">사랑을담은,하트</h2>
                       <h3 class="composition">

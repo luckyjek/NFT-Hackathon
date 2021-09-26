@@ -135,7 +135,7 @@ i {
 /* artist 프로필 img border */
 .artistProfile__imgs {
   font-weight: bold;
-  width: 350px;
+  width: 220px;
   height: 150px;
   margin: 0;
   margin-left: 50px;
@@ -157,7 +157,7 @@ i {
 
 /* artist 슬로건 */
 .artistProfile__info p {
-  padding: 25px;
+  /* padding: 25px; */
   margin-top: 15px;
 }
 
@@ -236,19 +236,16 @@ i {
 .card .thumb {
   width: auto;
   height: 260px;
-  /* background: url("../../../../uploads/art/arg_img1.jpg") no-repeat center; */
-  background: url("https://images.unsplash.com/photo-1584448062058-0d13ba997eb0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80")
-    no-repeat center;
-  background-size: cover;
+  object-fit: cover;
   border-radius: 3px;
 }
 .card .thumb2 {
   width: auto;
   height: 260px;
-  /* background: url("../../../../uploads/art/arg_img1.jpg") no-repeat center; */
-  background: url("https://images.unsplash.com/photo-1580475442877-f2831931fc51?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80")
-    no-repeat center;
-  background-size: cover;
+  /* background: url("https://images.unsplash.com/photo-1580475442877-f2831931fc51?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80")
+        no-repeat center; */
+  /* background-size: cover; */
+  object-fit: cover;
   border-radius: 3px;
 }
 
