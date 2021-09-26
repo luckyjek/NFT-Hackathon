@@ -43,18 +43,11 @@ function loadArtList(artList) {
         let artist_img = artList[i].profile_image_path;
 
         artSelectList += `
-            <article id="${art_id}" onclick="linkClickEvent(this.id);">
+             <article id="${art_id}" onclick="linkClickEvent(this.id);">
              <img class="nftImgs" src="/images/${art_image_path}"} />
              <div class="text">
                <h3 class="nftText nftText__title" id="nftName">${art_name}</h3>
-               <h3>${serialNumber}</h3>
-               <div class="donate__price">price</div>
-            <div class="donate__eth">
-                <h3 id="nftPrice">
-                    <i class="fab fa-ethereum fa-sm"></i>
-                    ${art_price}
-                </h3>
-            </div>
+               <h3 class="nftText nftText__price" id="nftPrice">${art_price}</h3>
                <p class="nftText__description" id="nftDescribe">
                ${art_description}
                </p>
@@ -80,6 +73,6 @@ function linkClickEvent(element) {
 }
 
 // donate Platform 버튼 누르면 paymentPlatform.html로 이동
-// function donatePlatform() {
-//     location.href = "paymentPlatform";
-// }
+function donatePlatform() {
+    location.href = "paymentPlatform";
+}
