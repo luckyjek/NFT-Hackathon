@@ -289,4 +289,4 @@ let artInfoModal = `
     <button class="chkBtn" onclick="ok()">확인</button>
   </div>
 </div>
-</div>';
+</div>`;
