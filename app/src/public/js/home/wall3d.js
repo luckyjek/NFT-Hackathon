@@ -40,6 +40,8 @@ function removeF() {
     openLink.style.display = "none";
 }
 
+
+
 function loadArtLeft(artList) {
     let artSelectList = "";
 
