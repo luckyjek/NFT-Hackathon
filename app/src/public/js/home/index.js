@@ -1,3 +1,9 @@
+// randomize the drawingStuff on the page
+let speed = [];
+let position = [];
+var web3;
+var userAccount;
+
 // donate 버튼 누르면 donateNFT.html로 이동
 function donateBtn() {
     console.log("donateBtn click");
@@ -6,10 +12,6 @@ function donateBtn() {
 
 //get all the drawingStuff divs
 const drawingStuff = document.querySelectorAll(".drawingStuff");
-
-// randomize the drawingStuff on the page
-let speed = [];
-let position = [];
 
 for (let i = 0; i < drawingStuff.length; i++) {
     //set the position of the drawingStuff to a random location
@@ -61,23 +63,24 @@ signs.forEach((el) => {
         mixupInterval(el);
     });
 });
+
 async function connectWallet() {
+    web3 = new Web3(Web3.givenProvider);
+
     if (window.ethereum) {
-        web3 = new Web3(window.ethereum);
         try {
-            console.log("Use connectWallet function!");
+            const userAccounts = await web3.eth.requestAccounts();
+            userAccount = userAccounts[0];
 
-            var result = await web3.eth.requestAccounts();
-            console.log(result);
-            console.log(result[0]);
-            account = result[0];
-            console.log("Login Address is :", account);
-
-            var navLogin = document.getElementById("connectWalletBtn");
-            navLogin.innerText = "Logout";
+            // var navLogin = document.getElementById("connectWalletBtn");
+            // navLogin.innerText = "Logout";
             // navLogin.classList.add("disabled");
+
+            // axios 로 디비에 유저정보 있는지 확인
+            location.href = "signUp";
         } catch (error) {
             console.log(error);
+            alert("Please, MetaMask Login First");
         }
     }
     // Legacy dapp browsers...
