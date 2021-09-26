@@ -9,41 +9,41 @@ let artList = [];
 
 // DB에서 아트리스트 불러오기
 function getArtList() {
-    axios({
-        method: "post",
-        url: "/getArtList",
+  axios({
+    method: "post",
+    url: "/getArtList",
+  })
+    .catch((e) => {
+      console.log("catch");
+      console.log(e);
+      // s;
     })
-        .catch((e) => {
-            console.log("catch");
-            console.log(e);
-            // s;
-        })
-        .then(function (res) {
-            // console.log("res");
-            artList = res.data;
-            // console.table(artList);
+    .then(function (res) {
+      // console.log("res");
+      artList = res.data;
+      // console.table(artList);
 
-            // 불러온 아트리스트 그리기
-            loadArtList(artList);
-        });
+      // 불러온 아트리스트 그리기
+      loadArtList(artList);
+    });
 }
 
 // 아트리스트 그리기
 function loadArtList(artList) {
-    let artSelectList = "";
+  let artSelectList = "";
 
-    for (let i = 0; i < artList.length; i++) {
-        let art_id = artList[i].art_id;
-        let account_id = artList[i].account_id;
-        let art_name = artList[i].art_name;
-        let art_created_at = artList[i].art_created_at;
-        let art_price = artList[i].art_price;
-        let art_image_path = artList[i].art_image_path;
-        let art_description = artList[i].art_description;
-        let artist_img = artList[i].artist_img;
-        let serialNumber = artList[i].serial_number;
+  for (let i = 0; i < artList.length; i++) {
+    let art_id = artList[i].art_id;
+    let account_id = artList[i].account_id;
+    let art_name = artList[i].art_name;
+    let art_created_at = artList[i].art_created_at;
+    let art_price = artList[i].art_price;
+    let art_image_path = artList[i].art_image_path;
+    let art_description = artList[i].art_description;
+    let artist_img = artList[i].artist_img;
+    let serialNumber = artList[i].serial_number;
 
-        artSelectList += `
+    artSelectList += `
             <article id="${art_id}" onclick="linkClickEvent(this.id);">
              <img class="nftImgs" src="/images/${art_image_path}"} />
              <div class="text">
@@ -70,17 +70,17 @@ function loadArtList(artList) {
                  </div>
              </div>
             </article>`;
-    }
-    document.querySelector(".grid").innerHTML = artSelectList;
-    // addClickListener();
+  }
+  document.querySelector(".grid").innerHTML = artSelectList;
+  // addClickListener();
 }
 
 function linkClickEvent(element) {
-    // console.log(element);
-    location.href = `artInfo?art_id=${element}`;
+  // console.log(element);
+  location.href = `artInfo?art_id=${element}`;
 }
 
 // donate Platform 버튼 누르면 paymentPlatform.html로 이동
-function donatePlatform() {
-    location.href = "paymentPlatform";
-}
+// function donatePlatform() {
+//     location.href = "paymentPlatform";
+// }
