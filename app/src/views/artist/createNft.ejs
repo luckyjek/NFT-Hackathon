@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html class="autoheight" lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -75,70 +75,67 @@
                 >
                     새로운 NFT 발행하기
                 </div>
-                <div>
-                    <!--main-container-->
-                    <div class="con main-container">
-                        <div class="text file-upload" style="margin: 5px">
-                            파일 업로드<br />
-                            NFT에 넣을 이미지/영상 파일을 업로드해주세요.
+                <!--main-container-->
+                <div class="con main-container">
+                    <div class="text file-upload" style="margin: 5px">
+                        파일 업로드<br />
+                        NFT에 넣을 이미지/영상 파일을 업로드해주세요.
+                    </div>
+                    <input type="file" />
+                    <div class="test">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-1"
+                                >작 품 명</span
+                            ><br />
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="inputGroup"
+                                aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default"
+                            />
                         </div>
-                        <input type="file" />
-                        <div class="test">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-1"
-                                    >작 품 명</span
-                                ><br />
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputGroup"
-                                    aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default"
-                                />
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"
-                                    >작품 금액(ETH)</span
-                                ><br />
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="eth-v"
-                                    aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default"
-                                />
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">시리얼 넘버</span
-                                ><br />
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="eth-v"
-                                    aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default"
-                                />
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-1"
-                                    >명언</span
-                                ><br />
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="inputGroup"
-                                    aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-default"
-                                />
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-text">작품설명</span>
-                                <textarea
-                                    class="form-control"
-                                    id="des"
-                                    aria-label="With textarea"
-                                ></textarea>
-                            </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">작품 금액(ETH)</span
+                            ><br />
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="eth-v"
+                                aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default"
+                            />
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">시리얼 넘버</span
+                            ><br />
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="eth-v"
+                                aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default"
+                            />
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-1"
+                                >명언</span
+                            ><br />
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="inputGroup"
+                                aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default"
+                            />
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text">작품설명</span>
+                            <textarea
+                                class="form-control"
+                                id="des"
+                                aria-label="With textarea"
+                            ></textarea>
                         </div>
                     </div>
                 </div>
@@ -148,10 +145,12 @@
                     <div class="text main-info">
                         <!--첫번째 NFT발행 수집및 이용 정보-->
                         <input
+                            class="check-text"
                             type="checkbox"
                             name="agree"
                             value="checked"
-                        />NFT 발행을 위해 아래 정보를 수집 및 이용하는 것에
+                        />
+                        NFT 발행을 위해 아래 정보를 수집 및 이용하는 것에
                         동의합니다.<br />
                         <div
                             style="
@@ -164,6 +163,7 @@
                         </div>
                         <div class="test-text-2">
                             <div class="box-color-1">
+                                <br />
                                 -수집항목: NFT 이름, 설명, 파일(이미지 등)<br />
                                 -수집목적: NFT 발행 및 관리<br />
                                 -보유 및 이용기간 : 영구<br />
@@ -173,10 +173,12 @@
                         <br /><br />
                         <!--두번째 NFT발행 수집및 이용 정보-->
                         <input
+                            class="check-text"
                             type="checkbox"
                             name="agree"
                             value="checked"
-                        />본인은 아래 유의사항을 꼼꼼히 확인하였으며, 이를
+                        />
+                        본인은 아래 유의사항을 꼼꼼히 확인하였으며, 이를
                         준수하는데 동의합니다.<br />
                         <div
                             style="
@@ -193,12 +195,13 @@
                                 타인의 권리를 침해하지 않습니다.<br />
                                 2. 본인은 본인의 개인정보를 활용하는 경우 본인의
                                 개인정보가 제3자에게 공개, 활용, 제공, 등이 될
-                                수 있음을 인지하며 이에 동의합니다.<br />
+                                수 있음을 <br />
+                                인지하며 이에 동의합니다.<br />
                                 3. NFT에 대한 모든 책임은 본인에게 있음을
                                 확인하고 동의합니다.<br />
                                 4. 본인의 NFT에 다른 아티스트의 작품을 업로드할
                                 경우 고지 없이 삭제될 수 있으며 해당 플랫폼
-                                추후에는 사용할 수 없음을 인지했습니다.<br />
+                                추후에는 <br />사용할 수 없음을 인지했습니다.<br />
                             </div>
                         </div>
                     </div>

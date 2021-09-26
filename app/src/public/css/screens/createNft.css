@@ -1,6 +1,6 @@
 .__create__container {
     margin: auto;
-    height: 1100px;
+    height: 100vh;
     box-sizing: border-box;
     background: #f5f5f5;
     box-shadow: 5px 5px 7px 5px;
@@ -22,7 +22,7 @@
 /*make new nft*/
 .main-container {
     width: 500px;
-    height: 350px;
+    height: auto;
     padding: 20px;
 }
 
@@ -47,9 +47,12 @@
     height: 300px;
 }
 
+.check-text {
+    margin-bottom: 10px;
+}
 .main-info {
     padding: 20px;
-    padding-top: 120px;
+    padding-top: 30px;
 }
 
 .test-text {
@@ -61,7 +64,7 @@
 
 .test-text-2 {
     width: 800px;
-    height: 120px;
+    height: 160px;
     background-color: rgb(230, 248, 255);
 }
 
@@ -72,14 +75,17 @@
     width: 800px;
     height: 100px;
     line-height: 25px;
+    margin-top: 15px;
 }
 .box-color-2 {
+    justify-content: center;
     color: gray;
     /* padding: 10px; */
     text-align: left;
     width: 800px;
     height: 100px;
     line-height: 25px;
+    margin-top: 15px;
 }
 
 /* NFT 버튼 div*/
@@ -91,7 +97,7 @@
 /* NFT 버튼 */
 .nftText__btn {
     padding: 10px 15px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     text-decoration: none;
     font-size: 20px;
     color: white;

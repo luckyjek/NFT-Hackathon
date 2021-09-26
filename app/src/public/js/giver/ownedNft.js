@@ -31,7 +31,7 @@ async function getArt() {
         console.log(err);
     }
 
-    // loadGiver(mintArt);
+    loadGiver(artList);
 }
 
 function loadGiver(artList) {
