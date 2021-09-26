@@ -180,7 +180,17 @@ function artInfo__donateBtn() {
     window.alert(`Hi!, ${account}`);
     location.href = "paymentGiver";
   }
+
+  // 가입이후 메타마스트에 결제창 뜨게
+  // if (account != undefined) {
+  //   window.alert(`Hi!, ${account}`);
+  //   getTxs();
+  // }
 }
+
+// function getTxs() {
+//   contract.methods.send(`from:${account}`)) {
+//   };
 
 // 사용자 지갑에 연결합니다.
 function connectWallet() {
