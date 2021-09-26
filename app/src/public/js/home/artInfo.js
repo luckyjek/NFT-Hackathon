@@ -10,45 +10,45 @@ const web3 = new Web3(Web3.givenProvider || "http://localhost:5000");
 console.log("insert web3", web3.version);
 
 function getArtId() {
-    var url_string = window.location.href.toLocaleLowerCase();
-    var url = new URL(url_string);
-    console.log(url);
-    art_id = url.searchParams.get("art_id");
-    console.log("get!", art_id);
+  var url_string = window.location.href.toLocaleLowerCase();
+  var url = new URL(url_string);
+  console.log(url);
+  art_id = url.searchParams.get("art_id");
+  console.log("get!", art_id);
 }
 
 function getArt() {
-    getArtId();
-    axios({
-        method: "post",
-        url: "/getArt",
-        data: {
-            // 2번이 NFT1.jpg
-            param: [art_id],
-        },
+  getArtId();
+  axios({
+    method: "post",
+    url: "/getArt",
+    data: {
+      // 2번이 NFT1.jpg
+      param: [art_id],
+    },
+  })
+    .catch((e) => {
+      console.log(e);
     })
-        .catch((e) => {
-            console.log(e);
-        })
-        .then(function (res) {
-            let art = res.data[0];
+    .then(function (res) {
+      let art = res.data[0];
 
-            let artId = art.art_id;
-            let imagePath = art.art_image_path;
-            let accountId = art.account_id;
-            let artName = art.art_name;
-            let artCreated_at = art.art_created_at;
-            let artPrice = art.art_price;
-            let artDescription = art.art_description;
-            let artistImg = art.artist_img;
-            let serialNumber = art.serial_number;
-            // getImage(imagePath);
-            console.log(art);
+      let artId = art.art_id;
+      let imagePath = art.art_image_path;
+      let accountId = art.account_id;
+      let artName = art.art_name;
+      let artCreated_at = art.art_created_at;
+      let artPrice = art.art_price;
+      let artDescription = art.art_description;
+      let artistImg = art.artist_img;
+      let serialNumber = art.serial_number;
+      // getImage(imagePath);
+      console.log(art);
 
-            const cardImgDiv = document.getElementsByClassName("row")[0];
+      const cardImgDiv = document.getElementsByClassName("row")[0];
 
-            // let imageHTML = `<img class="artInfo__img" src="/images/${imagePath}"} />`;
-            let artInfo = `
+      // let imageHTML = `<img class="artInfo__img" src="/images/${imagePath}"} />`;
+      let artInfo = `
             <!-- NFT 상세 부분 -->
             <div class="left">
               <!-- NFT Card 이미지 -->
@@ -146,8 +146,8 @@ function getArt() {
               </div>
             </div>`;
 
-            cardImgDiv.innerHTML = artInfo;
-        });
+      cardImgDiv.innerHTML = artInfo;
+    });
 }
 
 // function getImage(imagePath) {
@@ -160,23 +160,23 @@ function getArt() {
 
 // NFT 결제 페이지 이동
 function artInfo__donateBtn() {
-    connectWallet();
+  connectWallet();
 
-    console.log(account != undefined); // false!
+  console.log(account != undefined); // false!
 
-    if (account != undefined) {
-        window.alert(`Hi!, ${account}`);
-        location.href = "paymentGiver";
-    }
+  if (account != undefined) {
+    window.alert(`Hi!, ${account}`);
+    location.href = "paymentGiver";
+  }
 }
 
 // 사용자 지갑에 연결합니다.
 function connectWallet() {
-    console.log("Use connectWallet function!");
-    web3.eth.requestAccounts().then((accounts) => {
-        console.log(accounts);
+  console.log("Use connectWallet function!");
+  web3.eth.requestAccounts().then((accounts) => {
+    console.log(accounts);
 
-        account = accounts[0];
-        console.log("Login Address is :", account);
-    });
+    account = accounts[0];
+    console.log("Login Address is :", account);
+  });
 }
