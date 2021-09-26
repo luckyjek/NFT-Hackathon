@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html class="autoHeight" lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,7 +68,18 @@
           <input type="file" id="myFileInput" onclick="profile()" />
         </div>
 
-        <!--profile input부분 -->
+        <!--main button-->
+        <div style="text-align: center">
+          <a href="profile">
+            <input type="reset" class="colorBtn" value="취소" />
+          </a>
+          <input
+            type="button"
+            class="colorBtn"
+            value="변경사항저장"
+            onclick="submit()"
+          />
+        </div>
 
         <div class="con main2 main-container">
           <!--nickName-->

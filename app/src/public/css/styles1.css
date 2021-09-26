@@ -22,20 +22,18 @@
 @import "screens/signUp.css";
 @import "screens/paymentPlatform.css";
 
-html {
-  height: 100%;
-  /* overflow: auto; */
+.autoHeight {
+  /* 내용만큼 자동 스크롤 */
+  /* 메인화면 외 나머지 화면만 적용 */
+  /* overflow 적용할 때 height 값 유의해서 주기. height값이 작다면
+  overflow:auto;를 해도 height 만큼만 스크롤 생긴다. */
+  overflow: auto;
 }
 
 body {
   box-sizing: border-box;
   background-color: whitesmoke;
   margin-top: 50px;
-  /* max-height: 100%; */
-  min-height: 100px;
-  /* overflow: auto; */
-  /* min-height: 100vh; */
-  height: auto;
   display: flex;
   flex-direction: column;
   /* height: 10000px; */

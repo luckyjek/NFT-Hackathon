@@ -1,6 +1,7 @@
 "use strict";
 
 const auth = require("../config/auth");
+const sys = require("../config/db");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
@@ -9,10 +10,13 @@ class Account {
         this.body = body;
     }
 
-    async getProfile() {
+    // 특정 유저의 데이터를 가져옵니다.
+    async getAccount() {
         const client = this.body;
+        console.log("req.body is", client);
+
         try {
-            const user = await AccountSQL.getAccountInfo(client.account_id);
+            const user = await sys.db("getAccount", client.account_id);
             if (user) {
                 return { success: true, user };
             }
@@ -21,10 +25,13 @@ class Account {
         }
     }
 
-    async getProfileAll() {
-        // const client = this.body;
+    // 모든 유저의 데이터를 가져옵니다.
+    async getAccountList() {
+        const client = this.body;
+        console.log(client);
+
         try {
-            const user = await AccountSQL.getAccountInfo2();
+            const user = await sys.db("getAccountList");
             if (user) {
                 return { success: true, user };
             }
@@ -33,10 +40,11 @@ class Account {
         }
     }
 
+    // 로그인정보가 DB에 존재하는지 확인합니다.
     async login() {
         const client = this.body;
         try {
-            const user = await AccountSQL.getAccountInfo(client.account_id);
+            const user = await sys.db("getAccount", client.account_id);
             if (user) {
                 if (
                     user.account_id === client.account_id &&
@@ -69,28 +77,21 @@ class Account {
 
     async register() {
         const client = this.body;
+        console.log(client);
         try {
-            const response = await AccountSQL.register(client);
+            const response = await sys.db("registerAccount", {
+                eval_id: client.account_id,
+                class_id: client.wallet_address,
+                order: client.profile_image_path,
+                type: client.email,
+                content: bcrypt.hashSync(client.password, 8),
+            });
+
             return response;
         } catch (err) {
             return { success: false, err };
         }
     }
-    // / db.query(
-    //   query,
-    //   [
-    //       account.account_id,
-    //       account.wallet_address,
-    //       account.profile_image_path,
-    //       account.email,
-    //       bcrypt.hashSync(account.password, 8),
-    //   ],
-
-    //   (err) => {
-    //       if (err) reject(`${err}`);
-    //       else resolve({ success: true });
-    //   }
-    // );
 }
 
 module.exports = Account;

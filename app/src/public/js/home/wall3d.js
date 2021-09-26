@@ -54,7 +54,7 @@ function loadArtLeft(artList) {
               art_price : ${artList[i].art_price}<br/>
               art_info : ${artList[i].art_description}<br/>
           </div>
-          <button class="item-button-right" onclick="viewF()"> </button>
+          <button class="item-button-left" onclick="viewF()"> </button>
       </div>
       `;
     }
@@ -147,39 +147,3 @@ function loadArtRight(artList) {
     window.addEventListener("resize", resizeHandler);
     resizeHandler();
 })();
-
-// 이건 뭐지?
-
-// function showItem() {
-//     for (let i = 0; i < data.length; i++) {
-//         console.log(data[i]);
-
-//         //먼저 저 하나의큰 템플릿?을 하나 만들어 준뒤
-//         const item_left = document.querySelector(".grid-item-con");
-//         //for문을 돌린다.
-//         //그때 이미 만들어진 데이터와함께 만들어준다.
-
-//         // for (let j = 8; item_left < j; item_left++) {
-//         //     console.log("item_left1", hi);
-//         item_left.innerHTML = `
-//             <div class="grid-item item1">
-//             arrtist_id : ${data[0].artist_id}<br/>
-//             artist_name : ${data[0].artist_name}<br/>
-//             art_num : ${data[0].art_num}<br/>
-//             art_image : ${data[0].art_image}<br/>
-//             art_info : ${data[0].art_info}<br/>
-//             </div>
-//             <button
-//             class="item-button-left button1"
-//             onclick="viewF()"
-//             ></button>
-//             `;
-//         // }
-//     }
-
-//     // item_left.innerHTML = `
-//     // <div class="grid-item">arrtist_id : ${data[0].artist_id}</div>
-//     // <button class="item-button-left"></button>
-//     // `;
-// }
-// showItem();
