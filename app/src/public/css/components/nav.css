@@ -60,3 +60,28 @@
   color: black;
   font-size: 20px;
 }
+
+/* gallery 포인트~ */
+.glow {
+  /* gallery 텍스트 둘러싼 컬러 */
+  --interval: 1s;
+  display: block;
+  text-shadow: 0 0 10px var(--color1), 0 0 20px var(--color2),
+    0 0 60px var(--color3), 0 0 80px var(--color4);
+  will-change: filter, color;
+  filter: saturate(80%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+  color: pink;
+  --color1: rgb(211, 104, 140);
+  --color2: var(--pink);
+  --color3: rgb(196, 86, 123);
+  --color4: red;
+}
+
+/* gallery 텍스트 컬러 */
+@keyframes flicker {
+  50% {
+    color: whitesmoke;
+    filter: saturate(200%) hue-rotate(20deg);
+  }
+}
