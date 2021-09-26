@@ -49,6 +49,12 @@
   padding: 20px;
 }
 
+/* 마우스 올리면 글씨 진하게 */
+.nav__item :hover,
+.nav__item :active {
+  font-weight: bold;
+}
+
 /* 상단 nav bar 텍스트 */
 .nav__link {
   color: black;
