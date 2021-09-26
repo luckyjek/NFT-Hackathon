@@ -1,188 +1,146 @@
 <!DOCTYPE html>
 <html class="autoHeight" lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-            crossorigin="anonymous"
-        />
-        <link rel="shortcut icon" type="image/x-icon" href="img/DONATE.ico" />
-        <link rel="stylesheet" href="css/styles1.css" />
-        <title>Owned NFT</title>
-    </head>
-    <body class="home">
-        <!-- 상단 nav bar -->
-        <header class="nav">
-            <!-- 서비스명 및 로고  -->
-            <!-- 서비스명과 로고 클릭 시 메인 페이지로 이동 -->
-            <a class="nav__link" href="/">
-                <img src="../img/DONATE.ico" />
-                <span>AmaDo</span>
-            </a>
-            <!-- nav bar 메뉴들 -->
-            <ul class="nav__menu">
-                <!-- nav bar "HOME" 메뉴 버튼 -->
-                <!-- "Home" 클릭 시 메인 페이지로 이동 -->
-                <li class="nav__item">
-                    <a class="nav__link" href="/">Home</a>
-                </li>
-                <!-- 모든 NFT 리스트 -->
-                <li class="nav__item">
-                    <a class="nav__link" href="/donateNft">All NFTs</a>
-                </li>
-                <!-- nav bar "Gallery" 메뉴 버튼 -->
-                <li class="nav__item">
-                    <a class="nav__link" href="/gallery">Gallery</a>
-                </li>
-                <!-- nav bar "Create NFT" 메뉴 버튼 -->
-                <li class="nav__item">
-                    <a class="nav__link" href="/createNft">Create NFT</a>
-                </li>
-                <!-- nav bar "Log in" 메뉴 버튼 -->
-                <!-- Log in 클릭 시  메타마스크 연결-->
-                <li class="nav__item">
-                    <a class="nav__link" href="/signUp">Log in</a>
-                </li>
-            </ul>
-        </header>
-        <!-- Go Back 버튼 -->
-        <div class="mynft-banner">
-            <button onClick="history.go(-1)" class="backButton">
-                <i class="fas fa-paint-brush fa-lg"><span>Go Back</span></i>
-            </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="img/DONATE.ico" />
+    <link rel="stylesheet" href="css/styles1.css" />
+    <title>Owned NFT</title>
+  </head>
+  <body class="home">
+    <!-- 상단 nav bar -->
+    <header class="nav">
+      <!-- 서비스명 및 로고  -->
+      <!-- 서비스명과 로고 클릭 시 메인 페이지로 이동 -->
+      <a class="nav__link" href="/">
+        <img src="../img/DONATE.ico" />
+        <span>AmaDo</span>
+      </a>
+      <!-- nav bar 메뉴들 -->
+      <ul class="nav__menu">
+        <!-- nav bar "HOME" 메뉴 버튼 -->
+        <!-- "Home" 클릭 시 메인 페이지로 이동 -->
+        <li class="nav__item">
+          <a class="nav__link" href="/">Home</a>
+        </li>
+        <!-- 모든 NFT 리스트 -->
+        <li class="nav__item">
+          <a class="nav__link" href="/donateNft">All NFTs</a>
+        </li>
+        <!-- nav bar "Gallery" 메뉴 버튼 -->
+        <li class="nav__item">
+          <a class="nav__link glow" href="/gallery">Gallery</a>
+        </li>
+        <!-- nav bar "Create NFT" 메뉴 버튼 -->
+        <li class="nav__item">
+          <a class="nav__link" href="/createNft">Create NFT</a>
+        </li>
+        <!-- nav bar "Log in" 메뉴 버튼 -->
+        <!-- Log in 클릭 시  메타마스크 연결-->
+        <li class="nav__item">
+          <a class="nav__link" href="/signUp">Log in</a>
+        </li>
+      </ul>
+    </header>
+    <!-- Go Back 버튼 -->
+    <div class="mynft-banner">
+      <button onClick="history.go(-1)" class="backButton">
+        <i class="fas fa-paint-brush fa-lg"><span>Go Back</span></i>
+      </button>
+    </div>
+    <main>
+      <div class="mynft">
+        <div class="mynft-main">
+          <div class="container-owndNft">
+            <div class="artistProfile__imgs">
+              <img class="artistProfile__img" src="undefined" alt="" />
+            </div>
+          </div>
         </div>
-        <main>
-            <div class="mynft">
-                <div class="mynft-main">
-                    <div class="container-owndNft">
-                        <div class="artistProfile__imgs">
-                            <img
-                                class="artistProfile__img"
-                                src="undefined"
-                                alt=""
-                            />
-                        </div>
-                    </div>
+        <div>
+          <!-- <div class="row-owndNft"> -->
+          <div class="row-owndNft1">0x648e292x983...</div>
+          <div class="row-owndNft2">Jone Doa</div>
+          <!-- button 이후 추가로 하려면 하기-->
+          <!-- </div> -->
+        </div>
+      </div>
+      <div class="container-owndNft2">
+        <div class="getNft"><p class="getNft__text">소유한NFT</p></div>
+        <div class="getNft__card">
+          <!-- <div class="grid" style="justify-content: space-between"> -->
+          <div class="grid" style="justify-content: space-evenly">
+            <article id="1" onclick="linkClickEvent(this.id);">
+              <img class="nftImgs" src="/images/art\NFT2.jpg" }="" />
+              <div class="text">
+                <h3 class="nftText nftText__title" id="nftName">Green</h3>
+                <h3>#1214535</h3>
+                <div class="donate__price">price</div>
+                <div class="donate__eth">
+                  <h3 id="nftPrice">
+                    <i class="fab fa-ethereum fa-sm" aria-hidden="true"></i>
+                    5
+                  </h3>
                 </div>
-                <div>
-                    <!-- <div class="row-owndNft"> -->
-                    <div class="row-owndNft1">0x648e292x983...</div>
-                    <div class="row-owndNft2">Jone Doa</div>
-                    <!-- button 이후 추가로 하려면 하기-->
-                    <!-- </div> -->
+                <p class="nftText__description" id="nftDescribe">"green..."</p>
+              </div>
+              <div class="container__profile">
+                <img class="artist__img" src="undefined" />
+                <div class="container__profile__text">
+                  <p class="nftText nftText__id" id="nftCreatedBy">
+                    Created By undefined
+                  </p>
+                  <h2 class="nftText nftText__date" id="nftDate">
+                    2021-09-21T09:38:36.000Z
+                  </h2>
                 </div>
-            </div>
-            <div class="container-owndNft2">
-                <div class="getNft"><p class="getNft__text">소유한NFT</p></div>
-                <div class="getNft__card">
-                    <!-- <div class="grid" style="justify-content: space-between"> -->
-                    <div class="grid" style="justify-content: space-evenly">
-                        <article id="1" onclick="linkClickEvent(this.id);">
-                            <img
-                                class="nftImgs"
-                                src="/images/art\NFT2.jpg"
-                                }=""
-                            />
-                            <div class="text">
-                                <h3 class="nftText nftText__title" id="nftName">
-                                    Green
-                                </h3>
-                                <h3>#1214535</h3>
-                                <div class="donate__price">price</div>
-                                <div class="donate__eth">
-                                    <h3 id="nftPrice">
-                                        <i
-                                            class="fab fa-ethereum fa-sm"
-                                            aria-hidden="true"
-                                        ></i>
-                                        5
-                                    </h3>
-                                </div>
-                                <p
-                                    class="nftText__description"
-                                    id="nftDescribe"
-                                >
-                                    "green..."
-                                </p>
-                            </div>
-                            <div class="container__profile">
-                                <img class="artist__img" src="undefined" />
-                                <div class="container__profile__text">
-                                    <p
-                                        class="nftText nftText__id"
-                                        id="nftCreatedBy"
-                                    >
-                                        Created By undefined
-                                    </p>
-                                    <h2
-                                        class="nftText nftText__date"
-                                        id="nftDate"
-                                    >
-                                        2021-09-21T09:38:36.000Z
-                                    </h2>
-                                </div>
-                            </div>
-                        </article>
-                        <article id="2" onclick="linkClickEvent(this.id);">
-                            <img
-                                class="nftImgs"
-                                src="/images/art\NFT1.jpg"
-                                }=""
-                            />
-                            <div class="text">
-                                <h3 class="nftText nftText__title" id="nftName">
-                                    Remon
-                                </h3>
-                                <h3>#1214536</h3>
-                                <div class="donate__price">price</div>
-                                <div class="donate__eth">
-                                    <h3 id="nftPrice">
-                                        <i
-                                            class="fab fa-ethereum fa-sm"
-                                            aria-hidden="true"
-                                        ></i>
-                                        10
-                                    </h3>
-                                </div>
-                                <p
-                                    class="nftText__description"
-                                    id="nftDescribe"
-                                >
-                                    "I Love Remon"
-                                </p>
-                            </div>
-                            <div class="container__profile">
-                                <img class="artist__img" src="undefined" />
-                                <div class="container__profile__text">
-                                    <p
-                                        class="nftText nftText__id"
-                                        id="nftCreatedBy"
-                                    >
-                                        Created By undefined
-                                    </p>
-                                    <h2
-                                        class="nftText nftText__date"
-                                        id="nftDate"
-                                    >
-                                        2021-09-22T09:38:36.000Z
-                                    </h2>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+              </div>
+            </article>
+            <article id="2" onclick="linkClickEvent(this.id);">
+              <img class="nftImgs" src="/images/art\NFT1.jpg" }="" />
+              <div class="text">
+                <h3 class="nftText nftText__title" id="nftName">Remon</h3>
+                <h3>#1214536</h3>
+                <div class="donate__price">price</div>
+                <div class="donate__eth">
+                  <h3 id="nftPrice">
+                    <i class="fab fa-ethereum fa-sm" aria-hidden="true"></i>
+                    10
+                  </h3>
                 </div>
-            </div>
-        </main>
+                <p class="nftText__description" id="nftDescribe">
+                  "I Love Remon"
+                </p>
+              </div>
+              <div class="container__profile">
+                <img class="artist__img" src="undefined" />
+                <div class="container__profile__text">
+                  <p class="nftText nftText__id" id="nftCreatedBy">
+                    Created By undefined
+                  </p>
+                  <h2 class="nftText nftText__date" id="nftDate">
+                    2021-09-22T09:38:36.000Z
+                  </h2>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
 
-        <!--remove _ footer-->
-        <script
-            src="https://kit.fontawesome.com/6478f529f2.js"
-            crossorigin="anonymous"
-        ></script>
-        <script src="js/ownedNft.js"></script>
-    </body>
+    <!--remove _ footer-->
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/ownedNft.js"></script>
+  </body>
 </html>

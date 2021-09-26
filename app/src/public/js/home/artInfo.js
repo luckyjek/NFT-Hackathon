@@ -272,10 +272,21 @@ function artInfo__donateBtn() {
 //         });
 // }
 
-// 결제 완료 후 "나의 NFT 확인" 버튼 등장
-// const artInfoModal = document.querySelector(".artInfoModal");
-// const artInfoBtn = document.querySelector(".artInfoModal__btn");
-
-// artInfoBtn.addEventListener ("" {
-//   modal.style.display="block";
-// })
+// modal
+let artInfoModal = `
+<div class="open-link pointer-lock-close overlay2">
+<div id="addressChk">
+  <p class="artInfo__p">
+    <span class="chkBox"
+      >현재 <br />이 ${account}로 NFT를 소유하는 것이 맞습니까?</span
+    ><br />
+    <span class="chkBox"
+      >확인 버튼을 누른 이후에는 주소 변경이 불가합니다.</span
+    >
+  </p>
+  <div class="artInfo__p2">
+    <button class="chkBtn" onclick="cancel()">취소</button>
+    <button class="chkBtn" onclick="ok()">확인</button>
+  </div>
+</div>
+</div>';
