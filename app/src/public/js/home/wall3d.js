@@ -43,7 +43,7 @@ function removeF() {
 function loadArtLeft(artList) {
     let artSelectList = "";
 
-    for (let i = 0; i < artList.length; i++) {
+    for (let i = 0; i < 6; i++) {
         artSelectList += `<div class="grid-item-con">
           <div class="grid-item">
               <img src="/images/${artList[i].art_image_path}" alt="" />
@@ -64,8 +64,8 @@ function loadArtLeft(artList) {
 
 function loadArtRight(artList) {
     let artSelectList = "";
-
-    for (let i = 0; i < artList.length; i++) {
+    console.log(artList);
+    for (let i = 7; i < 12; i++) {
         artSelectList += `<div class="grid-item-con">
         <div class="grid-item">
             <img src="/images/${artList[i].art_image_path}" alt="" />

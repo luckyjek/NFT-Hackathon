@@ -1,6 +1,6 @@
 /*modal*/
 .open-link {
-    /* display: none; */
+    display: none;
 }
 
 h3,
@@ -24,8 +24,6 @@ a {
 }
 .overlay.open-link {
     background: rgba(1, 1, 1, 0.85);
-    width: 300px;
-    height: 150px;
 }
 .overlay {
     position: fixed;
@@ -40,4 +38,3 @@ a {
     top: 8px;
     right: 4px;
 }
-/* open-link pointer-lock-close overlay */
