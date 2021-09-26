@@ -20,4 +20,8 @@ module.exports = {
     registerArt: {
         query: "INSERT INTO t_art set ?",
     },
+    getOwnedNft: {
+        query: `select * from t_art
+                where t_art.user_name in (select t_account.user_name from t_account where user_address = ?)`,
+    },
 };

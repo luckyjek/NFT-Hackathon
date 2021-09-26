@@ -14,14 +14,14 @@ const cardLeftImgDiv = document.getElementsByClassName("left")[0];
 const cardRightImgDiv1 = document.getElementById("rightArtist");
 const cardRightImgDiv2 = document.getElementById("rightArt");
 
-// (async function init() {
-//     web3 = new Web3(Web3.givenProvider);
-//     const userAccounts = await web3.eth.requestAccounts();
-//     userAccount = userAccounts[0];
-//     console.log("Current User Account is", userAccount);
+(async function init() {
+    web3 = new Web3(Web3.givenProvider);
+    const userAccounts = await web3.eth.requestAccounts();
+    userAccount = userAccounts[0];
+    console.log("Current User Account is", userAccount);
 
-//     getContract();
-// })();
+    getContract();
+})();
 
 function getArtId() {
     var url_string = window.location.href.toLocaleLowerCase();
@@ -79,9 +79,6 @@ function loadLeftArt(art) {
 
     // 왼쪽 부분 아트 이미지
     let artInfo = `
-    <!-- NFT 상세 부분 -->
-    <div class="left">
-      <!-- NFT Card 이미지 -->
       <div class="artInfo__cardImg">
       <img class="artInfo__img" src="/images/${imagePath}"} />
       </div>
@@ -116,7 +113,6 @@ function loadLeftArt(art) {
         </div>
       </div>
     </div>`;
-
     cardLeftImgDiv.innerHTML = artInfo;
 
     // 오른쪽 부분 아티스트 프로필 이미지
@@ -192,8 +188,9 @@ function artInfo__donateBtn() {
         // getMetaData();
         // getTokenURI();
 
-        console.log(mintArt.ipfs_data_path);
-        mint(userAccount, mintArt.ipfs_data_path);
+        var ipfs_data_path = "QmRfrXtbc7nAAE49rN4tyQv9b8P6hjaLDLkKngaFeHZgri";
+        // console.log(mintArt.ipfs_data_path);
+        mint(userAccount, ipfs_data_path);
         // location.href = "paymentGiver";
     } else {
         alert("Metamask connect first!");
@@ -205,86 +202,72 @@ function artInfo__donateBtn() {
     }
 }
 
-// // init function 1
-// function getContract() {
-//     myContract = new web3.eth.Contract(ArtIPFSTokenABI, ArtIPFSTokenCA);
-//     console.log("myContract Contract Connected!", myContract);
+// init function 1
+function getContract() {
+    myContract = new web3.eth.Contract(ArtIPFSTokenABI, ArtIPFSTokenCA);
+    console.log("myContract Contract Connected!", myContract);
 
-//     myContract.events
-//         .allEvents({}, function (error, event) {
-//             console.log("Now on, Watching NewArt event in my contract!");
-//             if (!error) console.log("event", event);
-//         })
-//         .on("data", function (event) {
-//             console.log(event);
-//         });
+    myContract.events
+        .allEvents({}, function (error, event) {
+            console.log("Now on, Watching NewArt event in my contract!");
+            if (!error) console.log("event", event);
+        })
+        .on("data", function (event) {
+            console.log(event);
+            updateArt();
+            location.href = `ownedNft?user_address=${userAccount}`;
+        });
 
-//     console.log("Now on, Watching NewArt event in my contract!");
-// }
-
-// async function getMetaData() {
-//     var tokenName = await myContract.methods.name().call();
-//     var tokenSymbol = await myContract.methods.symbol().call();
-//     var tokenSupply = await myContract.methods.totalSupply().call();
-//     console.log(
-//         `tokenName is ${tokenName} \r
-//          tokenSymbol is ${tokenSymbol} \r
-//          currentSupply is ${tokenSupply}
-//          `
-//     );
-// }
-
-// async function getTokenURI(_tokenId) {
-//     var _tokenId = 1;
-
-//     var tokenURI = await myContract.methods.tokenURI(_tokenId).call();
-//     console.log(tokenURI);
-// }
-
-// function mint(_to, _ipfsHash) {
-//     console.log("Use mint function!");
-
-//     alert(`token owner account is ${_to}`);
-//     alert(`token ipfs address is ${_ipfsHash}`);
-
-//     myContract.methods
-//         .mint(_to, _ipfsHash)
-//         .send({ from: userAccount })
-//         .on("transactionHash", function (hash) {
-//             console.log(hash);
-//         })
-//         .on("receipt", function (receipt) {
-//             console.log(receipt);
-//         })
-//         .on("error", function (error, receipt) {
-//             console.log(error, receipt);
-//         });
-// }
-
-// modal
-let artInfoModal = `
-<div class="open-link pointer-lock-close overlay2">
-<div id="addressChk">
-  <p class="artInfo__p">
-    <span class="chkBox"
-      >현재 <br />이 ${account}로 NFT를 소유하는 것이 맞습니까?</span
-    ><br />
-    <span class="chkBox"
-      >확인 버튼을 누른 이후에는 주소 변경이 불가합니다.</span
-    >
-  </p>
-  <div class="artInfo__p2">
-    <button class="chkBtn" onclick="cancel()">취소</button>
-    <button class="chkBtn" onclick="ok()">확인</button>
-  </div>
-</div>
-</div>`;
-
-function cancel() {
-    let openLink = document.querySelector("#addressChk");
-    openLink.style.display = "none";
+    console.log("Now on, Watching NewArt event in my contract!");
 }
 
-// fuction ok(){
+async function getMetaData() {
+    var tokenName = await myContract.methods.name().call();
+    var tokenSymbol = await myContract.methods.symbol().call();
+    var tokenSupply = await myContract.methods.totalSupply().call();
+    console.log(
+        `tokenName is ${tokenName} \r
+         tokenSymbol is ${tokenSymbol} \r 
+         currentSupply is ${tokenSupply}
+         `
+    );
+}
 
-// }
+async function getTokenURI(_tokenId) {
+    var _tokenId = 1;
+
+    var tokenURI = await myContract.methods.tokenURI(_tokenId).call();
+    console.log(tokenURI);
+}
+
+function mint(_to, _ipfsHash) {
+    console.log("Use mint function!");
+
+    alert(`token owner account is ${_to}`);
+    alert(`token ipfs address is ${_ipfsHash}`);
+
+    myContract.methods
+        .mint(_to, _ipfsHash)
+        .send({ from: userAccount })
+        .on("transactionHash", function (hash) {
+            console.log(hash);
+        })
+        .on("receipt", function (receipt) {
+            console.log(receipt);
+        })
+        .on("error", function (error, receipt) {
+            console.log(error, receipt);
+        });
+}
+
+// 결제 완료 후 "나의 NFT 확인" 버튼 등장
+// const artInfoModal = document.querySelector(".artInfoModal");
+// const artInfoBtn = document.querySelector(".artInfoModal__btn");
+
+// artInfoBtn.addEventListener ("" {
+//   modal.style.display="block";
+// })
+
+function updateArt() {
+  
+}

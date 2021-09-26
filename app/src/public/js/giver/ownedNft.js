@@ -1,4 +1,68 @@
+"use strict";
+axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
+axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+
+var artList;
+var user_address;
+
+const giverProfile = document.getElementById("giverProfile");
+
+function getUserAddress() {
+    var url_string = window.location.href.toLocaleLowerCase();
+    var url = new URL(url_string);
+    user_address = url.searchParams.get("user_address");
+}
+
+async function getArt() {
+    getUserAddress();
+    try {
+        var result = await axios({
+            method: "post",
+            url: "/getOwnedNft",
+            data: {
+                param: [user_address],
+            },
+        });
+
+        artList = result.data;
+        console.table(artList);
+    } catch (err) {
+        console.log(err);
+    }
+
+    // loadGiver(mintArt);
+}
+
+function loadGiver(artList) {
+    var art = artList[0];
+
+    var giverInfo = `
+    <div class="mynft-main">
+                    <div class="container-owndNft">
+                        <div class="artistProfile__imgs">
+                            <img
+                                class="artistProfile__img"
+                                src="/images/${art.profile_image_path}"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- <div class="row-owndNft"> -->
+                    <div id="user_address" class="row-owndNft1">
+                        ${user_address}
+                    </div>
+                    <div id="user_name" class="row-owndNft2">
+                    ${art.user_name}
+                    </div>
+                </div>`;
+
+    giverProfile.innerHTML = giverInfo;
+}
 let ownedInfoList = "";
+
 for (let i = 0; i < data.length; i++) {
     artistId = data[i].artist_id;
     artistName = data[i].artist_name;
@@ -74,13 +138,4 @@ for (let i = 0; i < data.length; i++) {
   </li>
     </ul>
     `;
-}
-
-document.querySelector(".account__nftCardsList").innerHTML = ownedInfoList;
-
-async function getBalance(_address) {
-    var _address = "0x965ca4F0648c223C3B09e1E8bA46F9f71f7df1b8";
-
-    var tokenURI = await myContract.methods.balanceOf(_address).call();
-    console.log(tokenURI);
 }

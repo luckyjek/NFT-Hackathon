@@ -13,6 +13,18 @@ const output = {
 };
 
 const process = {
+    getOwnedNft: async (req, res) => {
+        try {
+            const result = await sys.db("getOwnedNft", req.body.param[0]);
+            console.table(result);
+            res.send(result);
+        } catch (err) {
+            res.status(500).send({
+                error: err,
+            });
+        }
+    },
+
     getSpecifiedArtList: async (req, res) => {
         console.log("process.getSpecifiedArtList");
         try {
