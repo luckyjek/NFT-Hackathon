@@ -45,3 +45,30 @@ function makeItRain() {
 
 //set the interval to re-reun the makeItRain function every 100ms
 setInterval(makeItRain, 100);
+
+async function connectWallet() {
+    if (window.ethereum) {
+        web3 = new Web3(window.ethereum);
+        try {
+            console.log("Use connectWallet function!");
+
+            var result = await web3.eth.requestAccounts();
+            console.log(result);
+            console.log(result[0]);
+            account = result[0];
+            console.log("Login Address is :", account);
+
+            var navLogin = document.getElementById("connectWalletBtn");
+            navLogin.innerText = "Logout";
+            // navLogin.classList.add("disabled");
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    // Legacy dapp browsers...
+    else if (window.web3) {
+        // Use Mist/MetaMask's provider.
+        web3 = window.web3;
+        console.log("Injected web3 detected.");
+    }
+}

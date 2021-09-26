@@ -2,7 +2,18 @@
 
 const express = require("express");
 const router = express.Router();
-// const multer = require("multer");
+const multer = require("multer");
+
+const uploadProfile = multer({
+    destination: (req, file, cb) => {
+        cb(null, "uploads/profile"); //important this is a direct path fron our current file to storage location
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    },
+    // dest: "uploads/profile",
+    //limits: { fileSize: 5 * 256 * 256 }
+});
 
 // const uploadArt = multer({
 //     destination: (req, file, cb) => {
@@ -67,8 +78,18 @@ router.get("/profile", profile_ctrl.output.profile);
 // router.post("/registerArt", artist_ctrl.process.registerArt);
 router.post("/getArtList", giver_ctrl.process.getArtList);
 router.post("/getArt", giver_ctrl.process.getArt);
+router.post("/getSpecifiedArtList", giver_ctrl.process.getSpecifiedArtList);
+// router.post("/getAccount", home_ctrl.process.getAccount);
 
-router.post("/registUser", home_ctrl.process.registerUser);
+router.post(
+    "/registerUser",
+    [uploadProfile.single("profile_image")],
+    (req, res) => {
+        // console.log(req.body);
+        console.log(req.file, req.files);
+    }
+    // home_ctrl.process.registerUser
+);
 // router.post("/getUserList", giver_ctrl.process.getUserList);
 // router.post("/getUser", giver_ctrl.process.getUser);
 

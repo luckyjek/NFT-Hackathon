@@ -1,18 +1,6 @@
 "use strict";
-const multer = require("multer");
 // const sys = require("../../config/db");
 const Account = require("../../models/Account");
-
-const uploadProfile = multer({
-    destination: (req, file, cb) => {
-        cb(null, "uploads/profile"); //important this is a direct path fron our current file to storage location
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname);
-    },
-    // dest: "uploads/profile",
-    //limits: { fileSize: 5 * 256 * 256 }
-});
 
 const output = {
     artInfo: (req, res) => {
@@ -39,13 +27,13 @@ const process = {
         return res.json(response);
     },
 
-    registerUser: async (req, res) => {
-        req.body.profile_image_path = req.file.path;
-        const account = new Account(req.body);
-        const response = await account.register();
-        const response2 = await account.getProfile();
-        console.log(response2);
-        return res.json(response);
+    registerUser: (req, res) => {
+        console.log(req);
+        // const account = new Account(req.body);
+        // const response = await account.register();
+        // const response2 = await account.getProfile();
+        // console.log(response2);
+        // return res.json(response);
     },
 };
 
