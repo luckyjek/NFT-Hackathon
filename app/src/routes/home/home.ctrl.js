@@ -21,20 +21,21 @@ const output = {
 
 const process = {
     login: async (req, res) => {
+        console.log(req.body);
         const account = new Account(req.body);
         const response = await account.login();
         return res.json(response);
     },
 
     signUp: async (req, res) => {
-        file.originalname
-        req.body.profile_image_path = req.file.path;
-        // console.log("req.file!!!!!", req.file);
+        const profile_image_path =
+            req.file.fieldname + "/" + req.file.originalname;
+
+        console.log(profile_image_path);
+        req.body.profile_image_path = profile_image_path;
+
         const account = new Account(req.body);
         const response = await account.register();
-        const response2 = await account.getProfile();
-        console.log(response2);
-        console.log(response);
         return res.json(response);
     },
 };

@@ -12,7 +12,7 @@ module.exports = {
         qurey: "SELECT * FROM t_account",
     },
     getAccount: {
-        query: "SELECT * FROM t_account WHERE account_id = ?",
+        query: "SELECT * FROM t_account WHERE user_id = ?",
     },
     registerAccount: {
         query: "insert into t_account set ?",

@@ -11,7 +11,8 @@ var userAccount;
 var myContract;
 
 const cardLeftImgDiv = document.getElementsByClassName("left")[0];
-const cardRightImgDiv = document.getElementsByClassName("right")[0];
+const cardRightImgDiv1 = document.getElementById("rightArtist");
+const cardRightImgDiv2 = document.getElementById("rightArt");
 
 (async function init() {
     web3 = new Web3(Web3.givenProvider);
@@ -64,17 +65,19 @@ async function getArt() {
     loadRightArt(artList);
 }
 
+// 왼쪽 아트 및 오른쪽 아티스트 이미지와 글
 function loadLeftArt(art) {
     let imagePath = art.art_image_path;
-    let accountId = art.account_id;
+    let artistName = art.user_name;
     let artName = art.art_name;
     let artCreated_at = art.art_created_at;
     let artPrice = art.art_price;
     let artDescription = art.art_description;
-    let artistImg = art.artist_img;
+    let artistImagePath = art.profile_image_path;
     let serialNumber = art.serial_number;
     let artistQuotes = art.artist_quotes;
 
+    // 왼쪽 부분 아트 이미지
     let artInfo = `
       <div class="artInfo__cardImg">
       <img class="artInfo__img" src="/images/${imagePath}"} />
@@ -85,7 +88,7 @@ function loadLeftArt(art) {
           <div class="artInfo__title">
             <h2 class="nftText__title">${artName}</h2>
             <h3 style="margin-top:20px">${serialNumber}</h3>
-            <h6 class="nftText__artist">Created by ${accountId}</h6>
+            <h6 class="nftText__artist">Created by ${artistName}</h6>
           </div>
           <div class="artInfo__price">
             <span class="nftText__price">
@@ -111,84 +114,71 @@ function loadLeftArt(art) {
       </div>
     </div>`;
     cardLeftImgDiv.innerHTML = artInfo;
+
+    // 오른쪽 부분 아티스트 프로필 이미지
+    let artistInfo = `
+    <div class="artistProfile">
+        <div class="artistProfile__imgs">
+            <img class="artistProfile__img" src="/images/${artistImagePath}" alt="" />
+        </div>
+        <div class="artistProfile__info">
+            <h4 class="artistProfile__name">${artistName}</h4>
+            <p>
+            ${artistQuotes}
+            </p>
+        </div>
+    </div>`;
+    cardRightImgDiv1.innerHTML = artistInfo;
 }
 
 function loadRightArt(artList) {
-    console.table(artList);
-    console.log(cardRightImgDiv);
-    // let userName = artList[0].user_name;
-    // let profileImagePath = artList[0].profile_image_path;
-    // let artName = artList[0].art_name;
-    // let artCreatedAt = artList[0].art_created_at;
-    // let artPrice = artList[0].art_price;
-    // let artImagePath = artList[0].art_image_path;
-    // let artDescription = artList[0].art_description;
-    // let serialNumber = artList[0].serial_number;
-    // let artistQuotes = artList[0].artist_quotes;
-    // let artInfo = `
-    //   <!-- 오른쪽 부분 아티스트 프로필 이미지 -->
-    //   <div class="artistProfile">
-    //     <div class="artistProfile__imgs">
-    //       <img class="artistProfile__img" src="${profileImagePath}" alt="" />
-    //     </div>
-    //     <div class="artistProfile__info">
-    //   <h4 class="artistProfile__name">${userName}</h4>
-    //   <p>
-    //     ${artistQuotes}
-    //   </p>
-    // </div>
-    //   </div>
-    //   <!--오른쪽 부분 아티스트가 발행한 NFT 리스트.. ? -->
-    //   <div class="artist__nftList">
-    //     <span class="artist__nftListTitle"> 아티스트가 발행한 NFT </span>
-    //   </div>
-    //   <!-- 오른쪽 부분 아티스트가 발행한 NFT 카드 리스트 -->
-    //   <div class="artist__nftCardsList">
-    //     <div id="box">
-    //       <div class="card">
-    //         <div class="thumb">
-    //           <img class="artInfo__img thumb" src="/images/${artImagePath}"} />
-    //         </div>
-    //         <div class="infos">
-    //           <h2 class="title">블루,핑크그녀</h2>
-    //           <h3 class="composition">
-    //             <span class="color"></span>
-    //           </h3>
-    //           <h3 class="type">2021.09.24</h3>
-    //           <h4 class="price"></h4>
-    //           <h4 class="code"></h4>
-    //           <p class="txt">
-    //             핑크를 사랑한 그녀는,<br />
-    //             오늘도 저 먼 곳<br />
-    //             어딘가를 바라봅니다 <br />
-    //             그곳은 바로...바로...바로...바로...바로...바로...바로...
-    //           </p>
-    //           <a href="#"><h3 class="details">view details</h3></a>
-    //         </div>
-    //       </div>
-    //       <div class="card">
-    //         <div class="thumb2">
-    //           <img class="artInfo__img thumb" src="/images/${artImagePath}"} />
-    //         </div>
-    //         <div class="infos">
-    //           <h2 class="title">사랑을담은,하트</h2>
-    //           <h3 class="composition">
-    //             <span class="color"></span>
-    //           </h3>
-    //           <h3 class="type">2021.09.23</h3>
-    //           <h4 class="price"></h4>
-    //           <h4 class="code"></h4>
-    //           <p class="txt">
-    //             핑크하우스,<br />
-    //             오래전부터 그리워하던<br />
-    //             나의 끝은<br />
-    //             이곳에서...곳에서...곳에서...곳에서...곳에서...곳에서...
-    //           </p>
-    //           <a href="#"><h3 class="details">view details</h3></a>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>`;
+    // console.log(artList);
+
+    var h = [];
+    h.push(
+        `<div class="artist__nftList">
+            <span class="artist__nftListTitle"> 아티스트가 발행가능한 NFT </span>
+         </div>
+         `
+    );
+    h.push(
+        `<div class="artist__nftCardsList">
+            <div id="box">
+    `
+    );
+    // 오른쪽 부분 카드리스트
+    for (var art of artList) {
+        h.push(`
+        <div class="card test2">
+            <div class="thumb">
+                <img
+                    class="artInfo__img2"
+                    src="/images/${art.art_image_path}"
+                />
+            </div>
+            <div class="infos">
+                <h2 class="title">${art.art_name}</h2>
+                <h3 class="composition">
+                    <span class="color"></span>
+                </h3>
+                <h3 class="type">${art.art_created_at}</h3>
+                <h4 class="price">${art.art_price}</h4>
+                <h4 class="code"></h4>
+                <p class="txt">${art.art_description}</p>
+                <a href="/artInfo?art_id=${art.art_id}">
+                    <h3 class="details">view details</h3>
+                </a>
+            </div>
+        </div>
+    `);
+    }
+
+    h.push(
+        `</div>
+        </div>;
+        `
+    );
+    cardRightImgDiv2.innerHTML = h.join("");
 }
 
 // 사용자 지갑을 확인 후 결제창

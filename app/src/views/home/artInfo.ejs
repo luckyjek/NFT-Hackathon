@@ -7,14 +7,6 @@
         <link rel="shortcut icon" type="image/x-icon" href="img/DONATE.ico" />
         <link rel="stylesheet" href="css/styles1.css" />
         <title>NFT Details</title>
-        <style>
-            .test1 {
-                border: solid 5px blue;
-            }
-            .test2 {
-                border: solid 10px red;
-            }
-        </style>
     </head>
     <body class="home" onload="getArt();">
         <!-- modal -->
@@ -67,16 +59,30 @@
             </div>
             <!-- NFT, 아티스트 정보 들어간 총 border -->
             <div class="artInfo-con">
-                <div class="row test1">
+                <div class="row">
                     <!-- NFT 상세 부분 -->
                     <!--오른쪽 부분_아티스트-->
-                    <div class="left test2">
+                    <div class="left">
+                        <div>
+                            <button onClick="history.go(-1)" class="backButton">
+                                <i class="fas fa-paint-brush fa-lg"
+                                    ><span>Go Back</span></i
+                                >
+                            </button>
+                        </div>
                         <!-- 메인 아트 이미지 -->
                     </div>
                     <!-- NFT 상세 부분 -->
                     <!--오른쪽 부분_아티스트-->
-                    <div class="right test2">
-                        <!-- 관련 user발행된 NFT 전부보여주기 -->
+                    <div class="right">
+                        <div id="rightArtist">
+                            <!-- artist -->
+                        </div>
+                        <div id="rightArt">
+                            <!-- nft -->
+                            <!-- nft -->
+                            <!-- nft -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -143,5 +149,6 @@
             crossorigin="anonymous"
         ></script>
         <script src="js/home/artInfo.js"></script>
+        <script src="contracts/ArtIPFSToken.js"></script>
     </body>
 </html>
