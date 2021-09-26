@@ -1,40 +1,100 @@
 /*modal*/
+
+/* gallery page */
 .open-link {
-    display: none;
+  /* display: none; */
 }
 
 h3,
 p {
-    color: white;
-    margin: 15px;
+  color: white;
+  margin: 15px;
 }
 a {
-    text-decoration-line: none;
+  text-decoration-line: none;
 }
 .url {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 .overlay .button {
-    padding: 8px 16px;
-    display: inline-block;
-    border: 1px solid #555;
-    background: linear-gradient(#f3f3f3, #fafafa);
-    font-weight: bold;
+  padding: 8px 16px;
+  display: inline-block;
+  border: 1px solid #555;
+  background: linear-gradient(#f3f3f3, #fafafa);
+  font-weight: bold;
 }
 .overlay.open-link {
-    background: rgba(1, 1, 1, 0.85);
+  background: rgba(1, 1, 1, 0.85);
 }
 .overlay {
-    position: fixed;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    padding: 20px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 20px;
 }
 .overlay .close {
-    display: inline-block;
-    position: fixed;
-    top: 8px;
-    right: 4px;
+  display: inline-block;
+  position: fixed;
+  top: 8px;
+  right: 4px;
+}
+
+/* artInfo page */
+
+/* 텍스트와 버튼 감싸는 div */
+#addressChk {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid var(--pink);
+  border-radius: 4px;
+  width: 420px;
+  height: 250px;
+}
+
+/* 텍스트 */
+.artInfo__p {
+  color: black;
+  margin: 25px;
+  padding: 15px;
+}
+
+/* 텍스트 내에 첫번째 텍스트 */
+.artInfo__p :first-child {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+/* 텍스트 내에 마지막 텍스트 */
+.artInfo__p:last-child {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* 화면 가운데 */
+.overlay2 {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+/* 버튼 */
+.artInfo__p2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.artInfo__p2 .chkBtn {
+  border-style: none;
+  background-color: var(--pink);
+  color: white;
+  border-radius: 5px;
+  margin: 30px;
+  padding: 8px 18px;
+  font-size: 18px;
 }

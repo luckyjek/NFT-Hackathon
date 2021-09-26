@@ -11,6 +11,7 @@
 @import "components/backButton.css";
 @import "components/myAccountNav.css";
 @import "components/payment.css";
+@import "components/modal.css";
 
 /* screens */
 @import "screens/main.css";
