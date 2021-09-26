@@ -59,10 +59,36 @@
             <h1 class="signUp__title">Create Account</h1>
             <!-- ID 입력 -->
             <input
-              id="signUp-id"
+              id="account_id"
               class="sign__input"
               type="text"
               placeholder="ID"
+              autocomplete="on"
+              required
+            />
+            <!-- NAME 입력 -->
+            <input
+              id="signUp-id"
+              class="sign__input"
+              type="text"
+              placeholder="Name"
+              autocomplete="on"
+              required
+            />
+            <!-- wallet address 입력 -->
+            <input
+              id="signUp-id"
+              class="sign__input"
+              type="text"
+              placeholder="Wallet Address"
+              autocomplete="on"
+              required
+            />
+            <input
+              id="name"
+              class="sign__input"
+              type="text"
+              placeholder="NAME"
               autocomplete="on"
             />
             <!-- <input
@@ -72,22 +98,31 @@
                   autocomplete="on"
                 /> -->
 
+            <input
+              id="wallet_address"
+              class="sign__input"
+              type="text"
+              placeholder="Wallet Address"
+              autocomplete="on"
+            />
             <!-- 패스워드 입력 -->
             <input
-              id="signUp-ps"
+              id="password"
               class="sign__input"
               type="password"
               placeholder="Password"
+              required
             />
             <!-- 패스워드 확인 입력 -->
             <input
-              id="signUp-confirmPs"
+              id="confirm_password"
               class="sign__input"
               type="password"
               placeholder="Confirm Password"
+              required
             />
             <!-- 체크박스 -->
-            <div class="chk" id="signUp-chk">
+            <!-- <div class="chk" id="signUp-chk">
               <label
                 ><input
                   type="checkbox"
@@ -102,17 +137,17 @@
                   value="giverPersonal"
                 />기부자</label
               >
-            </div>
+            </div> -->
             <!-- 프로필 이미지 입력-->
             <div class="profile__preview" id="signUp-img">
               <div class="viewImg">
                 <!-- main-content -->
-                <img id="previewImg" src="" alt="previewImg" />
+                <img id="previewImg" src="" alt="Profile" />
               </div>
-              <input type="file" id="inputMyFile" onclick="profileClick()" />
+              <input type="file" id="profile_image"/>
             </div>
 
-            <button class="signBtn" onclick="signUp()">Sign Up</button>
+            <button class="signBtn" id="button">Sign Up</button>
           </form>
         </div>
         <!-- 로그인 부분 -->

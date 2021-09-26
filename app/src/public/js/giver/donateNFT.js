@@ -22,7 +22,6 @@ function getArtList() {
             // console.log("res");
             artList = res.data;
             // console.table(artList);
-
             // 불러온 아트리스트 그리기
             loadArtList(artList);
         });
@@ -81,6 +80,6 @@ function linkClickEvent(element) {
 }
 
 // donate Platform 버튼 누르면 paymentPlatform.html로 이동
-function donatePlatform() {
-    location.href = "paymentPlatform";
-}
+// function donatePlatform() {
+//     location.href = "paymentPlatform";
+// }

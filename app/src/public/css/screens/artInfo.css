@@ -1,4 +1,5 @@
 /* art(NFT) info 및 아티스트가 소유한 다양한 NFT page css*/
+
 .row {
     display: flex;
     width: auto;
@@ -134,7 +135,7 @@ i {
 /* artist 프로필 img border */
 .artistProfile__imgs {
     font-weight: bold;
-    width: 220px;
+    width: 350px;
     height: 150px;
     margin: 0;
     margin-left: 50px;
@@ -385,3 +386,31 @@ card:hover .infos .code {
         left: 180px;
     }
 }
+
+/* .artInfoModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.artInfoModal.show {
+  display: block;
+}
+
+.artInfoModal__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--pink);
+  border-radius: 10px;
+  border-style: none;
+  transform: translateX(-50%) translateY(-50%);
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+} */
