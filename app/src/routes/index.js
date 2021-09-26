@@ -55,7 +55,6 @@ router.get("/editProfile", profile_ctrl.output.editProfile);
 router.get("/myAccountArtist", profile_ctrl.output.myAccountArtist);
 router.get("/myAccountGiver", profile_ctrl.output.myAccountGiver);
 router.get("/profile", profile_ctrl.output.profile);
-
 /**
  * @title APIs
  * @description 데이터베이스 및 서버 스토리지에 데이터를 저장하거나 요청합니다.
@@ -67,6 +66,7 @@ router.get("/profile", profile_ctrl.output.profile);
 // router.post("/registerArt", artist_ctrl.process.registerArt);
 router.post("/getArtList", giver_ctrl.process.getArtList);
 router.post("/getArt", giver_ctrl.process.getArt);
+router.post("/getSpecifiedArtList", giver_ctrl.process.getSpecifiedArtList);
 // router.post("/getAccount", home_ctrl.process.getAccount);
 
 // router.post("/registUser", home_ctrl.process.registerUser);

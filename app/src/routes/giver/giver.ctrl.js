@@ -54,6 +54,21 @@ const process = {
             fs.createReadStream(filePath).pipe(res);
         }
     },
+    getSpecifiedArtList: async (req, res) => {
+        console.log("process.getSpecifiedArtList");
+        try {
+            const result = await sys.db(
+                "getSpecifiedArtList",
+                req.body.param[0]
+            );
+            console.table(result);
+            res.send(result);
+        } catch (err) {
+            res.status(500).send({
+                error: err,
+            });
+        }
+    },
 };
 
 module.exports = {

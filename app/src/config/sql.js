@@ -1,4 +1,7 @@
 module.exports = {
+    getSpecifiedArtList: {
+        query: "select * from t_art where user_name = ?",
+    },
     getArtList: {
         query: "SELECT * from t_art",
     },
