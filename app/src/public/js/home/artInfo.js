@@ -290,3 +290,12 @@ let artInfoModal = `
   </div>
 </div>
 </div>`;
+
+function cancel() {
+    let openLink = document.querySelector("#addressChk");
+    openLink.style.display = "none";
+}
+
+// fuction ok(){
+
+// }
