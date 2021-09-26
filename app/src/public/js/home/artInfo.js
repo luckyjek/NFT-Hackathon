@@ -203,10 +203,7 @@ function connectWallet() {
   });
 }
 
-// 결제 완료 후 "나의 NFT 확인" 버튼 등장
-// const artInfoModal = document.querySelector(".artInfoModal");
-// const artInfoBtn = document.querySelector(".artInfoModal__btn");
-
-// artInfoBtn.addEventListener ("" {
-//   modal.style.display="block";
-// })
+// ownedNft 페이지로 이동
+// function goToOwnedNft() {
+//   location.href = "ownedNft";
+// }
