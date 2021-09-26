@@ -1,199 +1,121 @@
 <!DOCTYPE html>
 <html class="autoHeight" lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="img/DONATE.ico" />
-    <link rel="stylesheet" href="css/styles1.css" />
-    <title>NFT Details</title>
-  </head>
-  <body class="home" onload="getArt();">
-    <!-- 상단 nav bar -->
-    <header class="nav">
-      <!-- 서비스명 및 로고  -->
-      <!-- 서비스명과 로고 클릭 시 메인 페이지로 이동 -->
-      <a class="nav__link" href="/">
-        <img src="../img/DONATE.ico" />
-        <span>AmaDo</span>
-      </a>
-      <!-- nav bar 메뉴들 -->
-      <ul class="nav__menu">
-        <!-- nav bar "HOME" 메뉴 버튼 -->
-        <!-- "Home" 클릭 시 메인 페이지로 이동 -->
-        <li class="nav__item">
-          <a class="nav__link" href="/">Home</a>
-        </li>
-        <!-- 모든 NFT 리스트 -->
-        <li class="nav__item">
-          <a class="nav__link" href="/donateNft">All NFTs</a>
-        </li>
-        <!-- nav bar "Gallery" 메뉴 버튼 -->
-        <li class="nav__item">
-          <a class="nav__link" href="/gallery">Gallery</a>
-        </li>
-        <!-- nav bar "Create NFT" 메뉴 버튼 -->
-        <li class="nav__item">
-          <a class="nav__link" href="/createNft">Create NFT</a>
-        </li>
-        <!-- nav bar "Log in" 메뉴 버튼 -->
-        <!-- Log in 클릭 시  메타마스크 연결-->
-        <li class="nav__item">
-          <a class="nav__link" href="/signUp">Log in</a>
-        </li>
-      </ul>
-    </header>
-    <main>
-      <!-- Go Back 버튼 -->
-      <div>
-        <button onClick="history.go(-1)" class="backButton">
-          <i class="fas fa-paint-brush fa-lg"><span>Go Back</span></i>
-        </button>
-      </div>
-      <!-- NFT, 아티스트 정보 들어간 총 border -->
-      <div class="row">
-        <!-- NFT 상세 부분 -->
-        <div class="left">
-          <!-- NFT Card 이미지 -->
-          <div class="artInfo__cardImg"></div>
-          <!-- NFT Card 제목, 아티스트 이름, NFT 넘버 -->
-          <div class="artInfo__textBox">
-            <div class="artInfo__top">
-              <div class="artInfo__title">
-                <h2 class="nftText__title">고래</h2>
-                <h3 class="nftText__number">#123456678</h3>
-                <h6 class="nftText__artist">Created by Jane Doe</h6>
-              </div>
-              <div class="artInfo__price">
-                <span class="nftText__price">
-                  <i class="fab fa-ethereum fa-sm"></i>
-                  <!-- ETH 가격 -->
-                  5
-                </span>
-              </div>
-            </div>
-            <div class="artInfo__description">
-              <h5>작품 설명</h5>
-              <p class="nftText__description">
-                이 작품은 저의 초기작입니다. 바다 밖에서는 살지 못하지만, 물밖의
-                세상도 궁금한 어린 고래를 그렸습니다. 일상을 탈출하고 싶은 제
-                마음을 표현했습니다.
-              </p>
-            </div>
-            <div class="artInfo__btn">
-              <button class="nftText__btn" onclick="artInfo__donateBtn()">
-                Donate
-              </button>
-            </div>
-          </div>
-        </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/x-icon" href="img/DONATE.ico" />
+        <link rel="stylesheet" href="css/styles1.css" />
+        <title>NFT Details</title>
+    </head>
+    <body class="home" onload="getArt();">
+        <!-- 상단 nav bar -->
+        <header class="nav">
+            <!-- 서비스명 및 로고  -->
+            <!-- 서비스명과 로고 클릭 시 메인 페이지로 이동 -->
+            <a class="nav__link" href="/">
+                <img src="../img/DONATE.ico" />
+                <span>AmaDo</span>
+            </a>
+            <!-- nav bar 메뉴들 -->
+            <ul class="nav__menu">
+                <!-- nav bar "HOME" 메뉴 버튼 -->
+                <!-- "Home" 클릭 시 메인 페이지로 이동 -->
+                <li class="nav__item">
+                    <a class="nav__link" href="/">Home</a>
+                </li>
+                <!-- 모든 NFT 리스트 -->
+                <li class="nav__item">
+                    <a class="nav__link" href="/donateNft">All NFTs</a>
+                </li>
+                <!-- nav bar "Gallery" 메뉴 버튼 -->
+                <li class="nav__item">
+                    <a class="nav__link" href="/gallery">Gallery</a>
+                </li>
+                <!-- nav bar "Create NFT" 메뉴 버튼 -->
+                <li class="nav__item">
+                    <a class="nav__link" href="/createNft">Create NFT</a>
+                </li>
+                <!-- nav bar "Log in" 메뉴 버튼 -->
+                <!-- Log in 클릭 시  메타마스크 연결-->
+                <li class="nav__item">
+                    <a class="nav__link" href="/signUp">Log in</a>
+                </li>
+            </ul>
+        </header>
 
-        <!--오른쪽 부분_아티스트-->
-        <div class="right">
-          <!-- 오른쪽 부분 아티스트 프로필 이미지 -->
-          <div class="artistProfile">
-            <div class="artistProfile__imgs">
-              <img class="artistProfile__img" src="img/artist.jpg" alt="" />
+        <main>
+            <!-- Go Back 버튼 -->
+            <div>
+                <button onClick="history.go(-1)" class="backButton">
+                    <i class="fas fa-paint-brush fa-lg"><span>Go Back</span></i>
+                </button>
             </div>
-          </div>
+            <!-- NFT, 아티스트 정보 들어간 총 border -->
+            <div class="row">
+                <!-- NFT 상세 부분 -->
+            </div>
+        </main>
 
-          <!--오른쪽 부분 아티스트가 발행한 NFT 리스트.. ? -->
-          <div class="artist__nftList">
-            <span class="artist__nftListTitle"> 아티스트가 발행한 NFT </span>
-          </div>
-
-          <!-- 오른쪽 부분 아티스트가 발행한 NFT 카드 리스트 -->
-          <div class="artist__nftCardsList">
-            <div id="box">
-              <div class="card">
-                <div class="thumb"></div>
-                <div class="infos">
-                  <h2 class="title">블루,핑크그녀</h2>
-                  <h3 class="composition">
-                    <span class="color"></span>
-                  </h3>
-                  <h3 class="type">2021.09.24</h3>
-                  <h4 class="price"></h4>
-                  <h4 class="code"></h4>
-                  <p class="txt">
-                    핑크를 사랑한 그녀는,<br />
-                    오늘도 저 먼 곳<br />
-                    어딘가를 바라봅니다 <br />
-                    그곳은 바로...바로...바로...바로...바로...바로...바로...
-                  </p>
-                  <a href="#"><h3 class="details">view details</h3></a>
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer__div">
+                <div class="footer__menu">
+                    <!-- 플랫폼 로고 이미지 -->
+                    <ul class="footer__brandLogo">
+                        <li class="footer__li">
+                            <span>AmaDo</span>
+                        </li>
+                    </ul>
+                    <!-- 플랫폼 대표 전화, 주소, 이메일 입력 -->
+                    <ul class="footer__info">
+                        <li class="footer__li">
+                            상담센터 <span>070-123-4567</span>
+                        </li>
+                        <li class="footer__li">
+                            대표전화 <span>02-123-4567</span>
+                        </li>
+                        <li class="footer__li">
+                            주소
+                            <span
+                                >서울특별시 영등포구 양산로 53 월드메르디앙
+                                비즈센터</span
+                            >
+                        </li>
+                        <li class="footer__li">
+                            Email <span>ssjd6111@amado.com</span>
+                        </li>
+                    </ul>
+                    <!-- sns 로고 -->
+                    <ul class="footer__sns">
+                        <li class="footer__li">
+                            <span><i class="fab fa-twitter fa-2x"></i> </span
+                            ><span><i class="fab fa-instagram fa-2x"></i></span>
+                            <span
+                                ><i class="fab fa-facebook-square fa-2x"></i
+                            ></span>
+                            <span><i class="fab fa-youtube fa-2x"></i></span>
+                        </li>
+                    </ul>
                 </div>
-              </div>
-              <div class="card">
-                <div class="thumb2"></div>
-                <div class="infos">
-                  <h2 class="title">사랑을담은,하트</h2>
-                  <h3 class="composition">
-                    <span class="color"></span>
-                  </h3>
-                  <h3 class="type">2021.09.23</h3>
-                  <h4 class="price"></h4>
-                  <h4 class="code"></h4>
-                  <p class="txt">
-                    핑크하우스,<br />
-                    오래전부터 그리워하던<br />
-                    나의 끝은<br />
-                    이곳에서...곳에서...곳에서...곳에서...곳에서...곳에서...
-                  </p>
-                  <a href="#"><h3 class="details">view details</h3></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <!-- footer -->
-    <footer class="footer">
-      <div class="footer__div">
-        <div class="footer__menu">
-          <!-- 플랫폼 로고 이미지 -->
-          <ul class="footer__brandLogo">
-            <li class="footer__li">
-              <span>AmaDo</span>
-            </li>
-          </ul>
-          <!-- 플랫폼 대표 전화, 주소, 이메일 입력 -->
-          <ul class="footer__info">
-            <li class="footer__li">상담센터 <span>070-123-4567</span></li>
-            <li class="footer__li">대표전화 <span>02-123-4567</span></li>
-            <li class="footer__li">
-              주소
-              <span>서울특별시 영등포구 양산로 53 월드메르디앙 비즈센터</span>
-            </li>
-            <li class="footer__li">Email <span>ssjd6111@amado.com</span></li>
-          </ul>
-          <!-- sns 로고 -->
-          <ul class="footer__sns">
-            <li class="footer__li">
-              <span><i class="fab fa-twitter fa-2x"></i> </span
-              ><span><i class="fab fa-instagram fa-2x"></i></span>
-              <span><i class="fab fa-facebook-square fa-2x"></i></span>
-              <span><i class="fab fa-youtube fa-2x"></i></span>
-            </li>
-          </ul>
-        </div>
-        <!-- 플랫폼 copyrights 텍스트 -->
+                <!-- 플랫폼 copyrights 텍스트 -->
 
-        <div class="footer__copy">
-          <div class="footer__copyrights">@ AmaDo. All Rights Reserved.</div>
-        </div>
-      </div>
-    </footer>
-    <!-- import scripts  -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="lib/bignumber.min.js"></script>
-    <script type="text/javascript" src="lib/web3.min.js"></script>
-    <script
-      type="text/javascript"
-      src="https://kit.fontawesome.com/6478f529f2.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/home/artInfo.js"></script>
-  </body>
+                <div class="footer__copy">
+                    <div class="footer__copyrights">
+                        @ AmaDo. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- import scripts  -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="text/javascript" src="lib/bignumber.min.js"></script>
+        <script type="text/javascript" src="lib/web3.min.js"></script>
+        <script
+            type="text/javascript"
+            src="https://kit.fontawesome.com/6478f529f2.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/home/artInfo.js"></script>
+    </body>
 </html>

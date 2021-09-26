@@ -41,13 +41,15 @@ function loadArtList(artList) {
         let art_image_path = artList[i].art_image_path;
         let art_description = artList[i].art_description;
         let artist_img = artList[i].artist_img;
+        let serialNumber = artList[i].serial_number;
 
         artSelectList += `
             <article id="${art_id}" onclick="linkClickEvent(this.id);">
              <img class="nftImgs" src="/images/${art_image_path}"} />
              <div class="text">
                <h3 class="nftText nftText__title" id="nftName">${art_name}</h3>
-            <div class="donate__price">price</div>
+               <h3>${serialNumber}</h3>
+               <div class="donate__price">price</div>
             <div class="donate__eth">
                 <h3 id="nftPrice">
                     <i class="fab fa-ethereum fa-sm"></i>
