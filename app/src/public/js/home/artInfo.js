@@ -192,3 +192,11 @@ function connectWallet() {
     console.log("Login Address is :", account);
   });
 }
+
+// 결제 완료 후 "나의 NFT 확인" 버튼 등장
+// const artInfoModal = document.querySelector(".artInfoModal");
+// const artInfoBtn = document.querySelector(".artInfoModal__btn");
+
+// artInfoBtn.addEventListener ("" {
+//   modal.style.display="block";
+// })
