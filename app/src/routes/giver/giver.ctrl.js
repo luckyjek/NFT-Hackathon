@@ -1,7 +1,7 @@
 "use strict";
-// const multer = require("multer");
-const sys = require("../../config/db");
+const { sys } = require("../../config/db");
 const fs = require("fs");
+
 const output = {
     donateNft: (req, res) => {
         res.render("giver/donateNft");
@@ -13,6 +13,22 @@ const output = {
 };
 
 const process = {
+    getSpecifiedArtList: async (req, res) => {
+        console.log("process.getSpecifiedArtList");
+        try {
+            const result = await sys.db(
+                "getSpecifiedArtList",
+                req.body.param[0]
+            );
+            console.table(result);
+            res.send(result);
+        } catch (err) {
+            res.status(500).send({
+                error: err,
+            });
+        }
+    },
+
     getArtList: async (req, res) => {
         console.log("process.getArtInfo");
         try {

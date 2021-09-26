@@ -6,96 +6,56 @@ const container = document.getElementById("container");
 
 // 노란색 오른쪽 덮어쓰기
 signUpButton.addEventListener("click", () => {
-  container.classList.add("right-panel-active");
+    container.classList.add("right-panel-active");
 });
 
 // 노란색 왼쪽 덮어쓰기
 signInButton.addEventListener("click", () => {
-  container.classList.remove("right-panel-active");
+    container.classList.remove("right-panel-active");
 });
 
-// 프로필 이미지 미리보기
-// function profileClick() {
-//   document
-//     .querySelector("#inputMyFile")
-//     .addEventListener("change", function () {
-//       // console.log(this.files);
-//       const reader = new FileReader();
-//       reader.addEventListener("load", () => {
-//         // console.log(reader.result);
-//         localStorage.setItem("recent-image", reader.result);
-//       });
-//       reader.readAsDataURL(this.files[0]);
-//     });
-
-//   document.addEventListener("DOMContentLoaded", () => {
-//     const recentImageDataUrl = localStorage.getItem("recent-image");
-//     if (recentImageDataUrl) {
-//       document
-//         .querySelector("#previewImg")
-//         .setAttribute("src", recentImageDataUrl);
-//     }
-//   });
-// }
-
-// profileClick();
-
-// sign Up 버튼 누르면 사용자 데이터 저장
-// let userId = document.getElementById("signUp__id").value;
-// let userPs = document.getElementById("signUp__ps").value;
-// let userRePs = document.getElementById("signUp__confirmPs").value;
-// let userChk = document.getElementById("signUp__chk").value;
-// let userImg = document.getElementById("signUp__img").value;
-
-// function signUp() {}
-
-
-const account_id = document.querySelector("#account_id"),
-  name_str = document.querySelector("#name"),
-  password = document.querySelector("#password"),
-  confirmPassword = document.querySelector("#confirm_password"),
-  // emali = document.querySelector("#email"),
-  profile_image = document.querySelector("#profile_image"),
-  wallet_address = document.querySelector("#wallet_address"),
-  registerBtn = document.querySelector("#button");
+const userId = document.querySelector("#signUp-id"),
+    userName = document.querySelector("#signUp-name"),
+    userPs = document.querySelector("#signUp-ps"),
+    userConfirmPs = document.querySelector("#signUp-confirmPs"),
+    profile_image = document.querySelector("#profile_image"),
+    userAddress = document.querySelector("#signUp-address"),
+    registerBtn = document.querySelector("#registerBtn");
 
 registerBtn.addEventListener("click", register);
 
 function register() {
-  if (!account_id.value) return alert("Please enter account ID.");
-  if (password.value !== confirmPassword.value)
-    return alert("Incorrect password.");
+    let userType = document.querySelector(
+        'input[name="categorize"]:checked'
+    ).value;
 
-  const req = {
-    account_id: account_id.value,
-    name: name_str.value,
-    password: password.value,
-    // email: emali.value,
-    wallet_address: wallet_address.value
-  };
+    if (!userId.value) return alert("Please enter account ID.");
+    if (userPs.value !== userConfirmPs.value)
+        return alert("Incorrect password.");
 
-  fetch("/signup", {
-      method: "POST",
-      body: new FormData(profile_image.file)
-    });
+    const req = new FormData();
 
-  fetch("/signup", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(req),
-  })
-    .then((res) => res.json())
-    .then((res) => {
-      if (res.success) {
-        location.href = "/login";
-      } else {
-        if (res.err) return alert(res.err);
-        alert(res.msg);
-      }
+    req.append("user_id", userId.value);
+    req.append("user_name", userName.value);
+    req.append("user_password", userPs.value);
+    req.append("user_address", userAddress.value);
+    req.append("user_type", userType);
+    req.append("profile", profile_image.files[0]);
+
+    fetch("/signUp", {
+        method: "POST",
+        body: req,
     })
-    .catch((err) => {
-      console.error("Error occurs on register");
-    });
+        .then((res) => res.json())
+        .then((res) => {
+            if (res.success) {
+                location.href = "/login";
+            } else {
+                if (res.err) return alert(res.err);
+                alert(res.msg);
+            }
+        })
+        .catch((err) => {
+            console.error("Error occurs on register");
+        });
 }

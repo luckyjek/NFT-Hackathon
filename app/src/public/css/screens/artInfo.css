@@ -6,7 +6,6 @@
     height: 1000px;
     margin-bottom: 200px;
 }
-
 /* left & right layout */
 .left {
     height: auto;
@@ -16,7 +15,7 @@
 .right {
     height: auto;
     width: 50%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 /* card img background */

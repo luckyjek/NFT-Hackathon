@@ -67,7 +67,7 @@
 
 /* 회사 정보 제목과 내용 간 간격 */
 .footer__info span {
-  padding: 0 7px;
+    padding: 0 7px;
 }
 
 /* 하단 footer Sponsor title 텍스트 */

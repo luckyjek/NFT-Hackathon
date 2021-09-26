@@ -28,10 +28,9 @@ const pond = FilePond.create(inputElement, {
         },
     },
 });
-console.log("createNft 연결");
 
 function submit() {
-    console.log("hi");
+    // agreeBtn();
     //작품명
     let fileInfo = document.querySelector(".filepond--label-action");
     let inputGroup = document.getElementById("inputGroup").value;
@@ -40,38 +39,35 @@ function submit() {
     let chek1 = document.getElementsByName("heckbox1").checked;
     // let chek2 = document.getElementsByName("heckbox2").value;
 
-    console.log(
-        "파일정보" +
-            fileInfo +
-            "작품명 :" +
-            inputGroup +
-            "작품금액" +
-            eth +
-            "작품설명" +
-            des +
-            "chek1" +
-            chek1
-    );
-    // alert("작품명 :" + inputGroup+"작품금액"+eth+"작품설명"+des+"chek1"+chek1+"chek2"+chek2);
+    // if (!userId.value) return alert("Please enter account ID.");
+    // if (userPs.value !== userConfirmPs.value)
+    //     return alert("Incorrect password.");
 
-    //순서에 맞게 넣고, 빼고를 하려고 사용하는것이다.
-    var dataList = []; //배열 이 리스트이다. / 클래스는 객체
-
-    var data = {
-        fileInfo: fileInfo,
+    var req = {
         inputGroup: inputGroup,
-        eth: eth,
         des: des,
-        chek1: chek1,
-        // "chek2": chek2
     };
 
-    console.log(data);
-
-    dataList.push(data);
-    dataList.push(data);
-    dataList.push(data);
-    console.log("dataList :", dataList);
+    fetch("/registerArt", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(req),
+    })
+        .then((res) => res.json())
+        .then((res) => {
+            if (res.success) {
+                // location.href = "/login";
+                alert(res.success);
+            } else {
+                if (res.err) return alert(res.err);
+                alert(res.msg);
+            }
+        })
+        .catch((err) => {
+            console.error("Error occurs on register");
+        });
 }
 
 function agreeBtn() {

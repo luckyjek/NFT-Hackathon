@@ -1,5 +1,4 @@
 "use strict";
-const sys = require("../../config/db");
 
 const output = {
     paymentArtist: (req, res) => {
@@ -15,9 +14,6 @@ const output = {
     },
 };
 
-const process = {};
-
 module.exports = {
     output,
-    process,
 };

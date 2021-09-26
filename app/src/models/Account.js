@@ -1,9 +1,9 @@
 "use strict";
-
 const auth = require("../config/auth");
 const sys = require("../config/db");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
+const AccountSQL = require("./AccountSQL");
 
 class Account {
     constructor(body) {
@@ -25,13 +25,10 @@ class Account {
         }
     }
 
-    // 모든 유저의 데이터를 가져옵니다.
-    async getAccountList() {
-        const client = this.body;
-        console.log(client);
-
+    async getProfileAll() {
+        const clients = this.body;
         try {
-            const user = await sys.db("getAccountList");
+            const user = await AccountSQL.getAccountInfo2(clients);
             if (user) {
                 return { success: true, user };
             }

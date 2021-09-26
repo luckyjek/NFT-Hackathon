@@ -32,4 +32,4 @@ const sys = {
     },
 };
 
-module.exports = sys;
+module.exports = { sys, dbPool };
