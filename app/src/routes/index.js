@@ -22,17 +22,6 @@ const storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
-// const uploadArt = multer({
-//     destination: (req, file, cb) => {
-//         cb(null, "uploads/art"); //important this is a direct path fron our current file to storage location
-//     },
-//     filename: (req, file, cb) => {
-//         cb(null, file.originalname);
-//     },
-//     // dest: "uploads/art",
-//     //limits: { fileSize: 5 * 1024 * 1024 }
-// });
-
 const testAuthentication = () => {
     const pinataEndPoint = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
 

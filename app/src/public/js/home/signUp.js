@@ -49,7 +49,7 @@ function register() {
         .then((res) => res.json())
         .then((res) => {
             if (res.success) {
-                location.href = "/login";
+                location.href = "/";
             } else {
                 if (res.err) return alert(res.err);
                 alert(res.msg);
@@ -57,5 +57,44 @@ function register() {
         })
         .catch((err) => {
             console.error("Error occurs on register");
+        });
+}
+
+const loginId = document.querySelector("#signIn__id"),
+    loginPs = document.querySelector("#signIn__ps"),
+    loginBtn = document.querySelector("#loginBtn");
+
+loginBtn.addEventListener("click", login);
+
+function login() {
+    if (!loginId.value) return alert("Please enter Account ID!");
+    if (!loginPs.value) return alert("Please enter Password!");
+
+    const req = {
+        user_id: loginId.value,
+        user_password: loginPs.value,
+    };
+
+    // console.log(req);
+
+    fetch("/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(req),
+    })
+        .then((res) => res.json())
+        .then((res) => {
+            if (res.success) {
+                location.href = "/";
+            } else {
+                if (res.err) return alert(res.err);
+                alert(res.msg);
+            }
+        })
+        .catch((err) => {
+            console.error("Errors!");
+            alert(err);
         });
 }
