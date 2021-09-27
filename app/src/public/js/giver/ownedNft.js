@@ -81,15 +81,19 @@ function loadShowArt(artList) {
         let artistQuotes = artList[i].artist_quotes;
         let serialNumber = artList[i].serial_number;
         let userName = artList[i].user_name;
-        console.log(artId, userName);
+        let ipfs_data_path = artList[i].ipfs_data_path;
+
+        console.log(artId, ipfs_data_path);
 
         ownedInfoList += ` 
           <article id="${artId}" onclick="linkClickEvent(this.id);">
-          <img
-              class="nftImgs"
-              src="/images/${artImagePath}"
-              }=""
-          />
+          <a href="https://gateway.pinata.cloud/ipfs/${ipfs_data_path}">
+            <img
+                class="nftImgs"
+                src="/images/${artImagePath}"
+                }=""
+            />
+          </a>
           <div class="text">
               <h3 class="nftText nftText__title" id="nftName">
                   ${artName}
