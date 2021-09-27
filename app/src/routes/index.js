@@ -101,21 +101,17 @@ router.post("/getArt", giver_ctrl.process.getArt);
 router.post("/getSpecifiedArtList", giver_ctrl.process.getSpecifiedArtList);
 router.post("/getOwnedNft", giver_ctrl.process.getOwnedNft);
 router.post("/confirm", home_ctrl.process.confirm);
+router.post("/updateNFT", home_ctrl.process.updateNFT);
 
 router.post("/login", home_ctrl.process.login);
 
 router.post("/signUp", upload.single("profile"), home_ctrl.process.signUp);
 
-// router.post(
-//     "/registerArt",
-//     [auth_ctrl.verifyToken, uploadArt.single("art_image")],
-//     art_ctrl.process.registerArt
-// );
-
-router.post("/registerArt", async (req, res) => {
-    var res = await testAuthentication();
-    console.log(res);
-    // home_ctrl.process.signUp
-});
+// router.post("/registerArt", upload.single("art"), async (req, res) => {
+// console.log(req.body);
+// var res = await testAuthentication();
+// res.send(200);
+// home_ctrl.process.signUp
+// });
 
 module.exports = router;

@@ -11,15 +11,9 @@ const output = {
     },
 
     index: (req, res) => {
-        console.log("resresres", req);
         res.render("home/index");
     },
     index2: (req, res) => {
-        console.log("req", req);
-        // console.log("reqheader", req.header());
-        console.log("req.head", req.head);
-        console.log("req.body", req.body);
-
         res.render("home/index2");
     },
 
@@ -54,6 +48,18 @@ const process = {
         console.log(req.body);
         try {
             const result = await sys.db("confirm", req.body.param[0]);
+            console.table(result);
+            res.send(result);
+        } catch (err) {
+            res.status(500).send({
+                error: err,
+            });
+        }
+    },
+
+    updateNFT: async (req, res) => {
+        try {
+            const result = await sys.db("updateNFT");
             console.table(result);
             res.send(result);
         } catch (err) {

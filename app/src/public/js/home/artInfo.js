@@ -1,4 +1,7 @@
 "use strict";
+
+const { updateNFT } = require("../../../config/sql");
+
 axios.defaults.baseURL = "http://localhost:5000";
 axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -188,10 +191,10 @@ function artInfo__donateBtn() {
         // getMetaData();
         // getTokenURI();
 
-        var ipfs_data_path = "QmRfrXtbc7nAAE49rN4tyQv9b8P6hjaLDLkKngaFeHZgri";
+        var ipfs_data_path = "QmRkHFhuaxtueYhMiyLzs3uFXhxEY9SoNESSEMzpPWGArA";
         // console.log(mintArt.ipfs_data_path);
         mint(userAccount, ipfs_data_path);
-        // location.href = "paymentGiver";
+        updateNFT();
     } else {
         alert("Metamask connect first!");
 
@@ -268,4 +271,11 @@ function mint(_to, _ipfsHash) {
 //   modal.style.display="block";
 // })
 
-function updateArt() {}
+function updateNFT() {
+    axios({
+        method: "post",
+        url: "/updateNFT",
+    }).then((res) => {
+        console.log(res);
+    });
+}
