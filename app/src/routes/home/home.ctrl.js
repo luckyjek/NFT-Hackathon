@@ -11,8 +11,16 @@ const output = {
     },
 
     index: (req, res) => {
-        // console.log(req)
+        console.log("resresres", req);
         res.render("home/index");
+    },
+    index2: (req, res) => {
+        console.log("req", req);
+        // console.log("reqheader", req.header());
+        console.log("req.head", req.head);
+        console.log("req.body", req.body);
+
+        res.render("home/index2");
     },
 
     signUp: (req, res) => {

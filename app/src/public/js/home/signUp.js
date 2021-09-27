@@ -89,7 +89,7 @@ function login() {
             if (res.success) {
                 console.log(res);
                 console.log(res.accessToken);
-                location.href = "/";
+                location.href = "/logout";
             }
         })
         .catch((err) => {
