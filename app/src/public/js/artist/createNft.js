@@ -32,43 +32,44 @@ const pond = FilePond.create(inputElement, {
 function submit() {
     // agreeBtn();
     //작품명
-    let fileInfo = document.querySelector(".filepond--label-action");
-    let inputGroup = document.getElementById("inputGroup").value;
-    let eth = document.getElementById("eth-v").value;
-    let des = document.getElementById("des").value;
-    let chek1 = document.getElementsByName("heckbox1").checked;
-    console(fileInfo);
-    // let chek2 = document.getElementsByName("heckbox2").value;
 
-    // if (!userId.value) return alert("Please enter account ID.");
-    // if (userPs.value !== userConfirmPs.value)
-    //     return alert("Incorrect password.");
+    let fileName = document.querySelector(".filepond--label-action");
+    let art_name = document.getElementById("inputGroup").value;
+    let art_price = document.getElementById("eth-v").value;
+    let art_description = document.getElementById("des").value;
+    let serial_number = document.getElementById("serialNumber").value;
+    let artist_quotes = document.getElementById("quotes").value;
 
-    // var req = {
-    //     inputGroup: inputGroup,
-    //     des: des,
-    // };
+    console.log(fileName);
+
+    const req = new FormData();
+
+    req.append("art_name", art_name);
+    req.append("art_price", art_price);
+    req.append("art_description", art_description);
+    req.append("serial_number", serial_number);
+    req.append("artist_quotes", artist_quotes);
+    req.append("art", fileName.files);
+
+    console.log(req);
 
     // fetch("/registerArt", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(req),
-    // })
-    //     .then((res) => res.json())
-    //     .then((res) => {
-    //         if (res.success) {
-    //             // location.href = "/login";
-    //             alert(res.success);
-    //         } else {
-    //             if (res.err) return alert(res.err);
-    //             alert(res.msg);
-    //         }
+    //         method: "POST",
+    //         body: req,
     //     })
-    //     .catch((err) => {
-    //         console.error("Error occurs on register");
-    //     });
+    //         .then((res) => res.json())
+    //         .then((res) => {
+    //             if (res.success) {
+    //                 // location.href = "/login";
+    //                 alert(res.success);
+    //             } else {
+    //                 if (res.err) return alert(res.err);
+    //                 alert(res.msg);
+    //             }
+    //         })
+    //         .catch((err) => {
+    //             console.error("Error occurs on register");
+    //         });
 }
 
 function agreeBtn() {

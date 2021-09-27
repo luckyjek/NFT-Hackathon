@@ -70,20 +70,20 @@ function loadShowArt(artList) {
 
     let ownedInfoList = "";
 
-    // for (let i = 0; i < artList.length; i++) {
-    let artId = artList[0].art_id;
-    let profileImagePath = artList[0].profile_image_path;
-    let artCreatedAt = artList[0].art_created_at;
-    let artDescription = artList[0].art_description;
-    let artImagePath = artList[0].art_image_path;
-    let artName = artList[0].art_name;
-    let artPrice = artList[0].art_price;
-    let artistQuotes = artList[0].artist_quotes;
-    let serialNumber = artList[0].serial_number;
-    let userName = artList[0].user_name;
-    console.log(artId, userName);
+    for (let i = 0; i < artList.length; i++) {
+        let artId = artList[i].art_id;
+        let profileImagePath = artList[i].profile_image_path;
+        let artCreatedAt = artList[i].art_created_at;
+        let artDescription = artList[i].art_description;
+        let artImagePath = artList[i].art_image_path;
+        let artName = artList[i].art_name;
+        let artPrice = artList[i].art_price;
+        let artistQuotes = artList[i].artist_quotes;
+        let serialNumber = artList[i].serial_number;
+        let userName = artList[i].user_name;
+        console.log(artId, userName);
 
-    ownedInfoList += ` 
+        ownedInfoList += ` 
           <article id="${artId}" onclick="linkClickEvent(this.id);">
           <img
               class="nftImgs"
@@ -131,7 +131,7 @@ function loadShowArt(artList) {
           </div>
       </article>
     `;
-    // }
+    }
     giverProfile1.innerHTML = ownedInfoList;
     // grid
 }

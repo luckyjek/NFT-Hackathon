@@ -67,7 +67,14 @@ router.get("/ownedNft", giver_ctrl.output.ownedNft);
 // Page Renders - home folder
 router.get("/artInfo", home_ctrl.output.artInfo);
 router.get("/gallery", home_ctrl.output.gallery);
+
 router.get("/", home_ctrl.output.index);
+router.get(
+    "/logout",
+    [profile_ctrl.verify.verifyToken],
+    home_ctrl.output.index2
+);
+
 router.get("/signUp", home_ctrl.output.signUp);
 
 // Page Renders - payment folder
@@ -93,21 +100,18 @@ router.post("/getArtList", giver_ctrl.process.getArtList);
 router.post("/getArt", giver_ctrl.process.getArt);
 router.post("/getSpecifiedArtList", giver_ctrl.process.getSpecifiedArtList);
 router.post("/getOwnedNft", giver_ctrl.process.getOwnedNft);
+router.post("/confirm", home_ctrl.process.confirm);
+router.post("/updateNFT", home_ctrl.process.updateNFT);
 
 router.post("/login", home_ctrl.process.login);
 
 router.post("/signUp", upload.single("profile"), home_ctrl.process.signUp);
 
-// router.post(
-//     "/registerArt",
-//     [auth_ctrl.verifyToken, uploadArt.single("art_image")],
-//     art_ctrl.process.registerArt
-// );
-
-router.post("/registerArt", async (req, res) => {
-    var res = await testAuthentication();
-    console.log(res);
-    // home_ctrl.process.signUp
-});
+// router.post("/registerArt", upload.single("art"), async (req, res) => {
+// console.log(req.body);
+// var res = await testAuthentication();
+// res.send(200);
+// home_ctrl.process.signUp
+// });
 
 module.exports = router;

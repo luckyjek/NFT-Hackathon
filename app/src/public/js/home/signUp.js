@@ -75,7 +75,7 @@ function login() {
         user_password: loginPs.value,
     };
 
-    // console.log(req);
+    console.log(req);
 
     fetch("/login", {
         method: "POST",
@@ -87,14 +87,12 @@ function login() {
         .then((res) => res.json())
         .then((res) => {
             if (res.success) {
-                location.href = "/";
-            } else {
-                if (res.err) return alert(res.err);
-                alert(res.msg);
+                console.log(res);
+                console.log(res.accessToken);
+                location.href = "/logout";
             }
         })
         .catch((err) => {
-            console.error("Errors!");
-            alert(err);
+            console.log(err);
         });
 }

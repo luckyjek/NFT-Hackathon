@@ -33,7 +33,7 @@ function loadArtList(artList) {
 
     for (let i = 0; i < artList.length; i++) {
         let art_id = artList[i].art_id;
-        let account_id = artList[i].account_id;
+        let user_name = artList[i].user_name;
         let art_name = artList[i].art_name;
         let art_created_at = artList[i].art_created_at;
         let art_price = artList[i].art_price;
@@ -42,31 +42,32 @@ function loadArtList(artList) {
         let artist_img = artList[i].profile_image_path;
 
         artSelectList += `
-             <article id="${art_id}" onclick="linkClickEvent(this.id);">
-             <img class="nftImgs" src="/images/${art_image_path}"} />
-             <div class="text">
-               <h3 class="nftText nftText__title" id="nftName">${art_name}</h3>
-               <div class="donate__price">price</div>
-               <div class="donate__eth">
-                   <h3 id="nftPrice">
-                       <i class="fab fa-ethereum fa-sm"></i>
-                       ${art_price}
-                   </h3>
-               </div>
-               <p class="nftText__description" id="nftDescribe">
-               ${art_description}
-               </p>
-             </div>
-               <div class="container__profile">
-                 <img class="artist__img"
-                  src="/images/${artist_img}"
-                 />
-                 <div class="container__profile__text">
-                  <p class="nftText nftText__id" id="nftCreatedBy">Created By ${account_id}</p>
-                  <h2 class="nftText nftText__date" id="nftDate">${art_created_at}</h2>
-                 </div>
-             </div>
-            </article>`;
+
+        <article id="${art_id}" onclick="linkClickEvent(this.id);">
+        <img class="nftImgs" src="/images/${art_image_path}"} />
+        <div class="text">
+          <h3 class="nftText nftText__title" id="nftName">${art_name}</h3>
+          <div class="donate__price">price</div>
+          <div class="donate__eth">
+              <h3 id="nftPrice">
+                  <i class="fab fa-ethereum fa-sm"></i>
+                  ${art_price}
+              </h3>
+          </div>
+          <p class="nftText__description" id="nftDescribe">
+          ${art_description}
+          </p>
+        </div>
+          <div class="container__profile">
+            <img class="artist__img"
+             src="/images/${artist_img}"
+            />
+            <div class="container__profile__text">
+             <p class="nftText nftText__id" id="nftCreatedBy">Created By ${user_name}</p>
+             <h2 class="nftText nftText__date" id="nftDate">${art_created_at}</h2>
+            </div>
+        </div>
+       </article>`;
     }
     document.querySelector(".grid").innerHTML = artSelectList;
     // addClickListener();

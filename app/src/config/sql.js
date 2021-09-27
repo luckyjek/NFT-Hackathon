@@ -1,4 +1,7 @@
 module.exports = {
+    confirm: {
+        query: "select * from t_account where user_address = ?",
+    },
     getSpecifiedArtList: {
         query: "select * from t_art where user_name = ?",
     },
@@ -9,7 +12,7 @@ module.exports = {
         query: "select * from t_art where art_id = ?",
     },
     getAccountList: {
-        qurey: "SELECT * FROM t_account",
+        query: "SELECT * FROM t_account",
     },
     getAccount: {
         query: "SELECT * FROM t_account WHERE user_id = ?",
@@ -23,5 +26,10 @@ module.exports = {
     getOwnedNft: {
         query: `select * from t_art
                 where t_art.user_name in (select t_account.user_name from t_account where user_address = ?)`,
+    },
+    updateNFT: {
+        query: `update t_art 
+        SET user_name = "Big hand, Jang", profile_image_path = "profile\\jy.jpg"
+        where art_id = 4`,
     },
 };

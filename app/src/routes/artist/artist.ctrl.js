@@ -14,8 +14,8 @@ const process = {
     registerArt: async (req, res) => {
         console.log(req.body);
         // console.log(process.env.DATABASE_DB);
-        // const art = new Art(req.body);
-        // const response = await art.isterArt();
+        const art = new Art(req.body);
+        const response = await art.registerArt();
         var success = { success: true };
         return res.json(success);
     },
