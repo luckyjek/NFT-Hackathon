@@ -87,14 +87,12 @@ function login() {
         .then((res) => res.json())
         .then((res) => {
             if (res.success) {
+                console.log(res);
                 console.log(res.accessToken);
                 location.href = "/";
-            } else {
-                if (res.err) return alert(res.err);
-                alert(res.msg);
             }
         })
         .catch((err) => {
-            console.error("Errors!");
+            console.log(err);
         });
 }

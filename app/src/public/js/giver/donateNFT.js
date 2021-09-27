@@ -43,25 +43,31 @@ function loadArtList(artList) {
         let artist_img = artList[i].profile_image_path;
 
         artSelectList += `
-             <article id="${art_id}" onclick="linkClickEvent(this.id);">
-             <img class="nftImgs" src="/images/${art_image_path}"} />
-             <div class="text">
-               <h3 class="nftText nftText__title" id="nftName">${art_name}</h3>
-               <h3 class="nftText nftText__price" id="nftPrice">${art_price}</h3>
-               <p class="nftText__description" id="nftDescribe">
-               ${art_description}
-               </p>
-             </div>
-               <div class="container__profile">
-                 <img class="artist__img"
-                  src="/images/${artist_img}"
-                 />
-                 <div class="container__profile__text">
-                  <p class="nftText nftText__id" id="nftCreatedBy">Created By ${user_name}</p>
-                  <h2 class="nftText nftText__date" id="nftDate">${art_created_at}</h2>
-                 </div>
-             </div>
-            </article>`;
+        <article id="${art_id}" onclick="linkClickEvent(this.id);">
+        <img class="nftImgs" src="/images/${art_image_path}"} />
+        <div class="text">
+          <h3 class="nftText nftText__title" id="nftName">${art_name}</h3>
+          <div class="donate__price">price</div>
+          <div class="donate__eth">
+              <h3 id="nftPrice">
+                  <i class="fab fa-ethereum fa-sm"></i>
+                  ${art_price}
+              </h3>
+          </div>
+          <p class="nftText__description" id="nftDescribe">
+          ${art_description}
+          </p>
+        </div>
+          <div class="container__profile">
+            <img class="artist__img"
+             src="/images/${artist_img}"
+            />
+            <div class="container__profile__text">
+             <p class="nftText nftText__id" id="nftCreatedBy">Created By ${user_name}</p>
+             <h2 class="nftText nftText__date" id="nftDate">${art_created_at}</h2>
+            </div>
+        </div>
+       </article>`;
     }
     document.querySelector(".grid").innerHTML = artSelectList;
     // addClickListener();

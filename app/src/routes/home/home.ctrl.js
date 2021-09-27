@@ -10,8 +10,8 @@ const output = {
         res.render("home/gallery");
     },
 
-    index: (req, res) => {\
-        console.log(req)
+    index: (req, res) => {
+        // console.log(req)
         res.render("home/index");
     },
 
