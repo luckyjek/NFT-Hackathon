@@ -93,6 +93,7 @@ router.post("/getArtList", giver_ctrl.process.getArtList);
 router.post("/getArt", giver_ctrl.process.getArt);
 router.post("/getSpecifiedArtList", giver_ctrl.process.getSpecifiedArtList);
 router.post("/getOwnedNft", giver_ctrl.process.getOwnedNft);
+router.post("/confirm", home_ctrl.process.confirm);
 
 router.post("/login", home_ctrl.process.login);
 

@@ -1,6 +1,6 @@
 "use strict";
 const Account = require("../../models/Account");
-
+const { sys } = require("../../config/db");
 const output = {
     artInfo: (req, res) => {
         res.render("home/artInfo");
@@ -10,7 +10,8 @@ const output = {
         res.render("home/gallery");
     },
 
-    index: (req, res) => {
+    index: (req, res) => {\
+        console.log(req)
         res.render("home/index");
     },
 
@@ -24,6 +25,8 @@ const process = {
         console.log(req.body);
         const account = new Account(req.body);
         const response = await account.login();
+
+        console.log(response);
         return res.json(response);
     },
 
@@ -37,6 +40,19 @@ const process = {
         const account = new Account(req.body);
         const response = await account.register();
         return res.json(response);
+    },
+
+    confirm: async (req, res) => {
+        console.log(req.body);
+        try {
+            const result = await sys.db("confirm", req.body.param[0]);
+            console.table(result);
+            res.send(result);
+        } catch (err) {
+            res.status(500).send({
+                error: err,
+            });
+        }
     },
 };
 

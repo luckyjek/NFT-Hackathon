@@ -75,7 +75,7 @@ function login() {
         user_password: loginPs.value,
     };
 
-    // console.log(req);
+    console.log(req);
 
     fetch("/login", {
         method: "POST",
@@ -87,6 +87,7 @@ function login() {
         .then((res) => res.json())
         .then((res) => {
             if (res.success) {
+                console.log(res.accessToken);
                 location.href = "/";
             } else {
                 if (res.err) return alert(res.err);
@@ -95,6 +96,5 @@ function login() {
         })
         .catch((err) => {
             console.error("Errors!");
-            alert(err);
         });
 }

@@ -30,6 +30,8 @@ class Account {
         try {
             const result = await sys.db("getAccount", client.user_id);
             const user = result[0];
+            console.log(user.user_id, client.user_id);
+            console.log(user.user_password, client.user_password);
 
             if (user) {
                 if (
@@ -43,6 +45,7 @@ class Account {
                             expiresIn: 86400, // 24 hours
                         }
                     );
+                    console.log("로그인");
                     return { success: true, accessToken: token };
                 }
                 return {

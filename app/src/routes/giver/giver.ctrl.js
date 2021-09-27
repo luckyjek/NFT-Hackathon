@@ -82,6 +82,7 @@ const process = {
             fs.createReadStream(filePath).pipe(res);
         }
     },
+
     getSpecifiedArtList: async (req, res) => {
         console.log("process.getSpecifiedArtList");
         try {

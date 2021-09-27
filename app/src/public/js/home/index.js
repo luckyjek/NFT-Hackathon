@@ -4,6 +4,8 @@ let position = [];
 var web3;
 var userAccount;
 
+const loginLink = document.getElementById("loginLink");
+
 // donate 버튼 누르면 donateNFT.html로 이동
 function donateBtn() {
     console.log("donateBtn click");
@@ -71,11 +73,24 @@ async function connectWallet() {
         try {
             const userAccounts = await web3.eth.requestAccounts();
             userAccount = userAccounts[0];
+            // if (userAccount != undefined) {
+            //     console.log(userAccount);
+            //     myProfile();
 
-            // var navLogin = document.getElementById("connectWalletBtn");
-            // navLogin.innerText = "Logout";
-            // navLogin.classList.add("disabled");
+            //     axios({
+            //         method: "post",
+            //         url: "/login",
+            //         data: {
+            //             param: [userAccount],
+            //         },
+            //     }).then((res) => {
+            //         var result = res.data[0];
 
+            //         console.log(result);
+            //         alert(`Hello, ${result.user_name}`);
+            //         location.href = "/signUp";
+            //     });
+            // }
             // axios 로 디비에 유저정보 있는지 확인
             location.href = "signUp";
         } catch (error) {
@@ -87,6 +102,18 @@ async function connectWallet() {
     else if (window.web3) {
         // Use Mist/MetaMask's provider.
         web3 = window.web3;
+
         console.log("Injected web3 detected.");
     }
+}
+
+function myProfile() {
+    let n = `
+    <li class="nav__item">
+        <a class="nav__link" onclick="connectWallet();">
+            My Profile
+        </a>
+    </li>
+    `;
+    loginLink.innerHTML = n;
 }

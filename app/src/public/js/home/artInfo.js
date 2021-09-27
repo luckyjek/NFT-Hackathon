@@ -175,7 +175,7 @@ function loadRightArt(artList) {
 
     h.push(
         `</div>
-        </div>;
+        </div>
         `
     );
     cardRightImgDiv2.innerHTML = h.join("");
@@ -268,6 +268,4 @@ function mint(_to, _ipfsHash) {
 //   modal.style.display="block";
 // })
 
-function updateArt() {
-  
-}
+function updateArt() {}

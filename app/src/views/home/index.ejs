@@ -43,9 +43,14 @@
                 </li>
                 <!-- nav bar "Log in" 메뉴 버튼 -->
                 <!-- Log in 클릭 시  메타마스크 연결-->
-                <li class="nav__item">
-                    <a class="nav__link" onclick="connectWallet();">Log in</a>
-                </li>
+                <div id="loginLink">
+                    <!-- 메타마스크 로그인 시 바뀌어야함 -->
+                    <li class="nav__item">
+                        <a class="nav__link" onclick="connectWallet();"
+                            >Log in</a
+                        >
+                    </li>
+                </div>
             </ul>
         </header>
         <!-- 메인페이지 중간 부분 -->
@@ -131,6 +136,7 @@
                 </div>
             </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script type="text/javascript" src="lib/web3.min.js"></script>
         <script
             src="https://kit.fontawesome.com/6478f529f2.js"

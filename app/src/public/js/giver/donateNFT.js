@@ -34,7 +34,7 @@ function loadArtList(artList) {
 
     for (let i = 0; i < artList.length; i++) {
         let art_id = artList[i].art_id;
-        let account_id = artList[i].account_id;
+        let user_name = artList[i].user_name;
         let art_name = artList[i].art_name;
         let art_created_at = artList[i].art_created_at;
         let art_price = artList[i].art_price;
@@ -57,7 +57,7 @@ function loadArtList(artList) {
                   src="/images/${artist_img}"
                  />
                  <div class="container__profile__text">
-                  <p class="nftText nftText__id" id="nftCreatedBy">Created By ${account_id}</p>
+                  <p class="nftText nftText__id" id="nftCreatedBy">Created By ${user_name}</p>
                   <h2 class="nftText nftText__date" id="nftDate">${art_created_at}</h2>
                  </div>
              </div>

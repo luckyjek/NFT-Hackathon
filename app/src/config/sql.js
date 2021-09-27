@@ -1,4 +1,7 @@
 module.exports = {
+    confirm: {
+        query: "select * from t_account where user_address = ?",
+    },
     getSpecifiedArtList: {
         query: "select * from t_art where user_name = ?",
     },
@@ -9,7 +12,7 @@ module.exports = {
         query: "select * from t_art where art_id = ?",
     },
     getAccountList: {
-        qurey: "SELECT * FROM t_account",
+        query: "SELECT * FROM t_account",
     },
     getAccount: {
         query: "SELECT * FROM t_account WHERE user_id = ?",
