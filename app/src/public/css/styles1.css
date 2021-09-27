@@ -23,19 +23,19 @@
 @import "screens/paymentPlatform.css";
 
 .autoHeight {
-  /* 내용만큼 자동 스크롤 */
-  /* 메인화면 외 나머지 화면만 적용 */
-  /* overflow 적용할 때 height 값 유의해서 주기. height값이 작다면
+    /* 내용만큼 자동 스크롤 */
+    /* 메인화면 외 나머지 화면만 적용 */
+    /* overflow 적용할 때 height 값 유의해서 주기. height값이 작다면
   overflow:auto;를 해도 height 만큼만 스크롤 생긴다. */
-  overflow: auto;
+    overflow: auto;
 }
 
 body {
-  box-sizing: border-box;
-  background-color: whitesmoke;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  /* height: 10000px; */
-  font-family: "Baloo Paaji 2", "Noto Sans KR", sans-serif;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    /* margin-top: 50px; */
+    display: flex;
+    flex-direction: column;
+    /* height: 10000px; */
+    font-family: "Baloo Paaji 2", "Noto Sans KR", sans-serif;
 }

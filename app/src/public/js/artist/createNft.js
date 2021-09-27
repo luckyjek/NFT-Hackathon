@@ -37,37 +37,38 @@ function submit() {
     let eth = document.getElementById("eth-v").value;
     let des = document.getElementById("des").value;
     let chek1 = document.getElementsByName("heckbox1").checked;
+    console(fileInfo);
     // let chek2 = document.getElementsByName("heckbox2").value;
 
     // if (!userId.value) return alert("Please enter account ID.");
     // if (userPs.value !== userConfirmPs.value)
     //     return alert("Incorrect password.");
 
-    var req = {
-        inputGroup: inputGroup,
-        des: des,
-    };
+    // var req = {
+    //     inputGroup: inputGroup,
+    //     des: des,
+    // };
 
-    fetch("/registerArt", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(req),
-    })
-        .then((res) => res.json())
-        .then((res) => {
-            if (res.success) {
-                // location.href = "/login";
-                alert(res.success);
-            } else {
-                if (res.err) return alert(res.err);
-                alert(res.msg);
-            }
-        })
-        .catch((err) => {
-            console.error("Error occurs on register");
-        });
+    // fetch("/registerArt", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(req),
+    // })
+    //     .then((res) => res.json())
+    //     .then((res) => {
+    //         if (res.success) {
+    //             // location.href = "/login";
+    //             alert(res.success);
+    //         } else {
+    //             if (res.err) return alert(res.err);
+    //             alert(res.msg);
+    //         }
+    //     })
+    //     .catch((err) => {
+    //         console.error("Error occurs on register");
+    //     });
 }
 
 function agreeBtn() {

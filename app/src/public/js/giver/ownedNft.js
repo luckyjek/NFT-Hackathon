@@ -32,6 +32,7 @@ async function getArt() {
     }
 
     loadGiver(artList);
+    loadShowArt(artList);
 }
 
 function loadGiver(artList) {
@@ -61,81 +62,76 @@ function loadGiver(artList) {
 
     giverProfile.innerHTML = giverInfo;
 }
-let ownedInfoList = "";
 
-for (let i = 0; i < data.length; i++) {
-    artistId = data[i].artist_id;
-    artistName = data[i].artist_name;
-    artistImage = data[i].artist_image;
-    nftNum = data[i].art_num;
-    artImg = data[i].art_image;
-    artName = data[i].art_name;
-    artInfo = data[i].art_info;
-    artDate = data[i].art_update;
-    artPrice = data[i].art_price;
+const giverProfile1 = document.querySelector(".grid");
 
-    ownedInfoList += ` <ul class="account__ownedNftList">
-    <li class="account__ownedNftRow">
-      <img class="account__ownedNft" src="${artImg}" />
-      <div class="account__top">
-        <div class="account__title">
-          <h2 class="account__nftTitle">${artName}</h2>
-          <h3 class="account__number">${nftNum}</h3>
-          <h6 class="account__artist">Created by ${artistName}</h6>
-        </div>
-        <div class="account__price">
-          <span class="account__price"
-            ><i class="fab fa-ethereum fa-sm"></i>${artPrice}</span
-          >
-        </div>
-      </div>
-    </li>
-   
-    <li class="account__ownedNftRow">
-    <img class="account__ownedNft" src="${artImg}" />
-    <div class="account__top">
-      <div class="account__title">
-        <h2 class="account__nftTitle">${artName}</h2>
-        <h3 class="account__number">${nftNum}</h3>
-        <h6 class="account__artist">Created by ${artistName}</h6>
-      </div>
-      <div class="account__price">
-        <span class="account__price"
-          ><i class="fab fa-ethereum fa-sm"></i>${artPrice}</span
-        >
-      </div>
-    </div>
-  </li>
-  <li class="account__ownedNftRow">
-  <img class="account__ownedNft" src="${artImg}" />
-  <div class="account__top">
-    <div class="account__title">
-      <h2 class="account__nftTitle">${artName}</h2>
-      <h3 class="account__number">${nftNum}</h3>
-      <h6 class="account__artist">Created by ${artistName}</h6>
-    </div>
-    <div class="account__price">
-      <span class="account__price"
-        ><i class="fab fa-ethereum fa-sm"></i>${artPrice}</span
-      >
-    </div>
-  </div>
-  </li>
-  <li class="account__ownedNftRow">
-  <img class="account__ownedNft" src="${artImg}" />
-  <div class="account__top">
-    <div class="account__title">
-      <h2 class="account__nftTitle">${artName}</h2>
-      <h3 class="account__number">${nftNum}</h3>
-      <h6 class="account__artist">Created by ${artistName}</h6>
-    </div>
-    <div class="account__price">
-      <span class="account__price"
-        ><i class="fab fa-ethereum fa-sm"></i>${artPrice}</span
-      >
-    </div>
-  </div>
-  </li>
-    </ul>
+function loadShowArt(artList) {
+    console.log("loadShowArt", artList);
+
+    let ownedInfoList = "";
+
+    // for (let i = 0; i < artList.length; i++) {
+    let artId = artList[0].art_id;
+    let profileImagePath = artList[0].profile_image_path;
+    let artCreatedAt = artList[0].art_created_at;
+    let artDescription = artList[0].art_description;
+    let artImagePath = artList[0].art_image_path;
+    let artName = artList[0].art_name;
+    let artPrice = artList[0].art_price;
+    let artistQuotes = artList[0].artist_quotes;
+    let serialNumber = artList[0].serial_number;
+    let userName = artList[0].user_name;
+    console.log(artId, userName);
+
+    ownedInfoList += ` 
+          <article id="${artId}" onclick="linkClickEvent(this.id);">
+          <img
+              class="nftImgs"
+              src="/images/${artImagePath}"
+              }=""
+          />
+          <div class="text">
+              <h3 class="nftText nftText__title" id="nftName">
+                  ${artName}
+              </h3>
+              <h3>${serialNumber}</h3>
+              <div class="donate__price">price</div>
+              <div class="donate__eth">
+                  <h3 id="nftPrice">
+                      <i
+                          class="fab fa-ethereum fa-sm"
+                          aria-hidden="true"
+                      ></i>
+                      ${artPrice}
+                  </h3>
+              </div>
+              <p
+                  class="nftText__description"
+                  id="nftDescribe"
+              >
+                  ${artDescription}
+              </p>
+          </div>
+          <div class="container__profile">
+              <img class="artist__img" src="/images/${profileImagePath}" />
+              <div class="container__profile__text">
+                  <p
+                      class="nftText nftText__id"
+                      id="nftCreatedBy"
+                  >
+                      Created By ${userName}
+                  </p>
+                  <h2
+                      class="nftText nftText__date"
+                      id="nftDate"
+                  >
+                      ${artCreatedAt}
+                  </h2>
+              </div>
+          </div>
+      </article>
     `;
+    // }
+    giverProfile1.innerHTML = ownedInfoList;
+    // grid
 }
