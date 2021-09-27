@@ -28,7 +28,7 @@ module.exports = {
                 where t_art.user_name in (select t_account.user_name from t_account where user_address = ?)`,
     },
     updateNFT: {
-        query: `update t_art 
+        query: `update t_art
         SET user_name = "Big hand, Jang", profile_image_path = "profile\\jy.jpg"
         where art_id = 4`,
     },

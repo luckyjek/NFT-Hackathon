@@ -1,7 +1,5 @@
 "use strict";
 
-const { updateNFT } = require("../../../config/sql");
-
 axios.defaults.baseURL = "http://localhost:5000";
 axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -218,7 +216,7 @@ function getContract() {
         .on("data", function (event) {
             console.log(event);
             updateArt();
-            location.href = `ownedNft?user_address=${userAccount}`;
+            location.href = `ownedNft?user_address=0x9EC9AC831FA8D419FDBf2789CaDe45A79689Ffb7}`;
         });
 
     console.log("Now on, Watching NewArt event in my contract!");
