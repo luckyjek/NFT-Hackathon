@@ -29,19 +29,19 @@
     -   담당역할 : 기획 총괄 및 스마트 컨트랙트 개발
     -   업무내용 : 팀원들이 개발한 내용이 잘 맞춰질 수 있도록 개발 방향성을 이끌어감
     -   사용툴 : VScode, AWS RDS, Remix IDE, Pinata IPFS provider
-
+    -   
     2. [팀원/도희경](https://github.com/luckyjek)
 
     -   담당역할 : 서비스 디자인 총괄
     -   업무내용 : 웹 서비스 전반적인 디자인 템플릿을 제작하고, 웹 사이트 프레임 설계
     -   사용툴 : VScode, CSS, Bootstrap
-
+    -   
     3. [팀원/정은경](https://github.com/heekyungdo)
 
     -   담당역할 : 인터랙티브 디자인
     -   업무내용 : 팀원들이 개발한 내용이 잘 맞춰질 수 있도록 개발 방향성을 이끌어감
     -   사용툴 : VScode, filepond lib, Bootstrap, Interactive web libs
-
+    -   
     4. [팀원/서장연](https://github.com/Shumay14)
 
     -   담당역할 : 서버 및 DB 백엔드 담당
@@ -58,7 +58,7 @@
 <a href ='./presentation/아트아카데미-아키텍쳐설계.pdf'  target="_blank">2. AMADO 프로젝트 아키텍쳐 설계</a><br>
 <a href ='./presentation/아트아카데미-발표자료.pdf'  target="_blank">3. AMADO 프로젝트 발표자료 준비(21.09.26)</a><br>
 
-### 기술스택 정의서
+#### 기술스택 정의서
 <p align='center'>
 <img src="./presentation/최종기술스택-정의서.png"></img>
 </p>
