@@ -76,6 +76,12 @@
 -   blockchain protocol : Ethereum Ropsten Testnet
 -   blockchain provider : Metamask / PINATA IPFS
 
+#### NFT로 민팅된 IPFS 데이터 업로드 예시
+
+<p align='center'>
+<img src="./ipfs/ipfs_example.png"></img>
+</p>
+
 #### 어플리케이션 실행 메뉴얼
 
 > 1. git clone이후, VScode에서 프로젝트 폴더 내 app 폴더로 열어줍니다.
