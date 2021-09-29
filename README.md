@@ -79,12 +79,29 @@
 > 3. app 폴더 내에 .env 파일을 생성하고, 연결할 DB 정보를 입력합니다.(ex: DATABASE_HOST = "test...")
 > 4. 설치 이후, terminal 창에서 npm start를 입력하여 실행합니다.
 
-#### 프로젝트 개발(21.07.12 - 21.07.22)
+#### 개발 담당별 소개
+
+- 기획 및 컨트랙트 개발 / Jeonsgseup, Son
+본 기획은 이전 개인 Art Acamedy 라는 프로젝트를 발전시킨 프로젝트입니다. 본 기획의 목표는 상기 표기되어 있듯이, 작은 시장규모로 인해 잠재력있는 young & fresh한 우리나라 아티스트들에게 경제적인 지원 및 시장을 확장하고자 본 프로젝트를 기획하였습니다. 또한, 초기 경제성이 부족한 상황을 인지하고 NFT 마켓플레이스보다는 후원플랫폼을 기준으로 프로젝트를 디자인했으며, 기존 Giveth라는 후원 플랫폼의 UX 프로세스를 바탕으로 전체적인 프로세스를 디자인을 하였습니다.
+
+본 어플리케이션 내에 스마트 컨트랙트는 이더리움 테스트넷 상에서 이뤄지며, 우선 규모있는 시장성에서 많은 경제적인 기회를 포착하기 가장 용이하다라고 생각했기 때문에 이더리움 테스트넷에서 개발을 진행하였습니다. 프로젝트 내 이더리움 토큰은 ERC-721를 기준으로 개발하였으며, 컨트랙트 오딧사인 openzeppelin의 IERC를 기준으로 개발하였습니다. 
+
+
+- (분야)/(이름)
+소개...
+
+
+#### 프로젝트 개발시연 영상
+https://www.youtube.com/watch?v=XvaYc2APpUk
 
 ### 참고자료
 
--   bootstrap template : startbootstrap-admin-page
-    (https://github.com/StartBootstrap/startbootstrap-sb-admin-2)
+-   ERC-721 - 스마트 컨트랙트 인터페이스
+    (https://docs.openzeppelin.com/contracts/4.x/erc721)
 
--   fontawesome : vue-fontawesome
-    (https://github.com/FortAwesome/vue-fontawesome)
+-   PINATA IPFS : How to pin to IPFS effortlessly
+    (https://medium.com/pinata/how-to-pin-to-ipfs-effortlessly-ba3437b33885)
+  
+-   DAPP tutorial : 리액트로 구현하는 블록체인 이더리움 ERC721(NFT)
+    (https://www.inflearn.com/course/erc-721/dashboard)
+   
