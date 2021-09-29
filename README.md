@@ -1,10 +1,10 @@
-# 🔗 블록체인 비즈니스 모델 개발 - NFT 해커톤
+# 🔗 2021 Hdac Technology Competition - NFT를 활용한 서비스 모델 개발
 
 ### 프로젝트 개요
 
 -   프로젝트 과정 : 2021 혁신성장 청년인재 양성사업, 블록체인을 활용한 비즈니스 모델 개발
 -   프로젝트 명 : NFT 기반 아마추어 아티스트 후원 플랫폼, 아마도(AMADO)
--   프로젝트 기간 : 21.07.09 ~ 21.09.27
+-   프로젝트 기간 : 21.08.25 ~ 21.09.27
 -   구현 목표 :
     1. 아마추어 아티스트들의 작품 및 데이터 앱 내 진열 후 특정 기부자가 아티스아마추어 아티스트들의 작품을 구매하여 NFT로 민팅
     2. 아마추어 아티스들의 작품을 웹 상에서 전시할 수 있는 갤러리 공간 제작
@@ -30,47 +30,49 @@
     -   업무내용 : 팀원들이 개발한 내용이 잘 맞춰질 수 있도록 개발 방향성을 이끌어감
     -   사용툴 : VScode, AWS RDS, Remix IDE, Pinata IPFS provider
 
-    2. 팀원/[도희경]
+    2. [팀원/도희경](https://github.com/luckyjek)
 
     -   담당역할 : 서비스 디자인 총괄
     -   업무내용 : 웹 서비스 전반적인 디자인 템플릿을 제작하고, 웹 사이트 프레임 설계
     -   사용툴 : VScode, CSS, Bootstrap
 
-    3. 팀원/정은경
+    3. [팀원/정은경](https://github.com/heekyungdo)
 
     -   담당역할 : 인터랙티브 디자인
     -   업무내용 : 팀원들이 개발한 내용이 잘 맞춰질 수 있도록 개발 방향성을 이끌어감
     -   사용툴 : VScode, filepond lib, Bootstrap, Interactive web libs
 
-    4. 팀원/서장연
+    4. [팀원/서장연](https://github.com/Shumay14)
 
     -   담당역할 : 서버 및 DB 백엔드 담당
-    -   업무내용 :
+    -   업무내용 : 서버사이드 MVC 설계 및 DB 아키텍쳐 설계
     -   사용툴 : VScode / Node.js(express) / MariaDB / ejs template engine
 
 ---
 
 ### 프로젝트 세부 수행과정
 
+#### 프로젝트 기획(21.08.25 ~ 21.09.08)
+
+<a href ='./presentaion/아트아카데미-기획서.pdf'  target="_blank">1. AMADO 프로젝트 기획</a><br>
+<a href ='./presentaion/아트아카데미-아키텍쳐설계.pdf'  target="_blank">2. AMADO 프로젝트 아키텍쳐 설계</a><br>
+<a href ='./presentaion/아트아카데미-발표자료.pdf'  target="_blank">3. AMADO 프로젝트 발표자료 준비(21.09.26)</a><br>
+
 #### 어플리케이션 실행 환경
 
-#### 실행방법
+-   프론트엔드 : HTML5 + CSS
+-   백엔드 : express framework + MVC 구조
+-   서버 템플릿 : EJS
+-   DB - AWS RDS 프리티어(MariaDB-10.4.13 / 파라미터 세팅 : utf8 & utf_genernal_ci)
+-   blockchain protocol : Ethereum Ropsten Testnet
+-   blockchain provider : Metamask / PINATA IPFS
 
-1. 프론트 : nextress 폴더를 vs code로 엽니다.
-   terminal 에서 npm run serve를 입력하여 실행합니다.
-   (정상적으로 실행 시.. )
+#### 어플리케이션 실행 메뉴얼
 
-2. 서버 : backend 폴더를 vs code로 엽니다.\_
-   termianl.. **create**container
-
-3. 소스코드(소스코드 실행환경 -> PPT o rDOCX 만들어서 ex. xampp 설치후 아파치 실행 후 소스코드 어느 폴더에서 npm run ~ 명령 입력 / 발표 시연이후 디버그를 잡아서 제출해도 됨)
-
-#### 프로젝트 기획(21.07.02 ~ 21.07.09)
-
-<a href ='./presentaion/강사의_품격-아이디에이션.pdf'  target="_blank">1. 강사의 품격, 아이디에이션</a><br>
-<a href ='./presentaion/강사의_품격-벤치마킹조사.pdf'  target="_blank">2. 강사의 품격, 벤치마킹 조사</a><br>
-<a href ='./presentaion/강사의_품격-벤치마킹.pdf'  target="_blank">3. 강사의 품격, 벤치마킹</a><br>
-<a href ='./presentaion/강사의_품격-와이어프레임.pdf'  target="_blank">4. 강사의 품격, 와이어프레임</a><br>
+> git clone이후, VScode에서 프로젝트 폴더 내 app 폴더로 열어줍니다.
+> terminal에 npm install 로 필요한 js library를 설치합니다.
+> app 폴더 내에 .env 파일을 생성하고, 연결할 DB 정보를 입력합니다.(ex: DATABASE_HOST = "test...")
+> 설치 이후, terminal 창에서 npm start를 입력하여 실행합니다.
 
 #### 프로젝트 개발(21.07.12 - 21.07.22)
 
