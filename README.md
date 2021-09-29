@@ -36,5 +36,6 @@
 -   bootstrap template : startbootstrap-admin-page
     (https://github.com/StartBootstrap/startbootstrap-sb-admin-2)
 
+
 -   fontawesome : vue-fontawesome
     (https://github.com/FortAwesome/vue-fontawesome)

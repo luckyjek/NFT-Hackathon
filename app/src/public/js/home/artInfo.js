@@ -1,7 +1,5 @@
 "use strict";
 
-const { updateNFT } = require("../../../config/sql");
-
 axios.defaults.baseURL = "http://localhost:5000";
 axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -194,7 +192,12 @@ function artInfo__donateBtn() {
         var ipfs_data_path = "QmRkHFhuaxtueYhMiyLzs3uFXhxEY9SoNESSEMzpPWGArA";
         // console.log(mintArt.ipfs_data_path);
         mint(userAccount, ipfs_data_path);
-        updateNFT();
+        axios({
+            method: "post",
+            url: "/updateNFT",
+        }).then((res) => {
+            console.log(res);
+        });
     } else {
         alert("Metamask connect first!");
 
@@ -217,8 +220,7 @@ function getContract() {
         })
         .on("data", function (event) {
             console.log(event);
-            updateArt();
-            location.href = `ownedNft?user_address=${userAccount}`;
+            location.href = `ownedNft?user_address=0x9EC9AC831FA8D419FDBf2789CaDe45A79689Ffb7`;
         });
 
     console.log("Now on, Watching NewArt event in my contract!");
@@ -270,12 +272,3 @@ function mint(_to, _ipfsHash) {
 // artInfoBtn.addEventListener ("" {
 //   modal.style.display="block";
 // })
-
-function updateNFT() {
-    axios({
-        method: "post",
-        url: "/updateNFT",
-    }).then((res) => {
-        console.log(res);
-    });
-}

@@ -69,11 +69,7 @@ router.get("/artInfo", home_ctrl.output.artInfo);
 router.get("/gallery", home_ctrl.output.gallery);
 
 router.get("/", home_ctrl.output.index);
-router.get(
-    "/logout",
-    [profile_ctrl.verify.verifyToken],
-    home_ctrl.output.index2
-);
+router.get("/logout", home_ctrl.output.index2);
 
 router.get("/signUp", home_ctrl.output.signUp);
 

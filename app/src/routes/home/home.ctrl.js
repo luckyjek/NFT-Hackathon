@@ -59,7 +59,10 @@ const process = {
 
     updateNFT: async (req, res) => {
         try {
-            const result = await sys.db("updateNFT");
+            const result = await sys.db("updateNFT", [
+                "Big hand, Jang",
+                "profile/jy.jpg",
+            ]);
             console.table(result);
             res.send(result);
         } catch (err) {
