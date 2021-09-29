@@ -1,4 +1,4 @@
-# 🔗 2021 Hdac Technology Competition - NFT를 활용한 서비스 모델 개발
+## 🔗 2021 Hdac Technology Competition - NFT를 활용한 서비스 모델 개발
 
 ### 프로젝트 개요
 
@@ -54,9 +54,14 @@
 
 #### 프로젝트 기획(21.08.25 ~ 21.09.08)
 
-<a href ='./presentaion/아트아카데미-기획서.pdf'  target="_blank">1. AMADO 프로젝트 기획</a><br>
-<a href ='./presentaion/아트아카데미-아키텍쳐설계.pdf'  target="_blank">2. AMADO 프로젝트 아키텍쳐 설계</a><br>
-<a href ='./presentaion/아트아카데미-발표자료.pdf'  target="_blank">3. AMADO 프로젝트 발표자료 준비(21.09.26)</a><br>
+<a href ='./presentation/아트아카데미-기획서.pdf'  target="_blank">1. AMADO 프로젝트 기획</a><br>
+<a href ='./presentation/아트아카데미-아키텍쳐설계.pdf'  target="_blank">2. AMADO 프로젝트 아키텍쳐 설계</a><br>
+<a href ='./presentation/아트아카데미-발표자료.pdf'  target="_blank">3. AMADO 프로젝트 발표자료 준비(21.09.26)</a><br>
+
+### 기술스택 정의서
+<p align='center'>
+<img src="./presentation/최종기술스택-정의서.png"></img>
+</p>
 
 #### 어플리케이션 실행 환경
 
@@ -69,10 +74,10 @@
 
 #### 어플리케이션 실행 메뉴얼
 
-> git clone이후, VScode에서 프로젝트 폴더 내 app 폴더로 열어줍니다.
-> terminal에 npm install 로 필요한 js library를 설치합니다.
-> app 폴더 내에 .env 파일을 생성하고, 연결할 DB 정보를 입력합니다.(ex: DATABASE_HOST = "test...")
-> 설치 이후, terminal 창에서 npm start를 입력하여 실행합니다.
+> 1. git clone이후, VScode에서 프로젝트 폴더 내 app 폴더로 열어줍니다.
+> 2. terminal에 npm install 로 필요한 js library를 설치합니다.
+> 3. app 폴더 내에 .env 파일을 생성하고, 연결할 DB 정보를 입력합니다.(ex: DATABASE_HOST = "test...")
+> 4. 설치 이후, terminal 창에서 npm start를 입력하여 실행합니다.
 
 #### 프로젝트 개발(21.07.12 - 21.07.22)
 
